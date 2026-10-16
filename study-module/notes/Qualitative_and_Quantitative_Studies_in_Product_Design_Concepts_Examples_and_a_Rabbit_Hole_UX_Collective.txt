@@ -1,0 +1,170 @@
+SOURCE: Week01\Qualitative and Quantitative Studies in Product Design_ Concepts, Examples, and a Rabbit Hole _ UX Collective.mhtml
+Qualitative and Quantitative Studies in Product Design: Concepts, Examples, and a Rabbit Hole | UX Collective
+Medium
+Qualitative and Quantitative Studies in Product Design: Concepts, Examples, and a Rabbit Hole | UX Collective
+Sitemap
+Open in app
+Sign up
+Sign in
+Medium Logo
+Get app
+Write
+Search
+Sign up
+Sign in
+UX Collective
+��
+Follow publication
+Qualitative Methods
+Quantitative Methods
+Research Design
+We believe designers are thinkers as much as they are makers. 
+https://linktr.ee/uxc
+Follow publication
+Qiuzao Zhang
+ highlighted
+Product Design
+Research
+UX
+UX Research
+User Research
+Qualitative and quantitative studies in design: concepts, examples, and a rabbit hole
+Qiuzao Zhang
+Follow
+5 min read
+��
+May 25, 2020
+77
+Listen
+Share
+So, what are the things one usually hears when one joins a discussion on 
+research,
+ in the context
+ 
+of
+ 
+product design researches or generalized social studies?
+Some concepts we can���t avoid include: qualitative research, quantitative research, and hypothesis. A researcher���s ears prick when she or he hears the sound of those.
+In this episode, let���s clarify what each of them means before we dive into future discussion.
+Press enter or click to view image in full size
+I feel real bad in some 101 classes���
+Qualitative Methods
+Qualitative studies are my most frequently used product validation methods. In qualitative studies researchers deal with 
+���why & how���
+ questions by listening to real individuals (users or testers), observing their behaviours, analyzing their lived experience.
+A long long time ago in a galaxy far far away, before I even knew how to spell A-D-O-B-E, I worked briefly as a qualitative market researcher. My team flew into different tiers of cities to conduct studies: we conduct home visits, 1-on-1 interviews and small focus groups to understand how they purchase/use our clients��� products: cars, chocolates, raw meat���(Yes, raw meat).
+Today, in 
+product design
+, some 
+examples
+ of qualitative researches I conducted include:
+A. Design the same interface with two UI approaches. Have two groups of users test use them under the instruction of a moderator. Record and observe their oral description, feedback, as well as actual actions (including mouse movements). This may help us understand the goods and bads of A/B designs respectively.
+B. Write an imaginative scenario (e.g. ���You need to buy a cabbage using this website������) . Link your website���s prototype to an online testing platform. Ask the platform���s users to put themselves in the scenario and use the webpage to complete their cabbage quest. This is almost like a Dungeons & Dragons game, and you���re the Dungeon Master.
+C. Catch random users at Starbucks, or catch random co-workers to help test the flow you designed.
+D. Visit potential users in the environment they would use your product in. Check what they 
+are
+ already doing to solve the pain points you���re trying to solve with your product.
+Usually qualitative methods don���t need a large sample size. It���s more about insights than about numbers. We���ll leave the numbers part to quantitative studies.
+Press enter or click to view image in full size
+Car prototype testings were not my favourites
+Quantitative Methods
+Quantitative methods are about numbers. It measures the behaviour or feedback of testers to provide generalizable answers to
+���how many/how much���
+ questions.
+If we measure (on a defined spectrum) the offence power of Thor and the Hulk by asking them to perform the same attacks, perhaps we can finally know who���s the strongest Avenger.
+Get 
+Qiuzao Zhang
+���s stories in your inbox
+Join Medium for free to get updates from this writer.
+Subscribe
+Subscribe
+Remember me for faster sign in
+In 
+product design
+, we may collect product data (conversion rates, visits, views, comparative performance) by analytics tools used by our teams, like an internal A/B testing system. For example, the quantitative parallels for examples we mentioned in ���Qualitative Methods��� may look like this:
+Design the same interface with two UI approaches. Have two large groups of users test use them respectively, then compare completion rates & time needed for completion.
+Measure what���s the percentage of users that actually clicked the ���Buy the cabbage��� button. (& does it change with time?)
+Measure the conversion vs drop-off rate of each step in the flow you designed.
+Find out the usage distribution of competitor products in target users.
+Sample size for quantitative researches is usually larger. One quick threshold I���m referring to comes from 
+Nielson Norman Group
+: it���s a balance between science and budget to test each design option with 20+ users.
+Research Design
+NOW. Thank you for following me thus far. However, your animal instinct might be screaming already about something looming on the horizon: 
+this is a rabbit hole
+. Both qualitative and quantitative methods offer many options to choose from. The combined usage of them could have a thousand faces.
+If you may take away only one thing from this journey with me, it should be:
+The design of your research might be more important than the implementation of it.
+How we design the research largely depends on the problem. Something we always talk about is a 
+���hypothesis���, an initial assumption about the problem based on limited experience/information. 
+We need to find the best methods to prove/disapprove our hypotheses.
+We may decide to do qualitative interviews first to collect some rough concepts on user behaviour, then use larger-scale quantitative tests to see if these concepts are scalable. Or, vice versa, we may find user pain points by looking at large-scale data, then use qualitative methods to understand why some designs seem to be causing issues we���ve observed.
+Press enter or click to view image in full size
+Sometimes too many options = ���i just wanna quit������
+An example:
+1. We have built a sales portal for our client���s new product: a series of Pikachu mini-statues. However, the first round of ad tracking shows that 
+the overall conversion has been lower than expected. 
+One of the 
+hypotheses 
+from the team is: the check-out flow is at fault. (Another hypothesis could be: no one wants their own Pikachu. )
+2. Quantitative method: 
+we tracked the step-by-step conversion of the checkout flow: basic buyer info ��� payment ��� address ��� confirmation. We found that we���re losing most users from payment to address.
+3. We reviewed the design of the payment page, and made some more 
+hypotheses: 
+1. UX of this page is stopping users from going on; 2. users are not happy with payment options we provided.
+4.
+ Qualitative method: 
+We reviewed 50 sessions of actual user check-out by Fullstory (a real-session recording service). Here���s what we found: 1. Many users scrolled to review payment options, then quitted. 2. The form is a bit too long for mobile users, also ���Next��� button for form validation is hidden out of the fold. However, most users who chose to continue worked their way through this step.
+5. We removed two ���optional��� fields to make the form shorter, then focused on the second hypothesis: users are not happy with the payment options we provided.
+6. 
+Qualitative method: 
+We reviewed areas covered by the first round of marketing. It was mostly in Korea and China. We interviewed staff members from these markets (yes, depending on the research question, we may interview our internal friends), and got the feedback that buyers in these countries heavily use other alternative e-wallets for payment other than credit cards.
+Even when I was writing the example above, I started havin
+g doubts abo
+ut it: this is way too easy. This could only be ideal. Real cases in the wild world are often way much more complicated. Sometimes, even with thoroughly designed researches we still can���t guarantee that the conclusions/themes we found equals 
+correct
+ product decision.
+As your fellow forever apprentice on the path of product design, here���s how I keep my sanity: to keep thinking on, we also need to accept that despite our best efforts we���ll always live with the limit of data and the unknown part of the future we���re sailing into. ��� We can only try to remove, bit by bit, lil pieces of uncertainty before we���re actually there.
+Product Design
+Research
+UX
+UX Research
+User Research
+77
+77
+Follow
+Written by 
+Qiuzao Zhang
+34 followers
+��
+4 following
+Product Designer at Metalab. Previously served Universe & Instacart
+Follow
+Follow
+Published in 
+UX Collective
+636K followers
+��
+Last published 
+13 hours ago
+We believe designers are thinkers as much as they are makers. 
+https://linktr.ee/uxc
+Follow
+Help
+Status
+About
+Careers
+Press
+Blog
+Store
+Privacy
+Rules
+Terms
+Text to speech
+
+reCAPTCHA
+
+Recaptcha requires verification. 
+protected by 
+reCAPTCHA
+

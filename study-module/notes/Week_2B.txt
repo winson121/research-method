@@ -1,0 +1,143 @@
+SOURCE: Week02\Week 2B.pdf
+PAGES: 5
+
+===== PAGE 1 =====
+none
+1 / 5
+Studio Guide
+Faculty of Information Technology
+IT Research and Innovation Methods
+Week 3. Research Literature
+Studio Activities
+There are 3 activities in this studio sheet (one on each page):
+Activity 1: Developing a Synthesis Matrix
+Activity 2: Developing a Literature Search Plan
+Activity 3: Indicators of Quality
+This studio focuses on the process of developing a research literature review. You will do this by working in
+small groups on an ‘Activity’ related to the research area of “AI-based Chest X-ray Diagnosis” (something you
+should all be able to understand quickly in broad terms).
+We’re going to do this through literature review activities based on three papers on this topic. This is a typical
+starting point for a literature review, where someone (e.g. a colleague or supervisor) has recommended
+examples of research for you to use as a starting point for developing a research study in a particular area. In
+these ‘Activities’ you will: (i) practice "reading with purpose", by reviewing these papers under time pressure;
+(ii) learn to identify indicators of the quality of the work; (iii) construct a synthesis matrix for the work; and (iv)
+use the papers to identify other potentially relevant articles.
+The week before the studio you should study the videos, review the slides, transcript and any readings
+provided and complete the quiz, which is worth just under 1% of your total marks for the unit.
+During the studio you will work in small groups to complete the activities. You should aim to spend the allotted
+time in the studio working on the activity (using your whiteboard) in your groups, and then reviewing with a
+larger group.
+===== PAGE 2 =====
+none
+2 / 5
+Activity 1
+Developing a Synthesis Matrix
+This week’s studio will use the research topic of “AI-based Chest X-ray Diagnosis” to explore how to conduct
+a literature search. The studio activities relate to the following papers which you should download now (see
+Week 3 Moodle):
+PAPER 1: Cid, Y. D., Macpherson, M., Gervais-Andre, L., Zhu, Y., Franco, G., Santeramo, R., Lim, C.,
+Selby, I., Muthuswamy, K., Amlani, A., Hopewell, H., Indrajeet, D., Liakata, M., Hutchinson, C. E., Goh,
+V., & Montana, G. (2024). Development and validation of open-source deep neural networks for
+comprehensive chest x-ray reading: a retrospective, multicentre study. The Lancet. Digital health, 6(1),
+e44–e57. https://doi.org/10.1016/S2589-7500(23)00218-2
+PAPER 2: Seyyed-Kalantari, L., Zhang, H., McDermott, M.B.A. et al. Underdiagnosis bias of artificial
+intelligence algorithms applied to chest radiographs in under-served patient populations. Nat Med 27,
+2176–2182 (2021). https://doi.org/10.1038/s41591-021-01595-0
+PAPER 3: M. Li, B. Lin, Z. Chen, H. Lin, X. Liang and X. Chang, "Dynamic Graph Enhanced
+Contrastive Learning for Chest X-Ray Report Generation," 2023 IEEE/CVF Conference on Computer
+Vision and Pattern Recognition (CVPR), Vancouver, BC, Canada, 2023, pp. 3334-3343, doi:
+10.1109/CVPR52729.2023.00325.
+A synthesis matrix is a tool that we can use to help us synthesize insights from different sources and to
+support our critical engagement with papers that we read. The matrix helps us not only avoid simply
+describing sources in a standalone manner, but it also helps us to:
+1. Compare and contrast sources.
+2. Critically analyze and evaluate sources
+3. Extract insights and support new perspectives.
+To do this, we use a table in which we record our thoughts on the relationships between important ideas from
+the various sources. A synthesis matrix is a really useful device for making sense out of multiple contributions
+to ideas, differences in definitions and contrasting methods. It is a table which we can lay out in different ways
+according to what we’re looking to compare and contrast. When using this approach, be careful not to just
+replicate the section headings of papers. Instead, dig down into the concepts that you're exploring and use
+these as the headings.
+In your groups
+1. Scan (i.e. skim read) the sections for each paper to establish the topic, approach and findings of each
+paper (in addition to the conclusion and introduction which you should have already read); try to ignore
+irrelevant aspects of the presentation that do not relate directly to the general topic “AI-based Chest X-
+ray Diagnosis”.
+2. Based on your readings of the papers, as a group, decide on a set of headings for columns of a
+synthesis matrix (make sure you do not use headings that simply repeat the section headings of the
+papers!). Keep in mind that the overall topic of research for this tutorial is “AI-based Chest X-ray
+Diagnosis”.
+===== PAGE 3 =====
+none
+3 / 5
+3. Working with the the other members of your small group create a synthesis matrix for the 3 papers, and
+be ready to present this to the larger studio group.
+For example:
+Cid, Y. D., Macpherson, M., Gervais-Andre, L., Zhu, Y., Franco, G., Santeramo, R., Lim, C., Selby, I.,
+Muthuswamy, K., Amlani, A., Hopewell, H., Indrajeet, D., Liakata, M., Hutchinson, C. E., Goh, V., & Montana,
+G. (2024). Development and validation of open-source deep neural networks for comprehensive chest x-ray
+reading: a retrospective, multicentre study. The Lancet. Digital health, 6(1), e44–e57
+For the “Methods” section, there are three relevant subsections:
+NLP Model: This subsection explains how the model was fine-tuned on annotated training
+reports. Once trained, X-Raydar-NLP was used to automatically assign labels to the dataset
+based on the predefined taxonomy of findings. This process enabled automated chest X-ray
+reporting.
+Computer Vision Algorithm: This part describes how the abnormality detection task was framed
+as a multi-label image classification problem. The best-performing model used a custom loss
+function that incorporated label uncertainties from the NLP model and class weighting based on
+prevalence data from the training set.
+You don’t need to understand the details of the whole paper to understand the primary proposal of the
+research.
+Figure 1 summarises the design of the XRaydar system, using the Xray data from different hospitals
+Table 2 and 4 summarise the main results, i.e. the automated chest X-ray free-text report annotation
+and classification performance.
+On return to the main session
+Review your answers with your tutor and the larger group.
+===== PAGE 4 =====
+none
+4 / 5
+Activity 2
+Developing a Literature Search Plan
+Having read a small number of papers that you are likely to have been directed to by your supervisor or a
+colleague, your next step is to conduct your search for relevant literature more systematically. While industry
+and student research projects in IT are unlikely to involve the conduct a formal systematic review, you can still
+be systematic in your approach to the challenge of finding relevant literature for you own project.
+In your groups
+As a group choose either PAPER 1, PAPER 2 or PAPER 3 according to which one you believe to be most
+relevant to the research area of “AI-based Chest X-ray Diagnosis”.
+1. This is a 10-minute task (take no longer): Divide the literature review section of your paper between
+your team members and find and read the abstracts of research papers cited in the relevant sections of
+this paper (e.g. using Google Scholar). Based on what you read in these abstracts, compile a list of up
+to 6 of these papers (2 per member of your group) that you consider to be candidates for a closer
+reading (ones that look relevant to the topic of “AI-based Chest X-ray Diagnosis”). Use your worksheet
+to record your list with a brief explanation of why each has been selected.
+2. This is a 10-minute task (take no longer): Find the set of papers that have cited your paper (e.g. using
+Google Scholar to find other papers that cite to paper you have chosen) and divide these between your
+group members, and between you read the abstracts of these sources. Based on what you read in
+these abstracts, construct a list of up to 6 papers (e.g. 2 per member of your group) that are good
+candidates for a closer reading (ones that look relevant to the topic of “AI-based Chest X-ray
+Diagnosis"). Use your worksheet to record your list with a brief explanation of why each has been
+selected.
+On return to the main session
+Review you answers with your tutor and the larger group.
+===== PAGE 5 =====
+none
+5 / 5
+Activity 3
+Indicators of Quality for Literature
+In your groups
+For each paper re-review the abstract, introduction and conclusion sections to bolster your understanding
+of what the reported research is about (divide the papers between the members of your group if).
+1. Work with the members of your small group to do web searches to help you understand the context in
+which the research has been undertaken and published, and the response to it from the academic
+community. Consider the following factors:
+Venue: take time to research the venue at which the papers have been published, discuss and explore
+what features of these venues will give you indicators of the quality of work published.
+Citations: use Google Scholar (or other tools such as SCOPUS) to understand how much the paper has
+been cited, who is citing the work, and in what publications these citations occur.
+Authors: spend time exploring who the key authors are for these papers, and their track records for work
+in the research area of the paper, and related areas.
+2. Record your answers and be ready to informally present you findings to the larger studio group.
+On return to the main session
+Review with your tutor and the larger group

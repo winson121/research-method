@@ -1,0 +1,141 @@
+SOURCE: Week02\Workshop 2A.pdf
+PAGES: 25
+
+===== PAGE 1 =====
+Week 2: 
+Configuring 
+Research 
+Research Methods for IT
+===== PAGE 2 =====
+Workshop expectations
+• Before the workshop:
+• Watch the week’s video, read the associated work. Complete the weekly quiz on 
+Moodle (except week 1 Part A), prepare for the workshop (10% of your overall mark).
+• During the online workshop:
+• Three sections:
+■ Work in small breakout groups of 4-6 students on an activity.
+■ Record work on shared (online or in-person) worksheet (link to be shared).
+■ Review small group work with the rest of the workshop.
+• Consultations:  
+• If you have any questions about the material or workshop examples, please post the 
+question in our Moodles Forum.
+===== PAGE 3 =====
+Workshop Activities
+The workshop activity sheet: Moodle > Week 2 Part B - Workshop Activity
+❏Activity 1: Forming a Research Question & Selecting Methods
+❏Activity 2: Creating a Research Plan
+❏Activity 3: Resource Allocation
+===== PAGE 4 =====
+
+===== PAGE 5 =====
+MIRO
+● Miro board link: https://miro.com/app/board/uXjVEbC0wZQ=/ 
+Password: ITI5125_2026
+https://miro.com/app/board/uXjVEbC0wZQ=/?share_link_id=378408628988
+===== PAGE 6 =====
+Question 1
+1 - Select a research focus:
+● What specific research element would you like to focus on?
+○ E.g. The usability of the interface of the current timetabling system for students switching from 
+an online to on-campus study mode.
+● Create 2 research questions that you would address through your research.
+○ E.g. How accessible is the information required to perform the online-oncampus class switch?
+○ How can we redesign the calendar view to improve the visualisation of the students’ current 
+timetable?
+===== PAGE 7 =====
+Question 2
+2 - Are there any existing data you can use to answer these 
+questions?
+○ E.g. system logs, timestamps, staff communication content…
+===== PAGE 8 =====
+Question 3
+3- It is very likely that you would need to collect additional data 
+to answer your questions. How would you do this?
+○ E.g. Interviews, surveys, focus group, log data…
+===== PAGE 9 =====
+Question 4
+4- Who are you going to collect this additional data from? Be very specific 
+about the participant groups you collect this from
+○ What criteria would you apply to select them?
+○ How many participants? 
+===== PAGE 10 =====
+Activity 1: Round Robin 
+● Initial 20 min: create your group’s research questions and select methods
+● Next 10 min: exchange notes with a team next to you
+===== PAGE 11 =====
+Activity 1 
+Group Work
+
+===== PAGE 12 =====
+
+===== PAGE 13 =====
+
+===== PAGE 14 =====
+
+===== PAGE 15 =====
+Activity 2: Creating a Research Plan
+Your management has approved your research 
+agenda, and now you can roll up your sleeves 
+and start collecting data!
+But…
+You have a very tight deadline… :(
+3 MONTHS!!! 
+Yeah, okay, go ahead
+
+===== PAGE 16 =====
+Activity 2: Creating a Research Plan
+Produce a plan representing the various stages of the research:
+● What are the individual activities you need to conduct during each stage?
+○ E.g. recruitment advertising, shortlisting participants, interview scheduling
+○ Make sure to identify any dependencies between them
+● What design or piloting may be required for each stage?
+○ E.g. piloting a survey before you roll it out
+● What key resources will be required to conduct this research?
+○ E.g. $500,000; 1 year; 10 Software Engineers, 5 Research Assistants and 3 Web 
+Developers…
+● Timline: E.g. Gantt Chart..
+● Work on the Group Flipchart
+===== PAGE 17 =====
+Activity 2 
+Group Work
+
+===== PAGE 18 =====
+
+===== PAGE 19 =====
+
+===== PAGE 20 =====
+Activity 3: Resource Allocation
+Management has allocated your project $3000 for 
+you to outsource or contract your research.
+➔ Using the table in the worksheet, think about 
+how you might resource your research plan to 
+the best of your ability.
+➔ You might find that you won’t be able to 
+resource everything in your original plan, so 
+have a think about what to keep, what to adjust 
+and what to drop.
+
+===== PAGE 21 =====
+
+===== PAGE 22 =====
+
+===== PAGE 23 =====
+In the middle of project, something unexpected 
+happen…
+➔ The government increases the price of petrol → transportation cost 
+increases
+◆ In-person recruitment: $15/approach
+◆ Focus groups: $10/participant
+◆ Interview: $125/participant
+
+===== PAGE 24 =====
+Activity 3 
+Group Work
+
+===== PAGE 25 =====
+Weekly Reflection (10 minutes) 
+Now it is time to reflect to our weekly activity. 
+• In your initial groups, discuss amongst each other the following:
+“Discuss the potential challenges in designing research projects”
+In your groups, each identify a significant challenge and discuss its impact on 
+the research process.

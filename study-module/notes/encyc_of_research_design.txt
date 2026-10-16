@@ -1,0 +1,343 @@
+SOURCE: Week02\encyc-of-research-design.pdf
+PAGES: 11
+
+===== PAGE 1 =====
+Sage Research Methods 
+Encyclopedia of Research Design 
+For the most optimal reading experience we recommend using our website. 
+A free-to-view version of this content is available by clicking on this link, which 
+includes an easy-to-navigate-and-search-entry, and may also include videos, 
+embedded datasets, downloadable datasets, interactive questions, audio 
+content, and downloadable tables and resources. 
+Author: Rogério M. Pinto 
+Pub. Date: 2012 
+Product: Sage Research Methods 
+DOI: https://doi.org/10.4135/9781412961288 
+Methods: Confidence intervals, Dependent variables, Sample size, Correlation, Independent variables, Null 
+hypothesis 
+Disciplines: Anthropology, Business and Management, Criminology and Criminal Justice, Communication 
+===== PAGE 2 =====
+and Media Studies, Counseling and Psychotherapy , Economics, Education, Geography , Health, History , 
+Marketing, Nursing, Political Science and International Relations, Psychology, Social Policy and Public Policy, 
+Social Work, Sociology, Technology, Medicine 
+Access Date: October 16, 2026 
+Publisher: SAGE Publications, Inc. 
+City: Thousand Oaks 
+Online ISBN: 9781412961288 
+© 2012 SAGE Publications, Inc. All Rights Reserved. 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 2 of 11 Encyclopedia of Research Design
+===== PAGE 3 =====
+Mixed methods is a research orientation that possesses unique purposes and techniques. It integrates tech-
+niques from quantitative and qualitative paradigms to tackle research questions that can be best addressed 
+by mixing these two traditional approaches. As long as 40 years ago, scholars noted that quantitative and 
+qualitative research were not antithetical and that every research process, through practical necessity, should 
+include aspects of both quantitative and qualitative methodology. In order to achieve more useful and mean -
+ingful results in any study, it is essential to consider the actual needs and purposes of a research problem to 
+determine the methods to be implemented. The literature on mixed methods design is vast, and contributions 
+have been made by scholars from myriad disciplines in the social sciences. Therefore, this entry is ground -
+ed in the work of these scholars. This entry provides a historical overview of mixed methods as a paradigm 
+for research, establishes differences between quantitative and qualitative designs, shows how qualitative and 
+quantitative methods can be integrated to address different types of research questions, and illustrates some 
+implications for using mixed methods. Though still new as an approach to research, mixed methods design is 
+expected to soon dominate the social and behavioral sciences. 
+The objective of social science research is to understand the complexity of human behavior and experience. 
+The task of the researcher , whose role is to describe and explain this complexity , is limited by his or her 
+methodological repertoire. As tradition shows, dif ferent methods often are best applied to dif ferent kinds of 
+research. Having the opportunity to apply various methods to a single research question can broaden the di -
+mensions and scope of that research and perhaps lead to a more precise and holistic perspective of human 
+behavior and experience. Research is not knowledge itself, but a process in which knowledge is constructed 
+through step-by-step data gathering. 
+Data are gathered most typically through two distinct classical approaches—qualitative and quantitative. The 
+use of both these approaches for a single study , although sometimes controversial, is becoming more wide -
+spread in social science. Methods are really “design” components that include the following: (a) the relation -
+ship between the researcher and research “subjects,” (b) details of the experimental environment (place, time, 
+etc.), (c) sampling and data collection methods, (d) data analysis strategies, and (e) knowledge dissemina -
+tion. The design of a study thus leads to the choice of method strategy . The framework for a study, then, de-
+pends on the phenomenon being studied, with the participants and relevant theories informing the research 
+design. Most study designs today need to include both quantitative and qualitative methods for gathering ef -
+fective data and can thereby incorporate a more expansive set of assumptions and a broader worldview. 
+Mixing methods (or multiple-methods design) is generally acknowledged as being more pertinent to modern 
+research than using a single approach. Quantitative and qualitative methods may rely more on single data 
+collection methods. For example, whereas a quantitative study may rely on surveys for collecting data, a 
+qualitative study may rely on observations or open-ended questions. However , it is also possible that each 
+of these approaches may use multiple data collection methods. Mixed methods design “triangulates” these 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 3 of 11 Encyclopedia of Research Design
+===== PAGE 4 =====
+two types of methods. When these two methods are used within a single research study , different types of 
+data are combined to answer the research question—a defining feature of mixed methods. This approach is 
+already standard in most major designs. For example, in social sciences, interviews and participant observa-
+tion form a large part of research and are often combined with other data (e.g., biological markers). 
+Even though the integration of these two research models is considered fairly novel (emerging significantly 
+in the 1960s), the practice of integrating these two models has a long history . Researchers have often com -
+bined these methods, if perhaps only for particular portions of their investigations. Mixed methods research 
+was more common in earlier periods when methods were less specialized and compartmentalized and when 
+there was less orthodoxy in method selection. Researchers observed and cross-tabulated, recognizing that 
+each methodology alone could be inadequate. Synthesis of these two classic approaches in data gathering 
+and interpretation does not necessarily mean that they are wholly combined or that they are uniform. Often 
+they need to be employed separately within a single research design so as not to corrupt either process. 
+Important factors to consider when one is using mixed methods can be summarized as follows. Mixed meth -
+ods researchers agree that there are some resonances between the two paradigms that encourage mutual 
+use. The distinctions between these two methods cannot necessarily be reconciled. Indeed, this “tension” can 
+produce more meaningful interactions and thus new results. Combination of qualitative and quantitative meth-
+ods must be accomplished productively so that the integrity of each approach is not violated: Methodological 
+congruence needs to be maintained so that data collection and analytical strategies are not jeopardized and 
+can be consistent. The two seemingly antithetical research approaches can be productively combined in a 
+pragmatic, interactive, and integrative design model. The two “classical” methods can complement each other 
+and make a study more successful and resourceful by eliminating the possibility of distortion by strict adher -
+ence to a single formal theory. 
+Qualitative and Quantitative Data 
+Qualitative and quantitative distinctions are grounded in two contrasting approaches to categorizing and ex -
+plaining data. Dif ferent paradigms produce and use dif ferent types of data. Early studies distinguished the 
+two methods according to the kind of data collected, whether textual or numerical. The classic qualitative ap-
+proach includes study of real-life settings, focus on participants' context, inductive generation of theory, open-
+ended data collection, analytical strategies based on textual data, and use of narrative forms of analysis and 
+presentation. Basically, the qualitative method refers to a research paradigm that addresses interpretation and 
+socially constructed realities. The classic quantitative approach encompasses hypothesis formulation based 
+on precedence, experiment, control groups and variables, comparative analysis, sampling, standardization of 
+data collection, statistics, and the concept of causality. Quantitative design refers to a research paradigm that 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 4 of 11 Encyclopedia of Research Design
+===== PAGE 5 =====
+hypothesizes relationships between variables in an objective way. 
+Quantitative methods are related to deductivist approaches, positivism, data variance, and factual causation. 
+Qualitative methods include inductive approaches, constructivism, and textual information. In general, quan -
+titative design relies on comparisons of measurements and frequencies across categories and correlations 
+between variables whereas the qualitative method concentrates on events within a context, relying on mean-
+ing and process. When the two are used together , data can be transformed. Essentially , “qualitized” data 
+can represent data collected using quantitative methods that are converted into narratives that are analyzed 
+qualitatively. “Quantitized” data represent data collected using qualitative methods that can be converted into 
+numerical codes and analyzed statistically . Many research problems are not linear . Purpose drives the re -
+search questions. The course of the study, however, may change as it progresses, leading possibly to dif fer-
+ent questions and the need to alter method design. As in any rigorous research, mixed methods allows for 
+the research question and purpose to lead the design. 
+Historical overview 
+In the Handbook of qualitative research, Norman K. Denzin and Yvonna S. Lincoln classified four historic pe-
+riods in research history for the social sciences. Their classification shows an evolution from strict quantitative 
+methodology, a gradual implementation and acceptance of qualitative methods, to a merging of the two: (1) 
+traditional (quantitative), 1900 to 1950; (2) modernist, 1950 to 1970; (3) ascendance of constructivism, 1970 
+to 1990; and (4) pragmatism and the “compatibility thesis” (discussed later), 1990 to the present. 
+Quantitative methodology, and its paradigm, positivism, dominated methodological orientation during the first 
+half of the 20th century . This “traditional” period, although primarily focused on quantitative methods, did 
+include some mixed method approaches without directly acknowledging implementation of qualitative da -
+ta: Studies often made extensive use of interviews and researcher observations, as demonstrated in the 
+Hawthorne effect. In the natural sciences, such as biology, paleontology, and geology, goals and methods that 
+typically would be considered qualitative (naturalistic settings, inductive approaches, narrative description, 
+and focus on context and single cases) have been integrated with those that were regarded as quantitative 
+(experimental mani-pulation, controls and variables, hypothesis testing, theory verification, and measurement 
+and analysis of samples) for more than a century. 
+After World War II, positivism began to be discredited, which led to its “intellectual” successor, postpositivism. 
+Postpositivism (still largely in the domain of the quantitative method) asserts that research data are influenced 
+by the values of the researchers, the theories used by the researchers, and the researchers' individually con-
+structed realities. During this period, some of the first explicit mixed method designs began to emerge. While 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 5 of 11 Encyclopedia of Research Design
+===== PAGE 6 =====
+there was no distinctive categorization of mixed methods, numerous studies began to employ components of 
+its design, especially in the human sciences. Data obtained from participant observation (qualitative informa -
+tion) was often implemented, for example, to explain quantitative results from a field experiment. 
+The subsequent “modernist” period, or “Golden Age” (1950–1970), has been demarcated, then, by two 
+trends: positivism's losing its stronghold and research methods that began to incorporate “multi methods.” The 
+discrediting of positivism resulted in methods that were more radical than those of postpositivism. From 1970 
+to 1985—defined by some scholars as the “qualitative revolution”—qualitative researchers became more vo -
+cal in their criticisms of pure quantitative approaches and proposed new methods associated with construc -
+tivism, which began to gain wider acceptance. In the years from 1970 to 1990, qualitative methods, along with 
+mixed method syntheses, were becoming more eminent. In the 1970s, the combination of data sources and 
+multiple methods was becoming more fashionable, and new paradigms, such as interpretivism and natural -
+ism, were gaining precedence and validity. 
+In defense of a “paradigm of purity,” a period known as the paradigm wars took place. Different philosophical 
+camps held that quantitative and qualitative methods could not be combined; such a “blending” would corrupt 
+accurate scientific research. Compatibility between quantitative and qualitative methods, according to these 
+proponents of quantitative methods, was impossible due to the distinction of the paradigms. Researchers who 
+combined these methods were doomed to fail because of the inherent differences in the underlying systems. 
+Qualitative researchers defined such “purist” traditions as being based on “received” paradigms (paradigms 
+preexisting a study that are automatically accepted as givens), and they argued against the prejudices and 
+restrictions of positivism and postpositivism. They maintained that mixed methods were already being em -
+ployed in numerous studies. 
+The period of pragmatism and compatibility (1990–the present) as defined by Denzin and Lincoln constitutes 
+the establishment of mixed methods as a separate field. Mixed methodologists are not representative of either 
+the traditional (quantitative) or “revolutionary” (qualitative) camps. In order to validate this new field, mixed 
+methodologists had to show a link between epistemology and method and demonstrate that quantitative and 
+qualitative methods were compatible. One of the main concerns in mixing methods was to determine whether 
+it was also viable to mix paradigms—a concept that circumscribes an interface, in practice, between episte -
+mology (historically learned assumptions) and methodology . A new paradigm, pragmatism, ef fectively com-
+bines these two approaches and allows researchers to implement them in a complementary way. 
+Pragmatism addresses the philosophical aspect of a paradigm by concentrating on what works. Paradigms, 
+under pragmatism, do not represent the primary organizing principle for mixed methods practice. Believing 
+that paradigms (socially constructed) are malleable assumptions that change through history , pragmatists 
+make design decisions based on what is practical, contextually compatible, and consequential. Decisions 
+about methodology are not based solely on congruence with established philosophical assumptions but are 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 6 of 11 Encyclopedia of Research Design
+===== PAGE 7 =====
+founded on a methodology's ability to further the particular research questions within a specified context. Be-
+cause of the complexity of most contexts under research, pragmatists incorporate a dual focus between sense 
+making and value making. Pragmatic research decisions, grounded in the actual context being studied, lead 
+to a logical design of inquiry that has been termed fitness for purpose. Mixed methodologies are the result. 
+Pragmatism demonstrates that singular paradigm beliefs are not intrinsically connected to specific method -
+ologies; rather, methods and techniques are developed from multiple paradigms. 
+Researchers began to believe that the concept of a single best paradigm was a relic of the past and that mul-
+tiple, diverse perspectives were critical to addressing the complexity of a pluralistic society. They proposed 
+what they defined as the dialectical stance: Opposing views (paradigms) are valid and provide for more re -
+alistic interaction. Multiple paradigms, then, are considered a foundation for mixed methods research. Re -
+searchers, therefore, need to determine which paradigms are best for a particular mixed methods design for 
+a specific study. 
+Currently, researchers in social and behavioral studies generally comprise three groups: Quantitatively orient-
+ed researchers, primarily interested in numerical and statistical analyses; qualitatively oriented researchers, 
+primarily interested in analysis of narrative data; and mixed methodologists, who are interested in working 
+with both quantitative and qualitative data. The dif ferences between the three groups (particularly between 
+quantitatively and qualitatively oriented researchers) have often been characterized as the paradigm wars. 
+These three movements continue to evolve simultaneously , and all three have been practiced concurrently . 
+Mixed methodology is in its adolescent stage as scholars work to determine how to best integrate dif ferent 
+methods. 
+Integrated Design Models 
+A. Tashakkori and C. Teddlie have referred to three categories of multiple-method designs: multi-method re -
+search, mixed methods research, and mixed model research. The terms multimethod and mixed method are 
+often confused, but they actually refer to different processes. In multi-method studies, research questions use 
+both quantitative and qualitative procedures, but the process is applied principally to quantitative studies. This 
+method is most often implemented in an interrelated series of projects whose research questions are theo -
+retically driven. Multimethod research is essentially complete in itself and uses simultaneous and sequential 
+designs. 
+Mixed methods studies, the primary concern of this entry, encompass both mixed methods and mixed model 
+designs. This type of research implements qualitative and quantitative data collection and analysis techniques 
+in parallel phases or sequentially . Mixed methods (combined methods) are distinguished from mixed mod -
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 7 of 11 Encyclopedia of Research Design
+===== PAGE 8 =====
+el designs (combined quantitative and qualitative methods in all phases of the research). In mixed methods 
+design, the “mixing” occurs in the type of questions asked and in the inferences that evolve. Mixed model 
+research is implemented in all stages of the study (questions, methods, data collection, analysis, and infer -
+ences). 
+The predominant approach to mixing methods encompasses two basic types of design: component and in-
+tegrated. In component designs, methods remain distinct and are used for discreet aspects of the research. 
+Integrative design incorporates substantial integration of methods. Although typologies help researchers or -
+ganize actual use of both methods, use of typologies as an organizing tool demonstrates a lingering linear 
+concept that refers more to the duality of quantitative and qualitative methods than to the recognition and im-
+plementation of multiple paradigms. Design components (based on objectives, frameworks, questions, and 
+validity strategies), when organized by typology, are perceived as separate entities rather than as interactive 
+parts of a whole. This kind of typology illustrates a pluralism that “combines” methods without actually inte -
+grating them. 
+Triangulation and Validity 
+Triangulation is a method that combines different theoretical perspectives within a single study. As applied to 
+mixed methods, triangulation determines an unknown point from two or more known points, that is, collec -
+tion of data from dif ferent sources, which improves validity of results. In The Research Act , Denzin argued 
+that a hypothesis explored under various methods is more valid than one tested under only one method. T ri-
+angulation in methods, where dif fering processes are implemented, maximizes the validity of the research: 
+Convergence of results from dif ferent measurements enhances validity and verification. It was also argued 
+that using different methods, and possibly a faulty commonality of framework, could lead to increased error in 
+results. Triangulation may not increase validity but does increase consistency in methodology: Though empir-
+ical results may be conflicting, they are not inherently damaging but render a more holistic picture. 
+Triangulation allows for the exploration of both theoretical and empirical observation (inductive and deduc -
+tive), two distinct types of knowledge that can be implemented as a methodological “map” and are logically 
+connected. A researcher can structure a logical study , and the tools needed for organizing and analyzing 
+data, only if the theoretical framework is established prior to empirical observations. Triangulation often leads 
+to a situation in which dif ferent findings do not converge or complement each other . Divergence of results, 
+however, may lead to additional valid explanations of the study. Divergence, in this case, can be reflective of 
+a logical reconciliation of quantitative and qualitative methods. It can lead to a productive process in which 
+initial concepts need to be modified and adapted to differing study results. 
+Recently, two new approaches for mixing methods have been introduced: an interactive approach, in which 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 8 of 11 Encyclopedia of Research Design
+===== PAGE 9 =====
+the design components are integrated and mutually influence each other , and a conceptual approach, us-
+ing an analysis of the fundamental differences between quantitative and qualitative research. The interactive 
+method, as employed in architecture, engineering, and art, is neither linear nor cyclic. It is a schematic method 
+that addresses data in a mutually ongoing arrangement. This design model is a tool that focuses on analyzing 
+the research question rather than providing a template for creating a study type. This more qualitative ap -
+proach to mixed methods design emphasizes particularity, context, comprehensiveness, and the process by 
+which a particular combination of qualitative and quantitative components develops in practice, in contrast to 
+the categorization and comparison of data typical of the pure quantitative approach. 
+Implications for Mixed Methods 
+As the body of research regarding the role of the environment and its impact on the individual has developed, 
+the status and acceptance of mixed methods research in many of the applied disciplines is accelerating. This 
+acceptance has been influenced by the historical development of these disciplines and an acknowledgment 
+of a desire to move away from traditional paradigms of positivism and post-positivism. The key contributions 
+of mixed methods have been to an understanding of individual factors that contribute to social outcomes, the 
+study of social determinants of medical and social problems, the study of service utilization and delivery, and 
+translational research into meaningful practice. 
+Mixed methods research may bridge postmodern critiques of scientific inquiry and the growing interest in 
+qualitative research. Mixed methods research provides an opportunity to test research questions, hypothe -
+ses, and theory and to acknowledge the phenomena of human experience. Quantitative methods support the 
+ability to generalize findings to the general population. However, quantitative approaches that are well regard-
+ed by researchers may not necessarily be comprehensible or useful to lay individuals. Qualitative approaches 
+can help contextualize problems in narrative forms and thus can be more meaningful to lay individuals. Mixing 
+these two methods of fers the potential for researchers to understand, contextualize, and develop interven -
+tions. 
+Mixed methods have been used to examine and implement a wide range of research topics, including instru-
+ment design, validation of constructs, the relationship of constructs, and theory development or disconfirma -
+tion. Mixed methods are rooted, for one example, in the framework of feminist approaches whereby the study 
+of participants' lives and personal interpretations of their lives has implications in research. In terms of data 
+analysis, content analysis is a way for scientists to confirm hypotheses and to gather qualitative data from 
+study participants through different methods (e.g., grounded theory, phenomenological, narrative). The appli-
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 9 of 11 Encyclopedia of Research Design
+===== PAGE 10 =====
+cation of triangulation methodology is extremely invaluable in mixed methods research. 
+While there are certainly advantages to employing mixed methods in research, their use also presents sig -
+nificant challenges. Perhaps the most significant issue to consider is the amount of time associated with the 
+design and implementation of mixed methods. In addition to time restrictions, costs or barriers to obtaining 
+funding to carry out mixed methods research are a consideration. 
+Conclusion 
+Rather than choosing one paradigm or method over another, researchers often use multiple and mixed meth-
+ods. Implementing these newer combinations of methods better supports the modern complexities of social 
+behavior the changing perceptions of reality and knowledge better serve the purposes of the framework of 
+new studies in social science research. The classic quantitative and qualitative models alone cannot encom -
+pass the interplay between theoretical and empirical knowledge. Simply, combining methods makes common 
+sense and serves the purposes of complex analyses. Methodological strategies are tools for inquiry and rep-
+resent collections of strategies that corroborate a particular perspective. The strength of mixed methods is 
+that research can evolve comprehensively and adapt to empirical changes, thus going beyond the traditional 
+dualism of quantitative and qualitative methods, redefining and reflecting the nature of social reality. 
+Paradigms are social constructions, culturally and historically embedded as discourse practices, and contain 
+their own set of assumptions. As social constructions, paradigms are changeable and dynamic. The complex-
+ity and pluralism of our contemporary world require rejecting investigative constraints of singular methods and 
+implementing more diverse and integrative methods that can better address research questions and evolving 
+social constructions. Knowledge and information change with time and mirror evolving social perceptions and 
+needs. Newer paradigms and belief systems can help transcend and expand old dualisms and contribute to 
+redefining the nature of social reality and knowledge. 
+Scholars generally agree that it is possible to use qualitative and quantitative methods to answer objec -
+tive–value and subjective–constructivist questions, to include both inductive–exploratory and deductive–con -
+firmatory questions in a single study, to mix different orientations, and to integrate qualitative and quantitative 
+data in one or more stages of research, and that many research questions can only be answered with a mixed 
+methods design. Traditional approaches meant aligning oneself to either quantitative or qualitative methods. 
+Modern scholars believe that if research is to go forward, this dichotomy needs to be fully reconciled. 
+Rogério M.Pinto 
+See also 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 10 of 11 Encyclopedia of Research Design
+===== PAGE 11 =====
+Critical Theory 
+Grounded Theory 
+Mixed Model Design 
+Qualitative Research 
+Quantitative Research 
+Further Readings 
+Creswell, J. W.(2003).Research design: Qualitative, quantitative and mixed methods approach  (2nd ed. ). 
+Thousand Oaks, CA: Sage. 
+Denzin, N. K., & Lincoln, Y. S. (Eds.). (2000).Handbook of qualitative research  (2nd ed. ). Thousand Oaks, 
+CA: Sage. 
+Tashakkori, A., & Teddlie, C. (Eds.). (2003).Handbook of mixed methods in social and behavioral re -
+search.Thousand Oaks, CA: Sage. 
+https://doi.org/10.4135/9781412961288 
+Sage
+© 2010 by SAGE Publications, Inc.
+Sage Research Methods
+Page 11 of 11 Encyclopedia of Research Design

@@ -1,0 +1,1049 @@
+SOURCE: Week01\2003_Predicting-human-Oz.pdf
+PAGES: 8
+
+===== PAGE 1 =====
+ 
+Predicting Human Interruptibility with Sensors : 
+A Wizard o f O z Feasibility Study 
+ 
+Scott E . Hudson
+†
+, James Fogarty
+†
+, Christopher G . Atkeson
+† *
+, Daniel Avrahami
+†
+, 
+Jodi Forlizzi
+† +
+, Sara Kiesler
+†
+, Johnny C . L e e
+†
+, a n d J i e Yang
+†
+ 
+H C I Institute
+†
+, Robotics Institute * , a n d School o f Design
++
+ 
+Carnegie Mellon University , Pittsburgh , P A 1 5 2 1 3 , U S A 
+{ scott . hudson , jfogarty , c g a , n x 6 , forlizzi , kiesler , johnny , j i e _ yang } @ c s . c m u . e d u 
+ 
+ABSTRACT 
+A person seeking someone else ’ s attention i s normally able 
+t o quickly assess h o w interruptible they a r e . This 
+assessment allows f o r behavior w e perceive a s natural , 
+socially appropriate , o r simply polite . O n t h e other hand , 
+today ’ s computer systems a r e almost entirely oblivious t o 
+t h e human world they operate i n , a n d typically have n o w a y 
+t o take into account t h e interruptibility o f t h e user . This 
+paper presents a Wizard o f O z study exploring whether , 
+a n d h o w , robust sensor - based predictions o f interruptibility 
+might b e constructed , which sensors might b e most useful 
+t o such predictions , a n d h o w simple such sensors might b e . 
+T h e study simulates a range o f possible sensors through 
+human coding o f audio a n d video recordings . Experience 
+sampling i s used t o simultaneously collect randomly 
+distributed self - reports o f interruptibility . Based o n these 
+simulated sensors , w e construct statistical models 
+predicting human interruptibility a n d compare their 
+predictions with t h e collected self - report data . T h e results 
+o f these models , although covering a demographically 
+limited sample , a r e very promising , with t h e overall 
+accuracy o f several models reaching about 7 8 % . 
+Additionally , a model tuned t o avoiding unwanted 
+interruptions does s o f o r 9 0 % o f i t s predictions , while 
+retaining 7 5 % overall accuracy . 
+Keywords 
+Situationally appropriate interaction , context - aware 
+computing , sensor - based interfaces , machine learning . 
+INTRODUCTION 
+A s a part o f o u r early socialization , human beings normally 
+learn when i t i s appropriate t o interrupt someone . A s 
+adults , w e c a n typically assess someone ’ s interruptibility 
+very quickly a n d with a minimum o f effort . F o r example , 
+i n t h e time i t takes t o walk past someone ’ s open office 
+door , w e c a n often tell that w e should n o t intrude o n t h e 
+person . This assessment allows u s t o balance t h e benefits 
+o f a n interruption with i t s cost . Maintaining such a balance 
+usually results i n what i s recognized a s socially appropriate 
+( o r informally : civil o r polite ) behavior . 
+Unfortunately , computer a n d communications systems 
+cannot currently a c t i n a similar fashion – they a r e almost 
+entirely oblivious t o t h e human context i n which they 
+operate a n d cannot assess whether “ n o w i s a b a d time . ” A s 
+a result , they operate t h e same w a y i n essentially a l l 
+situations , a n d d o n o t a c t i n ways that remain appropriate t o 
+t h e situation . I f left unchecked , current systems c a n easily 
+disturb o r annoy – consuming t h e valuable resource o f 
+human attention i n a haphazard a n d inefficient fashion . A s 
+a result , w e often avoid building proactive systems – 
+forcing o u r interfaces t o b e silent a n d passive until called 
+upon . 
+I f w e could develop relatively robust estimators o f 
+interruptibility , w e might enhance human - computer 
+interaction a n d computer mediated communications i n a 
+number o f ways – making people more efficient ( a n d 
+possibly even more relaxed ) . F o r example , w e might build 
+a “ smart answering machine ” which stopped o u r phone 
+from ringing a n d diverted o u r other messaging traffic when 
+w e should n o t b e interrupted . W e might also b e able t o 
+build information displays that could balance a n estimation 
+o f t h e importance o f a piece o f information against t h e 
+attentional costs o f delivering i t . 
+This paper describes work exploring t h e feasibility o f 
+creating such a n estimator b y using sensors t o drive models 
+that predict human interruptibility . This should b e 
+theoretically possible , since t h e equivalent assessments 
+made b y people a r e based o n directly observable 
+phenomena ( rather than , f o r example , invisible internal 
+cognitive state ) . However , replicating this kind o f rich 
+human judgment i n practice m a y b e very challenging a n d 
+might even b e currently impossible . T h e study described 
+here seeks t o assess t h e feasibility o f this kind o f automatic 
+prediction based o n sensor data . Specifically i t seeks 
+answers t o a t least these five questions : 
+ 
+• C a n a practical sensor - driven model reliably predict 
+human interruptibility ? 
+• H o w c a n such a model b e constructed ? 
+• H o w accurate c a n w e make such a model ? 
+• Which sensors a r e most useful f o r such a model ? 
+• What a r e t h e simplest sensors that will produce a n 
+accurate prediction ? 
+ 
+F t . $ Lauderdale , $ Florida , $ U S A $ 2 $ April $ 5 5 1 0 , $ 2 0 0 3 $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ Paper : $ Modeling $ User $ Behavior $
+$ $ $ $
+!
+Volume N o . 5 , Issue N o . 1 2 5 7
+!
+!
+Permission ) t o ) make ) digital ) o r ) hard ) copies ) o f ) a l l ) o r ) part ) o f ) this ) work ) f o r )
+personal ) o r ) classroom ) u s e ) i s ) granted ) without ) f e e ) provided ) that ) copies ) a r e )
+n o t ) made ) o r ) distributed ) f o r ) profit ) o r ) commercial ) advantage ) a n d ) that )
+copies ) bear ) this ) notice ) a n d ) t h e ) full ) citation ) o n ) t h e ) first ) page . ) T o ) copy )
+otherwise , ) o r ) republish , ) t o ) post ) o n ) servers ) o r ) t o ) redistribute ) t o ) lists , )
+requires ) prior ) specific ) permission ) a n d / o r ) a ) f e e . )
+C H I $ 2 0 0 3 , ) April ) 5 – 1 0 , ) 2 0 0 3 , ) F t . ) Lauderdale , ) Florida , ) U S A . )
+Copyright ) 2 0 0 3 ) A C M ) 1 K 5 8 1 1 3 K 6 3 0 K 7 / 0 3 / 0 0 0 4 … $ 5 . 0 0 . !
+===== PAGE 2 =====
+ 
+W e might proceed b y creating a n d deploying sensors , then 
+testing their effectiveness with various forms o f models . 
+However , given t h e large uncertainty surrounding these 
+questions , i t i s almost inevitable that w e would spend 
+considerable effort t o build sensors which i n t h e e n d turned 
+o u t t o b e i l l - suited o r s u b - optimal f o r t h e task . Instead , w e 
+have chosen a Wizard o f O z approach that allows u s t o 
+simulate a wide range o f plausible sensors , build multiple 
+models based o n data from these simulated sensors , a n d 
+then test t h e effectiveness o f different models a n d different 
+combinations o f sensors . 
+Specifically , this study i s based o n a long - term digital audio 
+a n d video recording o f t h e working environment o f a 
+subject . These recordings were made during full working 
+hours f o r 1 4 - 2 2 working days f o r each subject . T h e 
+recordings were then viewed b y a person w h o coded f o r 
+actions a n d situations that could plausibly b e sensed . F o r 
+example , a s detailed below , w e recorded t h e number o f 
+people present , w h o w a s speaking , what task objects were 
+being manipulated , whether t h e phone w a s o f f - hook , a n d 
+other similar facts about t h e environment . Overall , w e 
+recorded 6 0 2 hours o f audio a n d video from t h e office 
+environments o f four subjects with similar j o b functions . 
+During t h e time that recordings were being made w e 
+employed experience sampling techniques [ 5 ] ( sometimes 
+called a beeper study ) t o elicit i n - situ self - reports o f their 
+interruptibility . Finally , a variety o f machine learning 
+techniques were used t o create predictive statistical models 
+that could u s e t h e simulated sensor data t o predict t h e 
+collected self - reports . 
+While currently limited t o a fairly narrow demographic 
+group , t h e results produced have been quite promising . 
+When predicting overall interruptibility o r n o n -
+interruptibility o f subjects ( a s a binary decision ) , several 
+models produced very similar results with a cross - subject 
+accuracy o f approximately 7 8 % ( compared t o a base 
+accuracy o f 6 8 % ) . W e were also surprised t o discover that 
+much o f that predictive power o f several o f these models 
+could b e obtained using a single , relatively easy t o build , 
+sensor that indicates whether anyone i n t h e space i s talking . 
+A primary u s e f o r a n interruptibility estimator will likely b e 
+t o structure information delivery t o avoid situations when 
+t h e user does n o t wish t o b e interrupted . I n that setting i t 
+m a y b e more important t o avoid “ incorrect ” interruptions 
+than i t i s t o make sure n o t t o miss opportunities f o r 
+“ correct ” interruptions . W e have constructed a model 
+tuned t o avoiding unwanted interruptions that does s o f o r 
+9 0 % o f i t s predictions ( while retaining 7 5 % overall 
+accuracy ) . 
+RELATED WORK 
+T h e study o f interruptions began with classic experiments 
+i n t h e 1 9 2 0 s showing that tasks that were interrupted were 
+more likely t o b e recalled after a delay than tasks that were 
+n o t interrupted [ 1 7 ] . Much o f t h e psychological literature 
+o n interruptions h a s been devoted t o examining this effect 
+[ 1 , 7 , 8 ] , although recent research i n H C I h a s sought t o find 
+what technological interventions might b e best t o negotiate 
+multiple a n d sometimes complex tasks [ 9 , 1 0 , 1 1 ] . 
+H C I researchers have only begun t o provide a more 
+analytic a n d precise approach t o understanding 
+interruption , s o a s t o design better context - aware systems . 
+Some researchers believe that understanding t h e context o f 
+interruptions cannot b e handled successfully b y machines , 
+b u t instead machines must defer t o users i n a n accessible 
+a n d useful fashion [ 2 ] . Others , such a s Horvitz [ 9 ] , a r e 
+optimistic that machine learning techniques c a n handle 
+many o f t h e predictions needed t o present information 
+appropriately . 
+Other researchers have worked towards design guidelines 
+f o r coordinating interruption i n H C I . McFarlane tested four 
+known methods f o r deciding when t o interrupt people [ 1 1 ] . 
+Although t h e results have implications f o r structuring 
+appropriate interruption i n H C I , n o o n e method emerged a s 
+best i n doing s o . O ’ Conaill completed a n ethnographic 
+study o n t h e nature o f interruptions i n t h e workplace with 
+implications f o r h o w t o better design communication 
+technology [ 1 3 ] . O n e major finding w a s that t h e recipients 
+o f interruptions often derive personal benefit from t h e 
+interruption , often a t t h e expense o f t h e initiator . This 
+suggests that a blanket approach o f suspending a l l 
+interruptions m a y eliminate t h e benefit that recipients 
+receive from being interrupted , a n d that a n intelligent 
+filtering approach , such a s done b y human assistants , would 
+b e useful . Bellotti defines t h e components o f context , 
+design guidelines a n d human - salient details f o r realizing 
+them [ 2 ] . Hudson poses t h e challenge o f making 
+interruptions more effective , since many view interruptions 
+a s a valuable part o f getting work done [ 1 0 ] . 
+STUDY DETAILS 
+I n order t o increase uniformity f o r this first experiment , w e 
+chose four subjects w h o a r e similar i n terms o f working 
+environment a n d t h e types o f tasks they perform . Each 
+serves i n a high level staff position i n o u r university , a n d 
+h a s significant responsibilities f o r d a y t o d a y administration 
+o f a large university department a n d / o r graduate program . 
+Each subject h a s a private office with a closable door . 
+Their jobs require them t o interact with quite a f e w 
+different people during t h e d a y a n d generally they d o n o t 
+Figure 1 . Custom Coding Interface 
+Showing a Typical View o f a Subject ’ s Office 
+Paper : ' Modeling ' User ' Behavior ' C H I ' 2 0 0 3 : ' N E W ' HORIZONS '
+! !
+!
+2 5 8 Volume N o . 5 , Issue N o . 1 
+===== PAGE 3 =====
+ 
+have full control over their o w n time . They typically 
+respond t o a significant number o f “ walk i n ” requests , a n d 
+overall a r e frequently interrupted . Each o f these subjects 
+almost always works with their door open , making them 
+accessible t o others most o f t h e time . ( Overall their doors 
+were closed a t some point i n t h e five minutes before a 
+sample only 3 % o f t h e time , a n d closed t h e entire five 
+minutes only 0 . 3 % o f t h e time . Note that this mostly 
+eliminates o n e o f t h e explicit cues people u s e t o indicate 
+n o n - interruptibility , a n d hence likely makes predictions f o r 
+these subjects more difficult . ) 
+F o r each subject w e placed a P C with a large disk a n d a n 
+A / V capture a n d compression card connected t o a small 
+camera a n d a microphone i n their office . Each machine 
+also h a d speakers f o r producing audio prompts , a n d a 
+keyboard which allowed t h e user t o temporarily disable 
+recording i f they felt their conversations were t o o sensitive 
+t o b e recorded ( t o ensure privacy , subjects could also 
+retroactively request t h e recordings from a n y time period 
+b e destroyed prior t o viewing ) . T h e P C d i d n o t include a 
+visual display . 
+A s illustrated i n Figure 1 , cameras with wide angle lenses 
+were carefully positioned ( using a portable mounting pole ) 
+s o that t h e primary work area ( s ) a s well a s t h e door were 
+visible . Data w a s captured i n grayscale with a resolution o f 
+3 2 0 x 2 4 0 pixels a t about 6 frames p e r second , a n d 8 - b i t 
+audio w a s recorded a t 1 1 K h z . Recording w a s performed 
+from 7 a m t o 6 p m o n workdays f o r 1 4 - 2 2 days f o r each 
+subject . W e estimate that 3 0 0 hours ( 2 7 days ) o f 
+compressed recording could b e placed o n t h e 8 0 G b disks 
+w e used . This recording setup worked well except i n o n e 
+case where a week ’ s data w a s lost d u e t o a n undetected 
+improper compression setting that caused t h e disk t o fill u p 
+prematurely . F o r this subject w e collected a n additional 1 0 
+days o f data a t a later date . Overall w e recorded 6 0 2 hours 
+from t h e subject ’ s offices . 
+Subjects were given a n audio prompt t o provide a self -
+report o f interruptiblity a t random b u t controlled intervals , 
+averaging t w o prompts p e r hour . I n order t o t r y t o 
+minimize t h e disturbance caused b y o u r prompts , w e chose 
+t o a s k only o n e question , a n d used a five point scale s o that 
+t h e subject could respond i n a minimally disruptive w a y – 
+holding u p some number o f fingers o n o n e hand ( although 
+almost a l l responses ended u p being verbal ) . Specifically , 
+subjects were asked t o “ rate your current interruptibility o n 
+a scale from o n e t o five , with o n e being most interruptible . ” 
+W e collected data f o r a total o f 6 7 2 prompts when t h e 
+subject w a s present . 
+While willingness t o b e interrupted i s clearly dependent n o t 
+only o n t h e state o f t h e person , b u t also o n t h e nature o f t h e 
+interruption , w e made this study more tractable b y 
+choosing t o only look a t t h e state o f t h e interruptee . W e 
+presume that i n u s e o f o u r models , a n assessment will also 
+b e made o f t h e importance o f a n y given interruption , a n d 
+that this will b e balanced against t h e interruptibility 
+estimate a s well a s factors such a s t h e recent a n d total 
+frequency o f interruptions a n d / o r specific strategies f o r 
+minimizing t h e impact o f interruptions [ 1 1 ] . 
+T o facilitate processing o f t h e recorded audio a n d video , w e 
+constructed specialized software f o r playback a n d coding 
+o f t h e data . Both t h e overall operation o f t h e software a n d 
+t h e items coded f o r were iterated based o n coding a n d 
+analysis o f t h e first subject ( which w a s subsequently 
+completely r e - coded using t h e final procedures ) . Multiple 
+coders – students hired o n a n hourly basis – were 
+employed , a n d began their work being trained f o r 
+consistency with t h e other coders before performing coding 
+that w a s retained . F o r cross - validation between coders w e 
+performed duplicate coding f o r a randomly selected 5 % o f 
+t h e data a n d found 9 3 . 4 % agreement a t t h e granularity o f 
+1 5 second intervals . T o minimize coding time , w e have 
+initially only coded t h e five minutes prior t o each sample 
+point f o r a total o f 5 6 hours o f coded data . 
+T h e final coder ’ s interface , shown i n Figure 1 , presented 
+recordings i n 1 5 second sequences . A series o f buttons ( a l l 
+with keyboard shortcuts ) were provided t o indicate t h e 
+occurrence o f events within that segment . A t t h e coders ’ 
+option , a sequence could b e played a t normal o r double 
+speed . After each segment , t h e coder pressed a k e y t o g o t o 
+t h e next segment , o r could back u p a n d s e e t h e segment 
+again . 
+Overall , w e found this setup a very good compromise 
+which allowed coders t o operate a t speeds near o r even 
+better than real - time i n t h e most common cases where very 
+little activity w a s apparent , b u t also allowed them t o control 
+pacing s o that they d i d n o t fall behind o r lose data when 
+complex actions were occurring . T o speed u p processing , 
+multiple passes over t h e recordings were made , starting 
+with whether t h e occupant w a s present during each prompt . 
+This information w a s then used t o optimize subsequent 
+passes . F o r example , after coding h o w many people were 
+present , n o sequences o f a n empty room were shown , a n d 
+passes which coded information about t h e activities o f 
+guests automatically skipped a l l sequences when only t h e 
+occupant w a s present . With these optimizations , w e a r e 
+n o w able t o code data a t a rate o f between three a n d four 
+minutes o f coding time p e r minute o f processed recording . 
+T H E DATA 
+I n 5 4 o f t h e 6 7 2 samples ( 8 . 0 % ) t h e subject w a s present b u t 
+d i d n o t respond t o t h e self - report prompt . W e examined 
+these cases individually a n d determined that i n t h e vast 
+majority o f them , t h e subject w a s either o n t h e phone o r 
+engaged i n conversation with a guest . Based o n empirical 
+results from t h e literature , w e expected these activities t o b e 
+highly correlated with n o n - interruptibility ( a n d this i s borne 
+o u t i n o u r data ) . Further , i n testing w e found that removing 
+these samples from t h e data h a d very little effect o n t h e 
+accuracy o f t h e final predictions . A s a result , t o make 
+analysis a n d model building simpler w e placed these 
+samples i n t h e “ least interruptible ” category f o r purposes o f 
+model building . 
+F t . $ Lauderdale , $ Florida , $ U S A $ 2 $ April $ 5 5 1 0 , $ 2 0 0 3 $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ Paper : $ Modeling $ User $ Behavior $
+$ $ $ $
+!
+Volume N o . 5 , Issue N o . 1 2 5 9
+===== PAGE 4 =====
+ 
+T h e overall distribution o f self - report responses i s shown i n 
+Table 1 with t h e aggregate distribution illustrated i n 
+Figure 2 . Although there a r e clear differences between t h e 
+subjects , w e c a n s e e that a substantial portion o f t h e reports 
+( 3 2 . 0 % ) indicated t h e least - interruptible condition . 
+I n coding from recorded data w e logged t h e following 2 3 
+events o r situations t o a c t a s simulated sensors : 
+Occupant related : 
+• Occupant presence . 
+• Speaking , writing , sitting , standing , o r o n t h e phone . 
+• Touch o f , o r interaction with : desk ( primary work 
+surface ) , table ( large flat surface , n o t t h e primary work 
+surface ) , file cabinet , food , drink , keyboard , mouse , 
+( gaze a t ) monitor , a n d papers ( a n y manipulation , 
+including books , newspapers , papers ) 
+Guest related : 
+• Number o f guests present . 
+• F o r each guest : sitting , standing , talking o r touching 
+( a n y physical contact o r very close proximity with 
+occupant , including handing occupant a n object ) . 
+Environment : 
+• Door open o r closed . 
+• D a y o f t h e week , a n d time o f d a y ( hour only ) . 
+These simulated sensors ( which w e will also refer t o a s 
+features ) were chosen because w e a priori believed they 
+might b e correlated with interruptibility , a sensor could 
+plausibly b e built t o detect them , a n d they could b e readily 
+observed i n o u r recordings . ( W e believe that information 
+about what i s happening o n t h e computer screen , such a s 
+what application ( s ) a r e running , could also b e useful , b u t 
+w e could n o t directly observe that i n o u r recordings . ) 
+Based o n t h e directly recorded information , w e also derived 
+a number o f variant sensors that captured recency a n d 
+density effects . F o r each binary feature – o n e which either 
+occurred o r d i d n o t occur i n each 1 5 second recorded 
+segment – w e produced variants o f t h e following forms ( t h e 
+names i n parenthesis will b e used t o refer t o them later ) : 
+• Event occurred i n t h e 1 5 second interval immediately 
+around t h e self - report sample ( I m m ) . 
+• Event occurred i n every 1 5 second interval f o r 1 minute 
+prior t o t h e sample ( A l l - 1 ) . 
+• Event occurred i n a t least o n e interval i n t h e 1 minute 
+prior t o t h e sample ( A n y - 1 ) . 
+• Event occurred i n every interval i n t h e five minutes 
+prior t o t h e sample ( A l l - 5 ) . 
+• Event occurred i n a t least o n e interval i n t h e 5 minutes 
+prior t o t h e sample ( A n y - 5 ) . 
+• T h e number o f intervals i n which t h e event occurred i n 
+t h e five minutes prior t o t h e sample ( Count - 5 ) . 
+F o r guests present , sitting , standing , talking , o r touching , 
+w e also counted : 
+• T h e number o f such guests a t t h e sampling point ( I m m ) . 
+• T h e number o f unique guests acting i n this w a y a t a n y 
+time during t h e prior o n e a n d five minutes ( A n y - 1 & 
+A n y - 5 ) . 
+• T h e number o f guests acting i n this w a y during t h e 
+entire o n e o r five minute prior period ( A l l - 1 & A l l - 5 ) . 
+Overall , w e obtained observation values corresponding t o a 
+s e t o f 1 2 8 direct o r derived simulated sensors . O f these , 3 0 
+were occurrence counts a n d 9 8 were based o n binary 
+events . O f t h e binary event sensors , 8 never occurred i n 
+o u r data , 1 4 occurred with fewer than 1 % o f samples 
+( fewer than 7 times ) , a n d 2 0 occurred with fewer than 2 % 
+o f samples ( fewer than 1 4 times ) . None o f t h e occurrence 
+count sensors h a d a l l counted values occurring less 2 % o f 
+t h e time . 
+PREDICTIVE POWER O F INDIVIDUAL SENSORS 
+Based o n t h e literature i n this area , w e would expect that 
+t h e strongest indicators o f n o n - interruptibility would b e 
+those related t o social a n d task engagement ( s e e f o r 
+example [ 1 4 ] ) . I n particular , interruptions a r e undesirable 
+when someone i s speaking ( which c a n b e seen informally 
+b y noting that i t i s almost always rude t o directly interrupt 
+someone w h o i s talking ) . Further , speaking o n t h e 
+telephone i s particularly unfavorable f o r interruption . This 
+m a y b e because t h e subtle negotiation o f a n interruption 
+that often occurs i n person v i a e y e contact , o r other n o n -
+verbal cues , cannot include t h e remote party t o t h e 
+conversation . 
+While w e knew i n advance t h e general type o f activities 
+that needed t o b e detected t o produce a good prediction , i t 
+w a s still unclear exactly which specific sensors would b e 
+most useful ( a n d which easy t o build sensors might work 
+just a s well a s more complex ones ) . T o t r y t o understand 
+this , w e analyzed t h e predictive power o f individual 
+simulated sensors using a n information gain metric [ 1 2 ] . 
+ Most Least 
+Subj 1 6 . 6 % 1 0 . 2 % 2 9 . 2 % 1 3 . 1 % 4 0 . 9 % 
+Subj 2 1 0 . 2 % 1 2 . 7 % 3 4 . 9 % 1 6 . 3 % 2 5 . 9 % 
+Subj 3 3 1 . 5 % 1 5 . 8 % 1 2 . 1 % 6 . 1 % 3 4 . 5 % 
+Subj 4 6 . 9 % 1 2 . 3 % 2 2 . 1 % 2 9 . 9 % 2 8 . 9 % 
+A ll 1 3 . 7 % 1 2 . 8 % 2 4 . 3 % 1 7 . 3 % 3 2 . 0 % 
+Table 1 . Distribution o f Self - Reports . 
+0 . 0 %
+1 0 . 0 %
+2 0 . 0 %
+3 0 . 0 %
+4 0 . 0 %
+MostLeast
+ 
+Figure 2 . Overall Distribution o f Interruptibility 
+Self - Reports 
+Paper : ' Modeling ' User ' Behavior ' C H I ' 2 0 0 3 : ' N E W ' HORIZONS '
+! !
+!
+2 6 0 Volume N o . 5 , Issue N o . 1 
+===== PAGE 5 =====
+ 
+I n simple terms , a n information gain metric works b y 
+sorting a s e t o f observations with respect t o t h e values o f a 
+single feature within t h e observation . This effectively 
+removes t h e entropy associated with variations i n that 
+feature . T h e entropy o f t h e resulting ordered data s e t i s 
+then estimated . T h e entropy estimates from different 
+sortings c a n then b e compared t o determine t h e relative 
+amount o f entropy removed , hence t h e relative information 
+content o f each feature . Note that t h e absolute value o f a n 
+information gain metric i s n o t o f particular interest , only 
+t h e relative values between features . Also , information 
+gain indicates potential usefulness i n prediction , b u t does 
+n o t show directly whether t h e feature indicates 
+interruptibility o r n o n - interruptibility . 
+I t i s also important t o note that many o f o u r simulated 
+sensors a r e , b y design , inherently overlapping . F o r 
+example , Talk ( A n y - 1 ) will always b e true when Talk 
+( I m m ) i s true . I n addition , there a r e some less obvious 
+overlaps such a s t h e fact that t h e Telephone ( A n y - * ) 
+sensors will almost always imply t h e corresponding Talk 
+( A n y - * ) sensors , a n d that Guest Talk ( A n y - * ) will b e quite 
+correlated with Talk ( A n y - * ) , since long monologs b y 
+either t h e occupant o r guest would b e expected t o b e fairly 
+rare . Information gain statistics allow u s t o consider 
+multiple overlapping sensors a n d provide a w a y t o estimate 
+which will b e most predictive i f w e need t o choose between 
+them . 
+Table 2 presents t h e information gain ordering f o r t h e t o p 
+2 0 features . Here w e c a n s e e that t h e occupant talk a n d 
+telephone sensors clearly rise t o t h e t o p i n predictive power 
+– holding eight o f t h e t o p nine positions . 
+After talk a n d telephone , occupant movement sensors S i t 
+( A l l - 1 ) a n d Stand ( I m m ) show t h e next highest predictive 
+power . These a r e followed a little further down b y S i t 
+( I m m ) a n d Stand ( A n y - 1 ) . Taken together , t h e s i t a n d stand 
+sensors might b e interpreted a s being positive a n d negative 
+indicators , respectively , o f engagement with office tasks 
+that a r e typically done i n a seated position . 
+T h e next highest indicator i s t h e number o f guests talking 
+( I m m ) , which clearly indicates social engagement . This i s 
+followed b y several indicators o f computer u s e – Keyboard 
+( I m m ) a n d Monitor ( A l l - 1 , I m m & Count - 5 ) . 
+I n addition t o t h e power o f particular sensors , w e c a n also 
+s e e that t h e shorter term binary sensors ( I m m , A n y - 1 , a n d 
+A l l - 1 ) generally tend t o b e more predictive than t h e binary 
+sensors working over a five minute period . However , t h e 
+five minute density sensors ( Count - 5 ) seem t o have roughly 
+t h e same power a s t h e short term sensors . ( W e h a d initially 
+eliminated t h e Count - 1 sensors t o make t h e sensor s e t 
+smaller . Based o n this result , future work will include 
+reintroduction o f t h e Count - 1 sensors a n d t h e analysis o f 
+their effects . ) 
+Most o f t h e sensors having very l o w information gain 
+scores occurred t o o infrequently t o provide a n y predictive 
+power . T h e only potentially surprising sensor among t h e 
+bottom 3 0 scores i s t h e Desk ( I m m ) sensor a t rank 1 0 1 o u t 
+o f 1 2 8 . ( I n contrast desk sensors f o r A n y - 1 , A n y - 5 , Count -
+5 , A l l - 1 , a n d A l l - 5 appear a t ranks 4 1 , 4 2 , 5 1 , 8 8 , a n d 9 9 
+respectively ) . 
+Information gain statistics only consider t h e predictive 
+power o f features i n isolation a n d d o n o t take into account 
+t h e overlapping nature o f o u r sensors . I n t h e next section 
+w e will also consider a n approach t o analysis o f predictive 
+power based o n constructing models with more a n d more 
+sensors a n d measuring t h e results o f adding sensors o n t h e 
+accuracy o f t h e model . 
+CONSTRUCTING PREDICTIVE MODELS 
+I n order t o explore t h e question o f whether predictive 
+models c a n b e constructed a t a l l , a s well a s h o w predictive 
+they might b e made , w e employed a number o f well known 
+machine learning algorithms t o construct several different 
+forms o f predictive model . T o make this work simpler a n d 
+less ambiguous w e first considered t h e binary decision 
+problem o f predicting whether o r n o t t h e user would 
+indicate “ least interruptible ” . W e will call these t w o states 
+“ interruptible ” a n d “ n o t - interruptible . ” This split w a s 
+motivated i n part b y t h e expected uses o f t h e predictor i n 
+avoiding t h e most harmful interruptions . I n addition , 
+anecdotal evidence suggests people often have strong 
+feelings about particular times being “ obviously n o t -
+interruptible , ” b u t often have more ambivalent attitudes 
+towards “ partially interruptible ” times . This seems t o b e a t 
+least hinted a t i n t h e bimodal distribution o f self - report 
+values , a n d would also argue f o r such a split . After 
+considering this binary problem w e also took t h e most 
+promising modeling approach a n d explored other 
+variations . 
+F o r t h e binary decision problem w e constructed models 
+using decision trees [ 1 5 ] , n a ï v e Bayesian predictors , 
+support vector machines [ 3 ] , a n d AdaBoost with decision 
+stumps [ 6 ] . ( W e will n o t attempt t o fully describe each o f 
+these techniques here . Interested readers c a n consult t h e 
+original references above , o r a machine learning text such 
+a s [ 1 2 ] . ) A l l o f these models were constructed using 
+widely available , open source software packages 
+( specifically t h e C 4 . 5 decision tree package [ 1 5 ] a n d t h e 
+Weka 3 machine learning software package [ 1 6 ] ) . 
+1 T a lk ( I m m ) 1 1 N Guests T a lk ( I m m ) 
+2 T a lk ( A n y - 1 ) 1 2 Stand ( A n y - 1 ) 
+3 T e le phone ( I m m ) 1 3 Keyboard ( I m m ) 
+4 T a lk ( Count - 5 ) 1 4 T a lk ( A n y - 5 ) 
+5 T e le phone ( A ll- 1 ) 1 5 M o n it o r ( A ll- 1 ) 
+6 T a lk ( A ll- 1 ) 1 6 M o n it o r ( I m m ) 
+7 T e le phone ( Count - 5 ) 1 7 M o n it o r ( Count - 5 ) 
+8 S it ( A ll- 1 ) 1 8 S it ( I m m ) 
+9 T e le phone ( A n y - 1 ) 1 9 N u m Guests ( A ll- 1 ) 
+1 0 Stand ( I m m ) 2 0 Keyboard ( A n y - 1 ) 
+Table 2 . Features with T o p 2 0 Information Gain Scores 
+F t . $ Lauderdale , $ Florida , $ U S A $ 2 $ April $ 5 5 1 0 , $ 2 0 0 3 $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ Paper : $ Modeling $ User $ Behavior $
+$ $ $ $
+!
+Volume N o . 5 , Issue N o . 1 2 6 1
+===== PAGE 6 =====
+ 
+F o r this data s e t there i s a base accuracy rate o f 6 8 . 0 % 
+( which would b e obtained b y always indicating 
+“ interruptible ” ) . 
+F o r t h e model evaluations shown i n Table 3 , w e used a 
+standard cross - validation approach involving multiple trials 
+o f model construction . I n each trial w e randomly selected 
+9 0 % o f t h e data f o r training , a n d used t h e resulting model 
+t o predict t h e remaining 1 0 % . T h e numbers reported here 
+a r e sums from 1 0 such trials . 
+Decision trees a r e perhaps t h e simplest o f t h e techniques . 
+T h e decision trees w e used a r e constructed b y first 
+selecting t h e binary test ( such a s “ N u m Guests ( I m m ) > 0 ” ) 
+which most usefully splits t h e data into t w o parts . Decision 
+trees a r e then recursively constructed f o r those subsets . 
+Leaves o f t h e resulting tree a r e then assigned predicted 
+values . O n e drawback o f decision trees i s that , after many 
+subdivisions , each leaf m a y represent only a small number 
+o f samples a n d hence m a y b e susceptible t o noise i n t h e 
+data . A s a result , o n e does n o t normally build decision 
+trees a s deeply a s possible , b u t instead applies certain 
+stopping criteria . I n o u r case w e used t h e C 4 . 5 decision 
+tree package [ 1 5 ] with 1 0 trials a n d a minimum branch size 
+o f 1 5 . 
+Table 3 a gives t h e results from o u r decision tree model . 
+Here , correct predictions appear o n t h e diagonal , a n d 
+incorrect predictions appear o f f t h e diagonal ( shaded i n 
+gray ) . Incorrect predictions come i n t w o forms , which w e 
+will call “ incorrect interruptions ” ( bottom left ) where 
+“ interruptible ” i s incorrectly predicted ( a n d a typical 
+application would improperly interrupt ) , a n d “ incorrect 
+delays ” ( t o p right ) where “ n o n - interruptible ” i s incorrectly 
+predicted ( a n d a typical application would unnecessarily 
+delay delivering information ) . 
+W e would expect decision trees t o work well f o r this 
+problem because there i s a strong a n d unambiguous feature 
+( talking ) that provides a very good initial split . I n fact a s 
+shown i n t h e rest o f Table 3 , t h e 7 8 . 1 % accuracy provided 
+b y decision trees i s t h e best result across t h e modeling 
+techniques . This prediction i s significantly better than 
+chance (
+χ
+2
+( 1 , 1 3 4 4 ) = 1 7 . 5 , p < . 0 0 1 ) . 
+I n addition t o decision trees w e also tried creating models 
+based o n n a ï v e Bayesian predictors , support vector 
+machines , a n d AdaBoost with decision stumps . T h e results 
+from these four techniques a r e presented i n Table 3 b - d . 
+These results a r e a l l similar a n d there i s n o statistically 
+significant difference between t h e largest a n d smallest . 
+Since results from a variety o f unrelated approaches 
+produce very similar results , w e feel this clearly shows that 
+predictive models c a n b e constructed , a n d w e a r e quite 
+hopeful that robust models with results i n t h e 7 5 - 8 0 % 
+accuracy range c a n b e driven from real sensors . 
+MODEL VARIATIONS 
+Since decision trees represent , i n some sense , t h e simplest 
+o f t h e models a n d also produced t h e best results , w e used 
+them t o explore several additional variations . 
+A l l t h e results reported thus f a r have been f o r predictions 
+across a l l subjects . This i s a preferable approach because i t 
+offers t h e hope that general models could b e constructed 
+without a n extensive individual training period . However , 
+i t might b e possible t o produce better predictions b y 
+tailoring models t o o n e specific person . T o explore this , w e 
+constructed four decision tree models isolated t o t h e data 
+from each individual . While w e would expect these models 
+t o perform better , i n fact they d i d n o t i n most cases . T h e 
+resulting accuracy f o r individualized models f o r t h e four 
+subjects w a s 6 9 . 1 % , 8 1 . 9 % , 7 4 . 6 % , a n d 7 6 . 0 % . This lack 
+o f improvement i s likely d u e t o t h e effects o f having 
+substantially less training data . A s a result , i t i s difficult t o 
+draw conclusions about h o w well personalized models 
+might work with more extensive individual training data . 
+W e next revisited t h e decision t o produce predictions o f 
+“ least interruptive ” v s . something else . ( Recall that 
+subjects gave a n interruptibility rating from o n e f o r most 
+interruptible , t o five f o r least interruptible . ) T o d o this , w e 
+considered whether a threshold value o f three rather than 
+four might produce better results . However , this instead 
+reduced accuracy t o 6 9 . 6 % ( with a base accuracy f o r this 
+decision problem o f 5 0 . 7 % ) . 
+Finally , w e looked a t whether better results might b e 
+obtained v i a a five - w a y decision problem rather than a 
+binary decision – i n other words , whether there w a s a n 
+advantage t o attempting t o directly predict t h e o n e - t o - five 
+interruptibility value . F o r a multi - w a y decision problem 
+w e were able t o u s e a more sophisticated technique : 
+decision trees with error correction codes [ 4 ] . Table 4 
+presents t h e results o f this model . Since this multi - w a y 
+problem i s substantially harder than t h e binary problem , 
+overall accuracy ( t h e s u m o f t h e main diagonal ) i s 
+substantially lower than f o r t h e binary problems . 
+ Predict 
+Inter . 
+Predict 
+N o t 
+ Predict 
+Inter . 
+Predict 
+N o t 
+ Predict 
+Inter . 
+Predict 
+N o t 
+ Predict 
+Inter . 
+Predict 
+N o t 
+Actually 
+Inter . 
+6 0 . 6 % 
+( 4 0 7 ) 
+7 . 4 % 
+( 5 0 ) 
+ 
+5 4 . 4 % 
+( 3 6 6 ) 
+1 3 . 5 % 
+( 9 1 ) 
+ 
+6 0 . 6 % 
+( 4 0 7 ) 
+7 . 4 % 
+( 5 0 ) 
+ 
+6 1 . 5 % 
+( 4 1 3 ) 
+6 . 5 % 
+( 4 4 ) 
+Actually 
+N o t 
+1 4 . 4 % 
+( 9 7 ) 
+1 7 . 6 % 
+( 1 1 8 ) 
+ 
+1 1 . 5 % 
+( 7 7 ) 
+2 0 . 5 % 
+( 1 3 8 ) 
+ 
+1 4 . 7 % 
+( 9 9 ) 
+1 7 . 3 % 
+( 1 1 6 ) 
+ 
+1 6 . 5 % 
+( 1 1 1 ) 
+1 5 . 5 % 
+( 1 0 4 ) 
+ Accuracy : 7 8 . 1 % Accuracy : 7 5 . 0 % Accuracy : 7 7 . 8 % Accuracy : 7 6 . 9 % 
+ a ) Decision Trees b ) N a ï v e Bayesian c ) Support Vector d ) AdaBoost Stumps 
+Table 3 . Results from Various Model Types 
+Paper : ' Modeling ' User ' Behavior ' C H I ' 2 0 0 3 : ' N E W ' HORIZONS '
+! !
+!
+2 6 2 Volume N o . 5 , Issue N o . 1 
+===== PAGE 7 =====
+ 
+However , w e c a n compare this model more directly i f i t s 
+results a r e mapped onto t h e same decision problem a s t h e 
+previous predictors . This i s done b y considering a l l 1 - 4 
+predictions t o match a n y 1 - 4 actuals ( i . e . , a threshold o f 4 ) , 
+a s illustrated i n Figure 3 . I n this case , t h e overall accuracy 
+i s 7 4 . 9 % . While this i s n o t a n improvement , i t i s important 
+t o note that this model h a s t w o potential advantages . First , 
+this model allows t h e decision problem t o b e changed b y 
+t h e user a t r u n - time without changing t h e model . I n 
+particular , t h e user m a y s e t h o w conservative they would 
+like t h e system t o b e i n choosing t o interrupt b y selecting a 
+threshold value between 0 a n d 5 ( e . g . , with 0 meaning 
+never interrupt , 3 meaning interrupt when predicted ≤ 3 , 
+a n d 5 meaning always interrupt ) . T h e second major 
+advantage concerns t h e distribution o f incorrect results . I n 
+this model , t h e percentage o f incorrect interruptions a s 
+defined i n t h e binary problem i s only 1 0 . 4 % o f t h e total 
+predictions . I f w e assume that incorrect delays a r e 
+preferable t o incorrect interruptions i n o u r final application , 
+this could b e a substantial advantage a n d worth t h e loss o f 
+3 % overall accuracy . Figure 4 illustrates t h e tradeoffs 
+between errors o f each type ( a n d resulting overall accuracy ) 
+a t each possible threshold setting . Note that while i t i s 
+possible t o reduce inappropriate interruptions t o a s l o w a s 
+2 % o f total predictions without stopping a l l interruptions , 
+this causes overall accuracy t o drop t o 4 0 % which m a y b e 
+unacceptably l o w . 
+PREDICTIVE POWER A N D SELECTING REAL SENSORS 
+I n addition t o t h e information gain metric described above , 
+w e c a n also examine predictive power o f sensors b y 
+looking a t t h e effect o f sensors o n t h e accuracy o f t h e 
+models themselves . T o d o this , w e constructed a series o f 
+decision tree models constrained b y t h e number o f different 
+sensors they could employ a n d measured t h e accuracy o f 
+each model . 
+Figure 5 presents a graph showing this effect . T h e 
+important thing t o note here i s that t h e first f e w sensors 
+( most notably t h e first o n e ) have a very large impact which 
+accounts f o r most o f t h e prediction , then t h e remaining 
+sensors provide mixed results , eventually adding only a f e w 
+percentage points t o t h e overall accuracy . Note that t h e 
+sensors added here a r e chosen b y t h e decision tree 
+algorithm . This i s done o n t h e basis o f a n information gain 
+metric . However , t h e analysis performed i s more 
+sophisticated than t h e independent information gain scores 
+presented earlier , i n that i t accounts f o r t h e overlapping 
+effects o f previously chosen sensors . Each point i n this 
+graph represents t h e average o f several decision trees , a n d 
+s o does n o t necessarily represent a specific sensor being 
+added . However , some o f t h e early sensors added a r e : 
+Telephone ( I m m ) , Talk ( I m m ) , N u m Guests ( I m m ) , S i t 
+( I m m ) , Write ( A n y - 5 ) , Table ( Count - 5 ) , a n d Keyboard 
+( Count - 5 ) . 
+This indicates that a relatively small number o f sensors c a n 
+b e used t o attain most o f t h e predictive result . I n order t o 
+further test this , w e constructed a final model using sensors 
+chosen based o n their ease o f implementation . These 
+included a n e w combined “ anyone talking sensor ” ( since i t 
+i s easier t o n o t t o have t o segregate guests from t h e 
+occupant ) , a s well a s telephone ( * ) , keyboard ( * ) , mouse 
+( * ) , a n d time o f d a y ( * ) . A s indicated i n Table 5 t h e 
+accuracy o f this model falls within t h e range o f results 
+found i n main models i n Table 3 . Thus w e a r e lead t o 
+believe that robust results should b e attainable from 
+practical , relatively easy t o implement sensors . 
+ Predict 1 Predict 2 Predict 3 Predict 4 Predict 5 
+Actual 
+1 
+5 . 2 1 % 
+( 3 5 ) 
+2 . 3 8 % 
+( 1 6 ) 
+2 . 8 3 % 
+( 1 9 ) 
+1 . 1 9 % 
+( 8 ) 
+2 . 0 8 % 
+( 1 4 ) 
+Actual 
+2 
+2 . 2 3 % 
+( 1 5 ) 
+1 . 3 4 % 
+( 9 ) 
+5 . 3 6 % 
+( 3 6 ) 
+1 . 4 9 % 
+( 1 0 ) 
+2 . 3 8 % 
+( 1 6 ) 
+Actual 
+3 
+1 . 4 9 % 
+( 1 0 ) 
+1 . 7 9 % 
+( 1 2 ) 
+1 1 . 7 6 % 
+( 7 9 ) 
+3 . 7 2 % 
+( 2 5 ) 
+5 . 5 1 % 
+( 3 7 ) 
+Actual 
+4 
+1 . 4 9 % 
+( 1 0 ) 
+1 . 1 9 % 
+( 8 ) 
+4 . 6 1 % 
+( 3 1 ) 
+5 . 2 1 % 
+( 3 5 ) 
+4 . 7 6 % 
+( 3 2 ) 
+Actual 
+5 
+1 . 9 3 % 
+( 1 3 ) 
+1 . 0 4 % 
+( 7 ) 
+4 . 7 6 % 
+( 3 2 ) 
+2 . 6 8 % 
+( 1 8 ) 
+2 1 . 5 8 % 
+( 1 4 5 ) 
+ Accuracy : 4 5 . 1 % ; within 1 : 7 2 . 6 % 
+Table 4 . Results f o r Decision Tree 
+with Error Correction Codes 
+ 
+ 
+ 
+ 
+ 
+ 
+㱺 
+ Predict 
+Inter . 
+Predict 
+N o t 
+Actually 
+Inter . 
+5 3 . 3 % 
+( 3 5 8 ) 
+1 4 . 7 % 
+( 9 9 ) 
+Actually 
+N o t 
+1 0 . 4 % 
+( 7 0 ) 
+2 1 . 6 % 
+( 1 4 5 ) 
+ A c c : 7 4 . 9 % 
+ 
+Figure 3 . Mapping Multi - W a y t o Binary Decision Using 
+t h e “ Interrupt ≤ 4 ” Decision Rule 
+0 %
+1 0 %
+2 0 %
+3 0 %
+4 0 %
+5 0 %
+6 0 %
+7 0 %
+A l l 4 3 2 1 N e v
+Incorrect Inter .
+Incorrect Delay
+Total Error
+ 
+Figure 4 . Threshold v s . Error Distribution Tradeoff 
+6 6 %
+6 8 %
+7 0 %
+7 2 %
+7 4 %
+7 6 %
+7 8 %
+8 0 %
+0 1 0 2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0 1 0 0 1 1 0 1 2 0
+ 
+Figure 5 . Accuracy ( % ) a s Features a r e Added 
+t o Decision Tree Models 
+F t . $ Lauderdale , $ Florida , $ U S A $ 2 $ April $ 5 5 1 0 , $ 2 0 0 3 $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ Paper : $ Modeling $ User $ Behavior $
+$ $ $ $
+!
+Volume N o . 5 , Issue N o . 1 2 6 3
+===== PAGE 8 =====
+ 
+CONCLUSIONS 
+While t h e study described here only considers a particular 
+category o f office worker , a n d w e cannot y e t tell h o w well 
+t h e results might translate t o other demographics , i t s results 
+a r e still quite promising . W e have demonstrated that 
+sensor - based estimators o f human interruptibility a r e 
+possible , that robust sensors operating i n t h e 7 5 - 8 0 % 
+accuracy range might b e constructed using several different 
+types o f models , that speech detectors a r e t h e most 
+promising sensor f o r this problem , a n d that overall a 
+relatively simple s e t o f sensors c a n probably b e employed 
+t o achieve good results . 
+FUTURE WORK 
+There a r e many areas f o r future work i n this line o f 
+research . First i t will b e important t o expand t h e study 
+done here t o different demographic groups ( i . e . , different 
+j o b functions a n d different work settings , perhaps even t o 
+different cultures ) i n order t o understand h o w robust t h e 
+results might b e across t h e population . W e would also like 
+t o compare t h e predictions made b y o u r model with t h e 
+performance o f humans estimating interruptibility . There 
+a r e also many additional opportunities f o r analysis o f this 
+data . F o r example , t h e analysis done thus f a r h a s 
+concentrated almost exclusively o n questions relating t o 
+construction o f predictive models . There i s another s e t o f 
+interesting questions related t o understanding human 
+behavior that w e have only partially touched o n here . W e 
+would also like t o d o a n i n depth review o f t h e 
+misclassifications made b y o u r models t o s e e i f there a r e 
+discernible patterns which could b e used t o improve t h e 
+models , a n d t o systematically explore t h e effects o f sensor 
+errors o n predictions . Finally , based o n these promising 
+results i n a Wizard o f O z setting , w e hope t o b e able t o 
+construct working systems with real sensors , a n d create 
+n e w interactive applications that u s e them . 
+ACKNOWLEDGMENTS 
+This work w a s funded i n part b y DARPA a n d b y t h e 
+National Science Foundation under grants I I S - 0 1 2 1 5 6 0 3 , 
+I I S - 0 2 0 5 2 1 9 , I I S - 9 9 8 0 0 1 3 a n d t h e second author ’ s N S F 
+Graduate Research Fellowship . W e would like t o 
+acknowledge t h e employees that recorded simulated sensor 
+values : B e n Davies , Rick Ebert , Rucha Humnabadkar , 
+Becky Kaplan , Matt Mowczko , a n d Long P a n . 
+REFERENCES 
+1 . Adams , M . J . , Tenney , Y . J . , a n d P e w , R . W . ( 1 9 9 5 ) “ Situation 
+Awareness a n d t h e Cognitive Management o f Complex 
+Systems . ” Human Factors , 3 7 ( 1 ) , p p . 8 5 - 1 0 4 . 
+2 . Bellotti , V . , a n d Edwards , K . ( 2 0 0 1 ) “ Intelligibility a n d 
+Accountability : Human Considerations i n Context - Aware 
+Systems . ” Journal o f Human - Computer Interaction 1 6 , p p . 
+1 9 3 - 2 1 2 . 
+3 . Burges , C . J . C . ( 1 9 9 8 ) “ A Tutorial o n Support Vector 
+Machines f o r Pattern Recognition ” , Data Mining a n d 
+Knowledge Discovery , 2 ( 2 ) , p p . 1 2 1 - 1 6 7 . 
+4 . Dietterich , T . G . , a n d Bakiri , G . ( 1 9 9 5 ) “ Solving Multiclass 
+Learning v i a Error - Correcting Output Codes ” , Journal o f 
+Artificial Intelligence Research , 2 , p p . 2 6 3 - 2 8 6 . 
+5 . Feldman - Barrett , L . , a n d Barrett , D . J . ( 2 0 0 1 ) . “ Computerized 
+experience - sampling : H o w technology facilitates t h e study o f 
+conscious experience ” , Social Science Computer Review , 1 9 , 
+p p . 1 7 5 - 1 8 5 . 
+6 . Freund Y . a n d Schapire , R . ( 1 9 9 7 ) A decision - theoretic 
+generalization o f o n - line learning a n d a n application t o 
+boosting , Journal o f Computer a n d System Sciences , 5 5 ( 1 ) , 
+p p . 1 1 9 - 1 3 9 . 
+7 . Gillie , T . a n d Broadbent , D . ( 1 9 8 9 ) “ What makes 
+interruptions disruptive ? A study o f length , similarity , a n d 
+complexity . ” Psychological Research ( 1 9 8 9 ) 5 0 : p p . 2 4 3 - 2 5 0 . 
+8 . Hess , S . M . , a n d Detweiler , M . ( 1 9 9 4 ) . “ Training t o Reduce 
+t h e Disruptive Effects o f Interruptions . ” Proceedings o f t h e 
+HFES 3 8
+t h
+ Annual Meeting , v 2 , p p . 1 1 7 3 - 1 1 7 7 . 
+9 . Horvitz , E . , Breese , J . , Heckerman , D . , Hovel , D . , a n d 
+Rommelse , K . ( 1 9 9 8 ) “ T h e Lumiere Project : Bayesian User 
+Modeling f o r Inferring t h e Goals a n d Needs o f Software 
+Users . ” Proceedings o f t h e Fourteenth Conference o n 
+Uncertainty i n Artificial Intelligence . 
+1 0 . Hudson , J . M . , Christensen , J . , Kellogg , W . A . , a n d Erikson , 
+T . ( 2 0 0 2 ) ‘ “ I ’ d B e Overwhelmed , B u t I t ’ s Just O n e More 
+Thing t o D o : ” Availability a n d Interruption i n Research 
+Management . ’ Proceedings o f C H I 0 2 , p p . 9 7 - 1 0 4 . 
+1 1 . McFarlane , D . C . ( 1 9 9 9 ) “ Coordinating t h e Interruption o f 
+People i n Human - Computer Interaction . ” Proceedings o f 
+INTERACT ’ 9 9 , p p . 2 9 5 - 3 0 3 . 
+1 2 . Mitchell , T . M . ( 1 9 9 7 ) “ Machine Learning ” , McGraw - Hill . 
+1 3 . O ’ Conaill , B . , a n d Frolich , D . ( 1 9 9 5 ) “ Timespace i n t h e 
+Workplace : Dealing with Interruptions . ” C H I ‘ 9 5 Conference 
+Companion , p p . 2 6 2 - 2 6 3 . 
+1 4 . Seshadri , S . & Shapira , Z . ( 2 0 0 1 ) . Managerial allocation o f 
+time a n d effort : T h e effects o f interruptions . Management 
+Science , 4 7 , p p . 6 4 7 - 6 6 2 . 
+1 5 . Quinlan , J . R . ( 1 9 9 3 ) C 4 . 5 : Programs f o r Machine Learning , 
+Morgan Kaufmann . 
+1 6 . Witten , I . H . , a n d Frank E . ( 1 9 9 9 ) Data Mining : Practical 
+Machine Learning Tools a n d Techniques with Java 
+Implementations , Morgan Kaufmann . ( Open source software 
+available from : http : / / w w w . c s . waikato . a c . n z / ~ m l / weka / ) . 
+1 7 . Zeignaric , B . ( 1 9 2 7 ) D a s Behalten erledigter u n d 
+unerledigter Handlungern . Psychologische Forschung 9 , p p . 
+1 - 8 5 . 
+ 
+ Predict 
+Inter . 
+Predict 
+N o t 
+Actually 
+Inter . 
+5 8 . 9 % 
+( 3 9 6 ) 
+9 . 1 % 
+( 6 1 ) 
+Actually 
+N o t 
+1 4 . 4 % 
+( 9 7 ) 
+1 7 . 6 % 
+( 1 1 8 ) 
+ Accuracy : 7 6 . 5 % 
+Table 5 . Results f o r “ Easiest Sensors ” Model 
+Paper : ' Modeling ' User ' Behavior ' C H I ' 2 0 0 3 : ' N E W ' HORIZONS '
+! !
+!
+2 6 4 Volume N o . 5 , Issue N o . 1 

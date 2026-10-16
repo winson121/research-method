@@ -1,0 +1,154 @@
+SOURCE: Week01\Week 1A.pdf
+PAGES: 6
+
+===== PAGE 1 =====
+none
+1 / 7
+Workshop Guide
+Faculty of Information Technology
+IT Research Methods
+Week 1: Part (A) 
+Why do we need Research Methods for IT?
+Workshop Activities
+There are 4 activities in this workshop (one on each page):
+Activity 1: Understanding People
+Activity 2: Understanding a System
+Activity 3: Communicating your results
+Weekly Communication Activity
+In this workshop you will work through a case study based on a real-world industry scenario. Each of the
+activities will take you through the key steps of performing research within the scenario. The workshop is
+designed to introduce you to how research methods are commonly used within the IT sector, and how these
+processes map to the research methods that you will cover during this unit.
+The weekly assessment task which contributes to your assignment can be found on the Moodle
+Assessments page.
+Before the workshop, each week you should study the videos, review the slides, transcript and the 
+readings provided. Complete the weekly quiz which is worth 5% of your total marks.
+There is a participation activity related to your participation in the activity for the week related on 
+Moodle over the 6 weeks this will be worth 5%.
+During the workshop you will work in small groups to complete the activities. You should aim to spend the
+allotted time in the workshop working on the activity (and writing notes) in your groups, and then reviewing
+with a larger group. You should record your notes on the activity in the worksheet provided.
+10%
+===== PAGE 2 =====
+none
+2 / 7
+Case Study Context
+OnStudent Feature Development
+In your groups
+Select one person from your group to read the following scenario out loud.
+Spend 5 minutes as a group making sure you all understand the scenario.
+OnStudent is an IT company that provides an integrated management system for universities to managing
+contact with new students throughout their application and arrival at university. Their ﬂagship product (also
+called "OnStudent") is in use by a number of major universities across the southern hemisphere, and their
+product is well respected by the university sector. The product manages a number of interactions between the
+university and arriving students: providing a knowledge base the student can access about their arrival;
+course selection; visa and accommodation services and IT services.
+A year ago, the CEO pushed the company to focus on student engagement through social media for the next
+generation of their platform. This has involved moving the primary mode of communication with students from
+email to social media accounts. Their new version of this social media based product is in use by 20% of their
+clients.
+As part of the yearly product update, the CEO wants to connect a student's family in a more meaningful way
+into the student on-boarding process to a university.
+One of your roles within the company is to conduct research around potential new features to the companies
+products and advising internal product teams on your ﬁndings. You are tasked with understanding how family
+engagement should be introduced into the product.
+===== PAGE 3 =====
+none
+3 / 7
+Activity 1
+Understanding People
+Work in groups, then review as a larger group with you tutor
+As an initial activity, you need to understand how students engage with their families as part of the existing
+on-boarding process provided by OnStudent. This is key data for understanding what any new features
+should be doing, and how potential users will interact with them.
+This will involve interviewing students who have used the current version of the OnStudent platform in their
+application to university, to ﬁnd out how this new feature may affect their experience.
+In your groups
+1. Decide on the following:
+Who will you interview?
+Where will you recruit these participants from?
+How many participants will you need to interview?
+How long should these interviews last?
+2. Decide on three key points that you would want to ﬁnd out from interviewing each student
+3. Decide what method you will use to get knowledge from these interviews, so that the results can be
+presented in a report.
+⚐Make notes on your shared worksheet.
+On return to the main session
+Review with your tutor and the larger group.
+Take a 10-minute break! (before the next activity)
+===== PAGE 4 =====
+none
+4 / 7
+Activity 2
+Understanding a System
+Work in groups, then review as a larger group with your tutor
+It turns out that a product development team in the company has already implemented a prototype feature
+into the platform to engage families in the student onboarding process. They have built the system after a
+short internal brainstorming process, and have not tested it externally yet.
+Speciﬁcally, this new feature matches the family members of different students together based on their
+demographic proﬁle, allowing them to chat, and share their experiences via the OnStudent platform.
+Before moving forward with the project, the CEO wants to know what effect this new feature might have on
+the onboarding process for students using the product. In particular, there is concern that introducing families
+to the communication process between the student and the university will change how and when the student
+engages with the platform. The platform collects detailed logs of all interactions in the platform.
+Available logs include:
+Timestamps of any communication between the student, the university and any family members
+Demographic proﬁles of family members, including their location, ethnicity, income range and age
+range
+Content of any messages sent between the university, student or family members
+In your groups
+⚐Make notes on your shared worksheet.
+1. Design a way to show if the prototype feature has an impact on communication between students and
+the university, when compared to the existing version of the product. What is the impact you are looking
+for?
+2. Consider the following:
+What data captured by the system will you use to demonstrate this impact?
+How will you show this impact using the above data?
+What tests or processes will you need to perform on the data to demonstrate the impact?
+3. After you receive some test data from the development team, you notice that some of the data logged
+by the system has some issues. The timestamps of interactions are actually captured incorrectly 20% of
+the time, with no way to reconstruct the data.
+How will this affect your analysis of the data?
+How might you mitigate this?
+4. The development team has time to build 1 more logging metric into the feature before testing, decide
+what you want them to include, and why this will help you better calculate the impact the feature is
+having.
+===== PAGE 5 =====
+none
+5 / 7
+On return to the main session
+Review your answers with your tutor and the larger group.
+Take a 10-minute break! (before the next activity)
+===== PAGE 6 =====
+none
+6 / 7
+Activity 3
+Communicating your results
+Work in groups, then review as a larger group with you tutor
+Small scale testing of the new feature was conducted with some of OnStudent's clients. Initial results suggest
+that the new feature as it is implemented is reducing student's engagement with the university, resulting in
+more complaints from students about the process.
+However, based on the interviews you conducted, your team have a different proposal:
+⚐Rather than family members be allocated automatically in the platform, your team proposes that family
+members of students who are already at university volunteer to become 'mentors' to incoming student's
+and their families. Mentors will be matched with multiple incoming students, based on their native
+language and timezone. Mentors will go through some basic training in how to engage with students and
+their families over the platform.
+You have been asked to communicate this new feature to the internal product review team. If successful, this
+will result in an external company developing the feature.
+Since these two teams are based in different locations, company policy is that you produce a 2 minute video
+summarising the feature that can be shared with both the internal review team, and the external company.
+Your video will need to communicate:
+A summary of the interview data that informed it's development
+The reason why this feature has been proposed.
+How this feature will improve the student experience of the platform.
+In your groups
+⚐Make notes on your shared worksheet.
+1. As a group, propose a structure for your 2 minute video.
+2. Describe how you will present the qualitative data that is behind this new feature.
+3. Consider and note down:
+What visuals will you use to augment the content?
+What level of technical detail will you be going into?
+How might you create this content (e.g. software, how to get content)
+On return to the main session
+Review you answers with your tutor and the larger group.

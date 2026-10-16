@@ -1,0 +1,13 @@
+SOURCE: Week01\week-02-part-01-introduction.pdf
+PAGES: 5
+
+===== PAGE 1 =====
+Introduction to research ethics
+===== PAGE 2 =====
+What is ethics?In any form of research or research community you need to be aware of legal, ethical and moral issues.•Ethics on conducting research•Ownership and custodianship of data•Copyright and intellectual property•Other standards of behaviourThis is relevant to everyone!New technologies are highlighting ethical issues stemming from technologies and methods:•Artificial Intelligence (transparency in decision making)•Data Science (amplification of bias)
+===== PAGE 3 =====
+Modern origins of research ethics…The Nuremberg Code (1947, after World War II)•Informed consent is absolutely essential.•Participants must be free to stop at any time.•Qualified researchers must use appropriate research designs.•There must be a favorable risk/ benefit ratio.Declaration of Helsinki (1960, World Medical Association)•“The well-being of the subject should take precedence over the interests of science and society”.•Consent should be in writing.•Use caution if participant is in dependent relationship with researcher.Today there is national legislation, and institutional principles and processes that researchers must adhere to.www.ph.ucla.edu › epi › Epi273 › Detels_ResEthics_04-08
+===== PAGE 4 =====
+Values & principles of ethical researchResearch merit & integrity•justifiable, uses appropriate methods, appropriate qualified researchers, conducted with integrity…Justice•inclusion & recruitment of participants is fair, benefit is fairly distributed, outcomes accessible to participants…Beneficence•Potential benefit must justify risk or harm, participants must understand risks, researchers are responsible…Respect•privacy, confidentiality and cultural sensitivities of the participants, vulnerable participants must be protected…Based on: National Statement on Ethical Conduct in Human Research, 2007 (Updated 2018)
+===== PAGE 5 =====
+Dimensions of human-subject researchPhysical or psychological harm or abuse Informed consent Right of withdrawalAccess to outcomesVulnerable participant groupsDeception and coercionIllegal practicesInvasion of privacyConfidentialityHuman subject data

@@ -1,0 +1,1780 @@
+SOURCE: Week02\PAPER01.pdf
+PAGES: 14
+
+===== PAGE 1 =====
+www.thelancet.com/digital-health   Vol 6   January 2024 e44
+Articles
+Lancet Digit Health 2024; 
+6: e44–57
+Published Online 
+December 8, 2023 
+https://doi.org/10.1016/ 
+S2589-7500(23)00218-2
+*Contributed equally
+WMG (Y D Cid, 
+M Macpherson MSci, Y Zhu MSc, 
+G Franco MSc, R Santeramo MSc, 
+Prof G Montana), Mathematics 
+Institute (M Macpherson, 
+Y Zhu), Warwick Medical School 
+(Prof C E Hutchinson MD), and 
+Department of Statistics 
+(Prof G Montana PhD), 
+University of Warwick, 
+Coventry, UK; School of 
+Biomedical Engineering and 
+Imaging Sciences, King’s 
+College London, London, UK 
+(L Gervais-Andre MD, 
+Prof V Goh FRCR); Department 
+of Radiology, University 
+Hospitals Birmingham NHS 
+Foundation Trust, Birmingham, 
+UK (C Lim MBChB);
+ Department 
+of Radiology, University of 
+Cambridge, Cambridge, UK 
+(I Selby MBChB); Department of 
+Radiology, Guy’s and 
+St Thomas’ NHS Foundation 
+Trust, London, UK 
+(K Muthuswamy FRCR, 
+A Amlani MBBS, Prof V Goh); 
+Department of Radiology, 
+University Hospitals of 
+Leicester NHS Trust, Leicester, 
+UK (H Hopewell BE, 
+D Indrajeet FRCR); The 
+Alan Turing Institute, London, 
+UK (M Liakata PhD, 
+Prof G Montana); Department 
+of Radiology, University 
+Hospitals Coventry and 
+Warwickshire NHS Trust, 
+Coventry, UK 
+(Prof C E Hutchinson); Institute 
+of Applied Data Science, Queen 
+Mary University of London, 
+London, UK (M Liakata)
+Correspondence to: 
+Prof Giovanni Montana, 
+Department of Statistics, 
+University of Warwick, 
+Coventry CV4 7AL, UK 
+g.montana@warwick.ac.uk
+Development and validation of open-source deep neural 
+networks for comprehensive chest x-ray reading: 
+a retrospective, multicentre study
+Yashin Dicente Cid*, Matthew Macpherson*, Louise Gervais-Andre, Yuanyi Zhu, Giuseppe Franco, Ruggiero Santeramo, Chee Lim, Ian Selby, 
+Keerthini Muthuswamy, Ashik Amlani, Heath Hopewell, Das Indrajeet, Maria Liakata, Charles E Hutchinson, Vicky Goh, Giovanni Montana
+Summary
+Background Artificial intelligence (AI) systems for automated chest x-ray interpretation hold promise for standardising 
+reporting and reducing delays in health systems with shortages of trained radiologists. Yet, there are few freely 
+accessible AI systems trained on large datasets for practitioners to use with their own data with a view to accelerating 
+clinical deployment of AI systems in radiology. We aimed to contribute an AI system for comprehensive chest x-ray 
+abnormality detection.
+Methods In this retrospective cohort study, we developed open-source neural networks, X-Raydar and X-Raydar-
+NLP, for classifying common chest x-ray findings from images and their free-text reports. Our networks were 
+developed using data from six UK hospitals from three National Health Service (NHS) Trusts (University Hospitals 
+Coventry and Warwickshire NHS Trust, University Hospitals Birmingham NHS Foundation Trust, and University 
+Hospitals Leicester NHS Trust) collectively contributing 2  513 546 chest x-ray studies taken from a 13-year period 
+(2006–19), which yielded 1  940 508 usable free-text  radiological reports written by the contemporary assessing 
+radiologist (collectively referred to as the “historic reporters”) and 1  896 034 frontal images. Chest x-rays were 
+labelled using a taxonomy of 37 findings by a custom-trained natural language processing (NLP) algorithm, 
+X-Raydar-NLP, from the original free-text reports. X-Raydar-NLP was trained on 23  230 manually annotated reports 
+and tested on 4551 reports from all hospitals. 1  694 921 labelled images from the training set and 89  238 from the 
+validation set were then used to train a multi-label image classifier. Our algorithms we re evaluated on three 
+retrospective datasets: a set of exams sampled randomly from the full NHS dataset reported during clinical practice 
+and annotated using NLP (n=103  328); a consensus set sampled from all six hospitals annotated by three  expert 
+radiologists (two independent annotators for each image and a third consultant to facilitate disagreement resolution) 
+under research conditions (n=1427); and an independent dataset, MIMIC-CXR, consisting of NLP-annotated exams 
+(n=252 374).
+Findings X-Raydar achieved a mean AUC of 0·919 (SD 0·039) on the auto-labelled set, 0·864 (0·102) on the consensus 
+set, and 0·842 (0·074) on the MIMIC-CXR test, demonstrating similar performance to the historic clinical radiologist 
+reporters, as assessed on the consensus set, for multiple clinically important findings, including pneumothorax, 
+parenchymal opacification, and parenchymal mass or nodules. On the consensus set, X-Raydar outperformed 
+historical reporter balanced accuracy with significance on 27 of 37 findings, was non-inferior on nine, and inferior on 
+one finding, resulting in an average improvement of 13·3% (SD 13∙1) to 0∙763 (0·110), including a mean 5∙6% (13·2) 
+improvement in critical findings to 0∙826 (0·119).
+Interpretation Our study shows that automated classification of chest x-rays under a comprehensive taxonomy can 
+achieve performance levels similar to those of historical reporters and exhibit robust generalisation to external data. 
+The open-sourced neural networks can serve as foundation models for further research and are freely available to the 
+research community.
+Funding Wellcome Trust.
+Copyright © 2023 The Author(s). Published by Elsevier Ltd. This is an Open Access article under the CC BY-NC-ND  
+4.0 license.
+Introduction
+The chest x-ray accounts for 40% of the 3 ·6 billion 
+imaging procedures performed worldwide each year1 as a 
+result of its efficacy in diagnosing cardiopulmonary 
+abnormalities, including those related to COVID-19, 2 
+coupled with a relatively low cost, low radiation burden, 
+and ease of acquisition. In 2021, WHO also recommended 
+strategic screening of tuberculosis, one of the top 
+infectious killers worldwide, with more than 10 million 
+cases each year, through chest x-ray screening of at-risk 
+populations.
+3 Given the volume of chest x-ray 
+examinations and potential human resource barrier to 
+===== PAGE 2 =====
+Articles
+e45 www.thelancet.com/digital-health   Vol 6   January 2024
+interpretation globally, 4,5 computer-based artificial 
+intelligence (AI) has a key role, particularly as a detection6 
+and triaging7 tool. Deep learning techniques can deliver 
+scalable radiological solutions with performances that 
+are not negatively affected by the volume of examinations 
+being processed and that have the potential to provide 
+substantial benefits to health services. Early success has 
+been found in focused tasks, such as algorithms that 
+detect only a single (eg, pneumothorax,
+8 tuberculosis,9 or 
+nodule10) or subsets of clinical pathological findings.11–13
+However, to match the detection accuracy of a trained 
+radiologist and progress the field, comprehensive 
+detection of the full range of abnor  malities typically 
+encountered in clinical practice is preferable. Easy 
+accessibility to such algorithms by non-AI specialists 
+remains relatively low. Although several commercial 
+clinical platforms are now available, to the best of our 
+knowledge the only extant non-commercial web-based 
+platform for real-time chest x-ray reading is Chester,
+14 
+which adopts the ChestXray14 taxonomy and requires 
+x-rays images in compressed format; other recent 
+publicly accessible resources, such as a recent foundation 
+model providing feature embeddings
+15 and a standardised 
+library of models, 16 are aimed more at the AI research 
+specialist community.
+We aimed to contribute an AI system for comprehensive 
+chest x-ray abnormality detection, trained on a novel 
+UK-sourced chest x-ray dataset. We assessed its perfor -
+mance in comparison to historical reporters working in 
+real-world, time-constrained clinical conditions.
+Methods 
+Workflow 
+In this retrospective study, we first developed a custom 
+NLP algorithm (X-Raydar-NLP) to automatically extract 
+comprehensive binary labels from the free-text reports 
+for each image using a 37-finding radiological taxonomy 
+(figure 1). The labelled images were then used to train 
+and test our computer vision algorithm, X-Raydar, in a 
+fully supervised machine-learning setting. Model 
+development and analysis were performed in the Nvidia 
+PyTorch (version 21.02) Docker container environ  ment 
+(Ubuntu [version 20.04], PyTorch [version 1.8], and 
+Python [version 3.8]) with pydicom (version 2.1) and 
+Grassroots Digital Imaging and Communications in 
+Medicine (DICOM; version 2.8.9), with Scikit-learn 
+(version 1.0.2) used in results analysis.
+Data collection and preprocessing 
+Data were provided by six hospitals from three UK 
+National Health Service (NHS) hospital networks: 
+University Hospitals Coventry and Warwickshire NHS 
+Trust (University Hospital Coventry, Hospital of St. Cross 
+Rugby), University Hospitals Birmingham NHS 
+Foundation Trust (Queen Elizabeth Hospital 
+Birmingham), and University Hospitals Leicester NHS 
+Trust (Leicester General Hospital, the Glenfield Hospital, 
+and the Leicester Royal Infirmary). Available historical 
+chest X-ray exams were extracted from the Picture 
+Archiving and Communication System for the period 
+between Jan 1, 2006, and Dec 31, 2019. Lateral x-rays are 
+Research in context
+Evidence before this study
+A search of PubMed over the 10 years preceding Oct 1, 2022, 
+with the keywords “chest” AND [“x-ray” OR “CXR” OR “xray”] 
+AND [“automat*” OR “classification”] AND [“deep learning” OR 
+“machine learning”] yielded 960 papers after removing non 
+x-ray modality studies. Of these papers, 599 were specific to 
+COVID-19 classification, 202 focused on other single-finding, 
+proof-of-concept work, 114 addressed segmentation or 
+technical computer vision aspects, and 11 were review papers. 
+The remaining papers predominantly addressed multi-label 
+classification under the US National Institutes of Health ChestX-
+ray14 ontology using Chest14, Chexpert, and Medical 
+Information Mart for Intensive Care public datasets for training 
+and assessment. Two studies were identified that attempted 
+comprehensive ontological coverage, and only one work was 
+found that offered public non-commercial web-based 
+assessment.
+Added value of this study
+This study is based on what is, to the best of our knowledge, the 
+largest chest x-ray dataset in the UK, comprising scans from all 
+clinical settings across six hospitals. The data cover a diverse 
+population of 4 million people over a period of 13 years, 
+providing a valuable alternative to existing studies using data 
+from other populations. It is one of the few studies to tackle 
+comprehensive multi-label chest X-ray classification, using a 
+37-finding taxonomy balancing clinical detail with parsimony 
+suited to artificial intelligence training. We compare model 
+performance against historical real-world clinical reporting, 
+showing that the model outperforms the historically observed 
+performance of radiologists in real, time-constrained clinical 
+practice. We provide access to our trained computer vision and 
+natural language processing neural networks via open-source 
+code with pre-trained weights, a user-friendly web portal, and 
+programmable application programming interfaces for image 
+and report labelling.
+Implications of all the available evidence
+This study, along with other recent work, indicates that 
+automated chest x-ray interpretation at close to human expert 
+level is now a reality and that models trained on large datasets 
+can overcome generalisation concerns, which have held back 
+deployment. By making our model freely available, we hope to 
+accelerate the adoption of automated systems in clinical 
+settings to help relieve acute pressures on health-care systems 
+in the post-COVID-19 environment.
+===== PAGE 3 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e46
+not routinely obtained in the UK and comprised less than 
+1% of imaging; therefore, only frontal images were 
+considered for the purposes of this study. Sourced from 
+hospitals offering free treatment at point of care, the 
+exams are expected to be representative of the population 
+served without biases arising from a particular clinical 
+specialty (eg, emergency medicine) or socioeconomic 
+factors (eg, implicit requirement for medical insurance). 
+In total, 2  513 546 anonymised studies and their 
+available free-text reports were collated, resulting in 
+2 775 902 DICOM files, accounting for multiple images in 
+some studies. After excluding studies with absent or 
+uninformative reports, 1 940 508 reports were available for 
+NLP training of which 1  171 855 were unique. Further 
+excluding patients younger than 16 years, non-frontal 
+chest x-rays, and derived or damaged images, we retained 
+1 896 034 images in our computer vision dataset. The 
+distribution by age and sex (as provided in the DICOM 
+metadata) of the retained dataset along with further 
+properties are detailed in the appendix (pp 1–2, 21−25). To 
+avoid bias arising from the diverse imaging hardware 
+used across the different hospitals and clinical specialties, 
+x-ray images were extracted from the raw DICOM files 
+with a customised preprocessing pipeline, giving 
+standardised image properties across the dataset. Full 
+details of the pre-processing pipeline are provided in the 
+appendix (pp 2–3).
+This study is based on non-identifiable data from three 
+NHS Trusts in the UK and the MIMIC-CXR publicly 
+available dataset. Data obtained from the three NHS 
+Trusts followed national governance (GAfREC) and NHS 
+data opt-out procedures; these data were previously 
+collected, non-identifiable information from patients as 
+part of their care and support. The need for ethical 
+approval and participant consent was waived because all 
+of the data were anonymised. University Hospitals 
+Coventry and Warwickshire NHS Trust was the primary 
+NHS sponsor for this study (GAfREC identification 
+GF0274). The MIMIC-CXR public dataset was originally 
+approved by the Institutional Review Board of the Beth 
+Israel Deaconess Medical Center (Boston, MA, USA) and 
+used here under the PhysioNet Credentialed Health Data 
+Use data use agreement.
+Taxonomy 
+To label the acquired images, a team of three senior 
+radiologists (VG, CEH, and LG-A) designed a radiological 
+taxonomy with the dual objectives of completeness (ie, 
+full coverage of the reported findings in our data) and 
+parsimony. The resulting taxonomy covers eight 
+anatomical areas (lung, mediastinum and hila; pleural 
+space; diaphragm; cardiovascular; osseus structures and 
+chest wall; skin and soft tissue; and abdomen) and non-
+anatomical structures (eg, medical object and foreign 
+body). For each area, a minimal set of descriptive labels 
+was developed to encompass key radiological findings. 
+Findings were also grouped by clinical importance, 
+referred to as criticality, with three levels: critical, urgent, 
+and non-urgent. In total, the taxonomy comprised 
+45 categories: 37 radiological findings and eight report-
+specific or technical categories (table 1).
+NLP model 
+Because the manual annotation of every image in our 
+database was not feasible, we leveraged the historical 
+free-text reports associated with the x-rays to extract the 
+required labels. To achieve this, we developed an NLP 
+algorithm based on the RoBERTa model,
+17 called 
+X-Raydar-NLP, which uses a deep neural network archi -
+tecture trained end-to-end on the entire database in a 
+See Online for appendix
+Figure 1: An overview of the artificial intelligence system and deep learning algorithm, X-Raydar
+An auxiliary NLP system (X-Raydar-NLP) was built to automatically extract the findings associated witheach x-ray from the historical reports collected. The NLP used 
+manually annotated reports labelled using our bespoke online tool AnnotateX. NHS=National Health Service. NLP=natural language processing.
+University Hospitals 
+Coventry and 
+Warwickshire
+NHS Trust
+University Hospitals 
+Birmingham NHS 
+Foundation Trust 
+University Hospitals 
+Leicester NHS Trust
+2·5 million
+studies
+Findings
+2·8 million
+x-rays
+Reports
+AnnotateXAnnotator
+Centralised
+database
+Reports
+1·8 million
+x-rays
+RoBERTaX
+X-Raydar
+X-Raydar
+NLP training
+X-Raydar
+training
+===== PAGE 4 =====
+Articles
+e47 www.thelancet.com/digital-health   Vol 6   January 2024
+semi-supervised manner using both unlabelled and 
+labelled reports. To support this training process, 
+27 781 randomly sampled radiological reports from the 
+full dataset were collectively annotated manually by ten 
+radiologists (including LG-A, CL, IS, KM, AA, DI, CEH, 
+and VG) using an integrated web-based report and image 
+annotation interface developed for the study, AnnotateX. 
+The radiologists were asked  to select non-overlapping 
+text segments within a report and visually tag them with 
+relevant labels. Complete coverage of all text within a 
+report was mandated. The majority of reports (20  673) 
+were annotated by single radiologists working 
+independently. The remainder were annotated by two or 
+more radiologists independently. For the reports used for 
+Standard glossary terms Examples of free text included in this label
+Lung
+Apical changes Apical cap Apical thickening; apical interstitial change; apical fibrosis
+Atelectasis Atelectasis Atelectasis; atelectatic change; atelectatic bands; liner atelectasis; subsegmental atelectasis; atelectatic 
+findings
+Bronchial changes Bronchiole; bronchiectasis; bronchiolectasis Bronchiectasis; bronchial wall thickening; peribronchial thickening
+Bulla Bulla Bulla; bullae; lung lucencies
+Cavity Cavity Cavitation; cavity; cavitating lesion
+Collapse or volume loss Collapse; architectural distortion Lung or lobe collapse; decreased lung volume; small volume lungs; decreased lung size; specific signs 
+(eg, sail sign, Golden S sign)
+Emphysema Emphysema Emphysema; emphysematous change; bullous emphysema
+Ground-glass opacification Ground-glass opacity Ground-glass opacity; ground glass change; ground glass shadowing; ground glass density
+Hyperexpanded lungs Air trapping Hyperexpanded lungs; hyperexpansion; hyperinflation; large lung volume; chest hyperinflated
+Interstitial opacification or fibrosis Reticular pattern; reticulonodular pattern; 
+interlobular septal thickening; idiopathic 
+pulmonary fibrosis; honey-combing 
+interstitium
+Interstitial shadowing; interstitial nodularity; increased interstitial markings; increased lung markings; 
+increased parenchymal lung markings; increased markings; fibrosis; reticular shadowing or opacification; 
+fibrotic change; reticular changes; reticular density; reticular shadow; reticulation; reticular pattern; 
+reticular interstitial pattern; septal thickening; Kerley B lines; septal lines
+Parenchymal mass or nodule Mass; nodule; opacity Lung mass; pulmonary mass; parenchymal mass; lung malignancy; primary lung malignancy; lung 
+metastases; pulmonary metastases; lung nodule; pulmonary nodule; parenchymal nodule; lung opacity; 
+pulmonary opacity; parenchymal opacity
+Parenchymal opacification Consolidation airspace Consolidation; lung consolidation; airspace consolidation; parenchymal consolidation; peri-hilar 
+opacification; batwing shadowing; airspace opacification; airspace shadowing; airspace changes; alveolar 
+shadowing; shadowing; ill-defined density; changes of pulmonary oedema
+Pulmonary blood flow redistribution Pulmonary blood flow redistribution Upper lobe diversion; prominent upper lobe pulmonary vessels or vasculature; dilated/enlarged upper lobe 
+vessels; enlarged pulmonary veins or vessels
+Mediastinum and hila
+Hilum or paratracheal changes Hilum, lymphadenopathy paratracheal 
+stripe, right
+Enlargement of hilum; hilar enlargement; prominent hila; hilar prominence; hilum prominent; 
+prominence of hilum; vascular prominence at hilum; bulky hilum; hilum or hilar bulky; hilar adenopathy; 
+hilar lymphadenopathy; hilar lymph node enlargement; hilar mass; hilar calcification; Paratracheal 
+adenopathy or lymphadenopathy; paratracheal soft tissue or opacification; widening of paratracheal stripe
+Mediastinum, displaced Mediastinal compartments Mediastinal shift; displaced mediastinum; cardiomediastinum displaced
+Mediastinum, widened Mediastinal compartments Widening of the mediastinum; mediastinal widening
+Pneumomediastinum Pneumomediastinum Air in mediastinum
+Pleural space
+Pleural abnormality Pleural space pleural plaque Calcified pleural plaques; pleural plaques; pleurally based changes; pleural thickening; parietal pleural 
+thickening; pleural reaction; pleural shadowing or shadow; pleural density; pleural scarring
+Pleural effusion Pleural space water density Pleural effusion, effusion; pleural fluid; fluid in major or minor fissure; blunting of costophrenic angle; 
+costophrenic angle attenuated
+Pneumothorax Pneumothorax Pneumothorax; tension pneumothorax
+Diaphragm
+Diaphragm, abnormality Diaphragm Elevation of hemidiaphragm; hemidiaphragm elevated; hemidiaphragmatic hump; eventration of 
+diaphragm; tenting of hemidiaphragm
+Cardiovascular
+Aortic calcification Calcification aorta Calcification of aorta; calcification of aortic knuckle
+Aortic tortuosity Tortuous aorta Unfolding of the (thoracic/descending) aorta; unfolded (thoracic) aorta
+Cardiac calcification Calcification heart Calcification of the coronary artery or vessels; cardiac valve; cardiac wall; or cardiac aneurysm
+Cardiomegaly Enlargement heart Cardiomegaly, heart enlarged, cardiac enlargement; cardiac silhouette enlarged; heart shadow enlarged; 
+large heart; large heart shadow
+Dextrocardia ·· Dextrocardia; situs inversus
+(Table 1 continues on next page)
+===== PAGE 5 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e48
+training, each radiologist’s annotation of the report was 
+used independently (ie, the same report was potentially 
+seen with different labels). For the test set, all the reports 
+were annotated by at least two radiologists, and the label 
+decided by majority voting (rounded up). Given the 
+potential ambiguity around text interpretation, the 
+exposure to noisy labels during training was seen as a 
+positive. 4551 reports were held back as a test set for 
+evaluating the NLP algorithm performance.  After 
+unsupervised pre-training on all available non-annotated 
+reports, comprising the 2  513 546 studies in our dataset, 
+which yielded 1  171 885 valid, unique reports, 
+supplemented by 140  258 wet-read and impressions 
+sections from MIMIC-CXR reports, the model was fine-
+tuned on the 23  230 annotated training reports. Once 
+trained, X-Raydar-NLP was used to assign binary labels to 
+our dataset for each finding in the taxonomy. Full details 
+of the annotation and NLP training process are in the 
+appendix (pp 5–6).
+Computer vision algorithm 
+For the development of our computer vision algorithm, 
+X-Raydar, the abnormality detection task was framed as a 
+multi-label image classification (MLC) problem: given a 
+frontal chest x-ray (two-dimensional) image, we developed 
+an algorithm able to return the probability that each one 
+of our 37 clinical findings (labels) was detected on the 
+image. An implementation of InceptionV3
+18 was used as 
+our feature extraction convolutional neural network given 
+its proven potential to produce state-of-the-art results for 
+the multi-label classification of chest x-rays.
+19 Comparing 
+various approaches to the MLC problem, we found the 
+strongest results from a prediction algorithm trained 
+using a custom loss function incorporating label 
+uncertainties derived from the NLP model and class 
+weighting factors derived from prevalences observed in 
+the training data. X-Raydar takes the mean probability of 
+each finding across three versions of the model trained 
+at 299², 512², and 1024² resolutions, which we found to 
+give improved performance versus any individual 
+resolution. Full details of the algorithms, alternatives 
+explored, and training process are given in the appendix 
+(pp 8–11), along with a study of the effects of training set 
+size and label noise on performance (appendix pp 12–13) 
+and a study of model interpretability using saliency 
+heatmaps (appendix pp 14–15). Performance of X-Raydar 
+was also compared with a range of public models on the 
+TorchXRayVision
+16 library using the MIMIC-CXR dataset.
+Standard glossary terms Examples of free text included in this label
+(Continued from previous page)
+Osseous structures and chest wall
+Bone, lesion Bone-forming neoplasm Bone metastasis; bone metastases
+Fracture, clavicle Fracture clavicle Clavicle fracture; clavicular fracture
+Fracture, rib Fracture rib Rib fracture; step in rib
+Mass, paraspinal Mass paraspinal Mass next to or adjacent to spine; paraspinal density
+Scoliosis Scoliosis Scoliosis; kyphoscoliosis; kyphosis
+Skin or soft tissue
+Emphysema, subcutaneous Emphysema, subcutaneous Surgical emphysema; subcutaneous emphysema
+Mass, soft tissue Mass; soft tissue density Soft tissue abnormality: breast, subcutaneous or cutaneous tissue, supraclavicular fossae, chest wall, 
+cervical area, upper limb; axillary mass; axillary adenopathy or lymphadenopathy; enlarged lymph node
+Abdomen
+Bowel, dilated Bowel dilated Dilatation or dilated bowel loops; dilated loop bowel; prominent small bowel loops; prominent gas 
+shadow; prominent bowel or loops of bowel; distended stomach or gastric bubble; distended gas filled 
+viscus; dilated viscus
+Hernia Hernia Hiatus hernia
+Pneumoperitoneum Pneumoperitoneum Pneumoperitoneum; free air (linked to subdiaphragmatic)
+Other findings
+Abnormal, not clinically important Non-actionable finding; normal variant Granuloma; pectus deformity; lobectomy; anatomical variant
+Normal anatomy Normal anatomy ··
+Medical object Medical object ··
+Non-clinical findings
+Technical Procedure AP film; shallow inspiration; the patient is rotated; suboptimal film
+Comparison Comparison report No previous imaging for comparison; comparison has been made with the previous x-ray; no interval 
+change; the left lung remains clear
+Diagnosis Diagnosis Features are suggestive of heart failure; chronic obstructive pulmonary disease
+Recommendation Clinical opinion Clinical correlation is advised; suggest repeat post-treatment
+Other text Report component Addendum start; authorised by secretary in absence of reporting radiologist
+Undefined sentence ·· X20; empty place holder value or index
+Table 1: Detailed taxonomy detailing the subclasses included in each of the 37 findings and eight technical labels
+===== PAGE 6 =====
+Articles
+e49 www.thelancet.com/digital-health   Vol 6   January 2024
+Performance of X-Raydar was compared with that of 
+the historical reporters using an exhaustively manually 
+annotated consensus’ set of images (n=1427). Binary 
+classification performance of the two was compared 
+using a fixed model probability threshold of 0∙50 as a 
+positive finding, and using probability thresholds 
+selected to match the observed human specificity level 
+(appendix p 13).
+Development of test datasets 
+To rigorously test the performance of X-Raydar, a high-
+quality ground truth dataset was developed, which we 
+refer to as the consensus set. It comprised 1427 images 
+sampled from all hospitals manually annotated by two 
+experienced radiologists (CG and LG-A). The images 
+were sampled to follow as closely as possible the 
+prevalence of findings in our entire population based on 
+NLP-Testset 
+(n=4551)
+Sensitivity Specificity Balanced 
+accuracy
+F1 score AUC MCC Cohen’s κ 
+All labels ·· 0·894 (0·131) 0·973 (0·012) 0·942 (0·068) 0·845(0·186) 0·982 (0·037) 0·841 (0·173) 0·834 (0·188)
+Radiological labels ·· 0·921 (0·081) 0·994 (0·006) 0·957 (0·042) 0·859 (0·175) 0·990 (0·011) 0·861 (0·155) 0·853 (0·175)
+Critical findings ·· 0·931 (0·069) 0·995 (0·004) 0·963 (0·036) 0·878 (0·099) 0·988 (0·013) 0·877 (0·096) 0·874 (0·101)
+Mediastinum widened 139 (3·1%) 0·813 0·992 0·903 0·790 0·966 0·784 0·783
+Pneumomediastinum 305 (6·7%) 0·989 0·998 0·994 0·948 0·996 0·948 0·947
+Pneumoperitoneum 83 (1·8%) 0·940 0·989 0·965 0·750 0·994 0·761 0·744
+Pneumothorax 305 (6·7%) 0·944 0·996 0·970 0·943 0·986 0·
+939 0·939
+Subcutaneous emphysema 160 (3·5%) 0·969 0·998 0·983 0·957 0·997 0·955 0·955
+Urgent findings ·· 0·906 (0·089) 0·992 (0·007) 0·949 (0·046) 0·829 (0·203) 0·987 (0·012) 0·832 (0·173) 0·822 (0·202)
+Bone lesion 82 (1·8%) 0·854 0·993 0·923 0·765 0·980 0·765 0·760
+Bowel dilated 146 (3·2%) 0·959 0·998 0·979 0·956 0·997 0·954 0·954
+Cavity 95 (2·1%) 0·979 0·997 0·988 0·925 0·998 0·925 0·924
+Clavicle fracture 115 (2·5%) 0·991 1·000 0·996 0·991 0·996 0·991 0·991
+Rib fracture 188 (4·1%) 0·984 0·998 0·991 0·966 0·998` 0·965 0·965
+Ground-glass opacification 152 (3·3%) 0·868 0·997 0·933 0·895 0·965 0·892 0·891
+Interstitial opacification 408 (9·0%) 0·721 0·980 0·850 0·750 0·961 0·727 0·726
+Mass paraspinal 1 (<0·1%) 1·000 0·998 0·999 0·200 1·000 0·333 0·200
+Mass parenchymal or nodule 236 (5·2%) 0·860 0·978 0·919 0·763 0·981 0·754 0·749
+Mediastinum displaced 227 (5·0%) 0·925 0·995 0·960 0·915 0·988 0·911 0·911
+Paratracheal hilum changes 324 (7·1%) 0·870 0·982 0·926 0·826 0·979 0·813 0·812
+Parenchymal opacification 1543 (33·9%) 0·930 0·983 0·956 0·947 0·991 0·921 0·921
+Pleura abnormality 346 (7·6%) 0·954 0·992 0·973 0·930 0·990 0·924 0·924
+Pleural effusion 826 (18·1%) 0·964 0·996 0·980 0·972 0·994 0·966 0·966
+Pulmonary blood flow redistribution 48 (1·1%) 0·729 0·994 0·862 0·636 0·989 0·637 0·632
+Non-urgent findings ·· 0·930 (0·080) 0·995 (0·005) 0·963 (0·040) 0·879 (0·170) 0·993 (0·009) 0·881 (0·156) 0·875 (0·170)
+Aortic calcification 109 (2·4%) 0·991 1·000 0·995 0·991 1·000 0·991 0·991
+Aortic tortuosity 222 (4·9%) 0·977 0·998 0·988 0·969 0·999 0·967 0·967
+Apical changes 75 (1·6%) 0·947 0·989 0·968 0·728 0·998 0·743 0·723
+Atelectasis 584 (12·8%) 0·923 0·983 0·953 0·904 0·984 0·890 0·890
+Bronchial changes 251 (5·5%) 0·940 0·997 0·968 0·940 0·994 0·937 0·937
+Bulla 109 (2·4%) 0·881 0·998 0·940 0·906 0·995 0·904 0·903
+Cardiac calcification 6 (0·1%) 0·833 0·999 0·916 0·714 0·999 0·721 0·714
+Cardiomegaly 517 (11·4%) 0·979 0·996 0·987 0·974 0·994 0·971 0·971
+Dextrocardia 113 (2·5%) 0·991 0·999 0·995 0·982 0·996 0·982 0·982
+Diaphragm abnormality 180 (4·0%) 0·967 0·998 0·982 0·961 0·996 0·960 0·960
+Emphysema 185 (4·1%) 0·935 0·986 0·960 0·822 0·992 0·820 0·813
+Hernia 136 (3·0%) 0·926 0·999 0·963 0·951 0·977 0·950 0·949
+Hyperexpanded lungs 196 (4·3%) 0·934 0·991 0·962 0·874 0·969 0·869 0·867
+Mass soft tissue 3 (0·1%) 0·667 0·998 0·832 0·308 0·999 0·364 0·307
+Medical object 1580 (34·7%) 0·983 0·995 0·989 0·987 0·999 0·980 0·980
+Scoliosis 243 (5·3%) 0·992 0·999 0·995 0·984 1·000 0·983 0·983
+Volume loss or collapse 661 (14·5%) 0·952 0·992 0·972 0·953 0·991 0·945 0·945
+(Table 2 continues on next page)
+===== PAGE 7 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e50
+the NLP-derived labels, and their labels then confirmed 
+by manual annotation of the selected reports. Using 
+AnnotateX, the radiologists were asked to label each 
+radiological finding they detected in the image with a 
+rectangular bounding box. The images were presented in 
+DICOM format, in their original native image resolution, 
+and displayed using a DICOM library that gave the 
+readers the same tools used in normal clinical routine. 
+Each image was annotated in a research environment, 
+with no time constraints and without any access to 
+radiological reports, clinical history, or any other patient 
+information. The radiologists, working independently, 
+were asked to identify any finding present in our 
+taxonomy, regardless of the finding’s criticality. When 
+findings had disagreement in presence or location 
+between the two annotators, the annotators were first 
+asked to reconfirm their annotation; remaining 
+disagreements (736 [9 ·5%] of 7774 total findings across 
+images) reviewed by the two original annotators 
+alongside a third senior radiologist (VG), resulting in a 
+consensus agreement for all cases (appendix pp 7–8). 
+Including the review process, each radiologist spent on 
+average 14·75 min per image. The total development 
+time took approximately 8 weeks per person on a full-
+time basis.
+Two larger NLP-labeled datasets were also used for 
+testing. The first, called the auto-labelled set (n=103 328), 
+was developed by randomly sampling our full dataset so 
+as to capture a considerably larger number of cases per 
+finding and mirror the dataset prevalences and patient 
+demographics more closely. We present a full comparison 
+of the auto-labelled characteristics versus our full dataset 
+in the appendix (pp 7, 32−33), demon  strating that this 
+size of test set is representative of our population. The 
+training data, auto-labelled, and consensus test sets were 
+constructed to be disjoint with respect to the anonymised 
+patient identifiers provided to us by the participating 
+hospital networks to ensure cross-contamination of 
+patients between datasets did not occur.
+The second NLP-labelled test set was an external 
+validation dataset, MIMIC-CXR,
+20 motivated by the large 
+number of studies in this database as well as the 
+availability of raw DICOM files (as opposed to pre-
+processed images) with associated raw free-text reports 
+(as opposed to pre-processed labels using a pre-existing 
+taxonomy). This allowed a validation study under the 
+exact same experimental conditions (exclusion criteria, 
+data pre-processing and radiological taxonomy). This 
+dataset consists of x-rays acquired at the Beth Israel 
+Deaconess Medical Center Emergency Department 
+during the period 2011–16. Starting from an initial pool 
+of 377  110 images, our exclusion and pre-processing 
+pipeline resulted in 252  374 exams. X-Raydar -NLP was 
+used (without fine tuning) to automatically label the free-
+text reports under our taxonomy.
+Development of open-source and web-based tools for 
+free public access
+We deployed our model and DICOM pre-processing 
+pipeline in a web portal open to public access. The 
+website is designed for a general audience, allowing 
+automatic pre-processing and real-time online classi -
+fication of user-uploaded DICOM images (appendix 
+p 29), along with application programming interfaces 
+(APIs) for X-Raydar and X-Raydar-NLP. For the specialist 
+AI community, our trained network architectures are 
+freely available for download for research purposes, 
+providing to the community an alternative foundation 
+model based on a broad sampling of the UK population, 
+which has hitherto been poorly represented in the 
+literature.
+Binary classification performance was assessed with 
+sensitivity, specificity, balanced accuracy, F1 score, 
+Matthew’s correlation coefficient, and Cohen’s κ. 
+Performance of the continuous model output was 
+assessed with AUC. 95% CIs are given based on the 2∙5 
+and 97∙5 percentiles of 10  000 bootstrapping samples. 
+Statistical significance is assessed at the 5% level subject 
+For the web portal see x-raydar.
+info
+NLP-Testset 
+(n=4551)
+Sensitivity Specificity Balanced 
+accuracy
+F1 score AUC MCC Cohen’s κ 
+(Continued from previous page)
+Report-specific labels ·· 0·774 (0·234) 0·973 (0·020) 0·874 (0·116) 0·781 (0·235) 0·944 (0·079) 0·749 (0·230) 0·747 (0·230)
+Abnormal, non-clinically important 533 (11·7%) 0·730 0·978 0·854 0·771 0·949 0·744 0·743
+Comparison 2198 (48·3%) 0·968 0·971 0·969 0·968 0·991 0·939 0·939
+Normal 3282 (72·1%) 0·953 0·979 0·966 0·972 0·987 0·906 0·904
+Other non-findings 543 (11·9%) 0·801 0·938 0·870 0·710 0·937 0·671 0·665
+Possible diagnosis 820 (18·0%) 0·804 0·950 0·877
+0·792 0·960 0·745 0·745
+Recommendation 477 (10·5%) 0·960 0·996 0·978 0·964 0·997 0·960 0·960
+Technical issue 805 (17·7%) 0·722 0·989 0·855 0·814 0·975 0·790 0·780
+Undefined sentence 91 (2·0%) 0·253 0·985 0·619 0·256 0·757 0·241 0·241
+Data are n (%) or mean (SD) unless otherwise stated. AUC=area under the receiver operating characteristic curve. MCC=Matthew’s correlation coefficient. NLP=natural language processing. 37 radiological 
+findings are grouped by criticality (critical, urgent, and non-urgent) and eight report-specific labels. All the reported metrics are computed on our manually annotated test set, NLP-Testset. 
+Table 2: Automated free-text report annotation performance achieved by the X-Raydar-NLP for all 45 labels in our taxonomy 
+===== PAGE 8 =====
+Articles
+e51 www.thelancet.com/digital-health   Vol 6   January 2024
+to a Benjamini-Hochberg adjustment for multiple 
+hypothesis testing with a 5% false discovery rate.
+Role of the funding source 
+The funder of the study had no role in study design, 
+data collection, data analysis, data interpretation, 
+writing of the report, or the decision to submit for 
+publication. 
+Results 
+X-Raydar-NLP achieved a mean sensitivity of 0 ·921 
+(SD 0·081), mean specificity of 0 ·994 (0·006), and area 
+Prevalence (%) Auto-labelled set (n=103 328) Consensus set (n=1427) MIMIC-CXR set (n=252 374)
+n (%) AUC* n (%) AUC* n (%) AUC*
+Overall ·· ·· 0·919 (0·039) ·· 0·864 (0·102) ·· 0·842 (0·074)
+Critical ·· ·· 0·949 (0·033) ·· 0·943 (0·048) ·· 0·885 (0·088)
+Mediastinum widened 1·12% 1188 (1·1%) 0·900 (0·891–0·909) 158 (11·1%) 0·868 (0·835–0·896) 20 002 (7·9%) 0·743 (0·740–0·746)
+Pneumomediastinum 0·07% 75 (0·1%) 0·940 (0·908–0·967) 9 (0·6%) 0·922 (0·860–0·981) 1120 (0·4%) 0·907 (0·896–0·916)
+Pneumoperitoneum 0·25% 254 (0·2%) 0·945 (0·932–0·959) 8 (0·6%) 0·981 (0·957–1·000) 1673 (0·7%) 0·873 (0·863–0·882)
+Pneumothorax 1·79% 1910 (1·8%) 0·975 (0·972–0·978) 44 (3·1%) 0·974 (0·956–0·985) 11 501 (4·6%) 0·928 (0·926–0·931)
+Subcutaneous emphysema 0·70% 795 (0·8%) 0·984 (0·979–0·990) 36 (2·5%) 0·968 (0·903–0·998) 4129 (1·6%) 0·975 (0·972–0·978)
+Urgent ·· ·· 0·905 (0·041) ·· 0·834 (0·118) ·· 0·835 (0·057)
+Bone lesion 1·61% 1665 (1·6%) 0·841 (0·831–0·850) 265 (18·6%) 0·752 (0·714–0·782) 16 457 (6·5%) 0·783 (0·780–0·787)
+Bowel dilated 0·32% 370 (0·4%) 0·927 (0·917–0·944) 29 (2·0%) 0·880 (0·788–0·969) 3197 (1·3%) 0·900 (0·894–0·907)
+Cavity 0·36% 354 (0·3%) 0·939 (0·925–0·949) 38 (2·7%) 0·919 (0·863–0·961) 1149 (0·5%) 0·858 (0·844–0·871)
+Clavicle fracture 0·28% 294 (0·3%) 0·962 (0·949–0·973) 24 (1·7%) 0·940 (0·903–0·973) 1362 (0·5%) 0·913 (0·902–0·922)
+Rib fracture 1·97% 2094 (2·0%) 0·939 (0·933–0·945) 152 (10·7%) 0·883 (0·854–0·915) 7999 (3·2%) 0·895 (0·891–0·898)
+Ground-glass opacification 0·36% 372 (0·4%) 0·837 (0·817–0·854) 52 (3·6%) 0·788 (0·735–0·836) 5061 (2·0%) 0·801 (0·795–0·806)
+Interstitial opacification 7·83% 8126 (7·9%) 0·874 (0·871–0·878) 693 (48·6%) 0·864 (0·849–0·880) 48 007 (19·0%) 0·822 (0·820–0·824)
+Mass paraspinal 0·03% 27 (<0·1%) 0·897 (0·835–0·944) 3 (0·2%) 0·468 (0·417–0·538) 222 (0·1%) 0·721 (0·687–0·753)
+Mediastinum displaced 0·38% 365 (0·4%) 0·954 (0·940–0·961) 99 (6·9%) 0·906 (0·880–0·936) 4475 (1·8%) 0·849 (0·842–0·855)
+Paratracheal hilum changes 2·80% 2948 (2·9%) 0·856 (0·850–0·863) 418 (29·3%) 0·774 (0·754–0·794) 22 234 (8·8%) 0·768 (0·766–0·771)
+Parenchymal mass or nodule 3·82% 3989 (3·9%) 0·889 (0·883–0·894) 200 (14·0%) 0·781 (0·745–0·826) 15 362 (6·1%) 0·793 (0·789–0·796)
+Parenchymal opacification 16·11% 16 813 (16·3%) 0·897 (0·894–0·898) 524 (36·7%) 0·900 (0·882–0·913) 89 710 (35·5%) 0·849 (0·847–0·850)
+Pleura abnormality 3·65% 3774 (3·7%) 0·902 (0·898–0·907) 284 (19·9%) 0·835 (0·810–0·858) 8680 (3·4%) 0·836 (0·832–0·841)
+Pleural effusion 11·30% 11 807 (11·4%) 0·955 (0·953–0·957) 580 (40·6%) 0·940 (0·928–0·951) 77 870 (30·9%) 0·916 (0·915–0·917)
+Pulmonary blood flow 
+redistribution
+3·49% 3679 (3·6%) 0·913 (0·910–0·917) 343 (24·0%) 0·881 (0·859–0·901) 12 226 (4·8%) 0·825 (0·822–0·829)
+Non-urgent ·· ·· 0·923 (0·034) ·· 0·868 (0·088) ·· 0·835 (0·083)
+Aortic calcification 0·24% 266 (0·3%) 0·911 (0·896–0·924) 571 (40·0%) 0·812 (0·795–0·832) 11 429 (4·5%) 0·865 (0·861–0·867)
+Aortic tortuosity 1·27% 1317 (1·3%) 0·942 (0·938–0·948) 179 (12·5%) 0·885 (0·857–0·907) 16 715 (6·6%) 0·864 (0·860–0·866)
+Apical changes 1·14% 1162 (1·1%) 0·955 (0·950–0·961) 87 (6·1%) 0·974 (0·964–0·984) 4240 (1·7%) 0·883 (0·878–0·887)
+Atelectasis 6·18% 6402 (6·2%) 0·888 (0·885–0·893) 299 (21·0%) 0·799 (0·774–0·823) 78 144 (31·0%) 0·793 (0·792–0·795)
+Bronchial changes 1·69% 1733 (1·7%) 0·860 (0·852–0·868) 102 (7·1%) 0·778 (0·736–0·816) 3295 (1·3%) 0·770 (0·761–0·779)
+Bulla 0·23% 216 (0·2%) 0·958 (0·945–0·972) 56 (3·9%) 0·908 (0·864–0·950) 809 (0·3%) 0·872 (0·861–0·885)
+Cardiac calcification 0·06% 57 (0·1%) 0·876 (0·806–0·925) 138 (9·7%) 0·752 (0·713–0·795) 846 (0·3%) 0·804 (0·788–0·817)
+Cardiomegaly 10·93% 11 330 (11·0%) 0·934 (0·932–0·936) 673 (47·2%) 0·935 (0·924–0·946) 61 539 (24·4%) 0·848 (0·846–0·850)
+Dextrocardia 0·05% 58 (0·1%) 0·915 (0·863–0·961) 4 (0·3%) 0·997 (0·992–1·000) 188 (0·1%) 0·634 (0·584–0·667)
+Diaphragm abnormality 1·83% 1871 (1·8%) 0·942 (0·935–0·946) 101 (7·1%) 0·929 (0·903–0·950) 9254 (3·7%) 0·881 (0·878–0·885)
+Emphysema 3·33% 3474 (3·4%) 0·912 (0·908–0·915) 153 (10·7%) 0·872 (0·837–0·900) 8023 (3·2%) 0·908 (0·904–0·911)
+Hernia 1·40% 1480 (1·4%) 0·984 (0·850–0·900) 85 (6·0%) 0·917 (0·569–0·729) 3595 (1·4%) 0·939 (0·771–0·807)
+Hyperexpanded lungs 4·44% 4602 (4·5%) 0·910 (0·981–0·987) 124 (8·7%) 0·919 (0·882–0·945) 14 236 (5·6%) 0·845 (0·935–0·943)
+Mass soft tissue 0·22% 239 (0·2%) 0·877 (0·906–0·913) 50 (3·5%) 0·651 (0·898–0·940) 943 (0·4%) 0·787 (0·841–0·849)
+Medical object 17·32% 17 936 (17·4%) 0·963 (0·962–0·965) 664 (46·5%) 0·877 (0·858–0·892) 121 007 (47·9%) 0·928 (0·927–0·929)
+Scoliosis 0·86% 880 (0·9%) 0·933 (0·927–0·941) 195 (13·7%) 0·832 (0·795–0·859) 4594 (1·8%) 0·897 (0·893–0·903)
+Volume or loss collapse 2·26% 2378 (2·3%) 0·921 (0·917–0·925) 229 (16·0%) 0·922 (0·906–0·936) 33 144 (13·1%) 0·681 (0·678–0·684)
+No findings ·· 46 714 (45·2%) 0·878 (0·876–0·880) 157 (11·0%) 0·941 (0·922–0·959) 34 971 (13·9%) 0·916 (0·914–0·918)
+95% CIs based on 10 000 bootstrapping samples are shown. AUC=area under the receiver operating characteristic curve. *Data are mean AUC (SD) or AUC (95% CI).
+Table 3: Chest X-ray classification performance achieved by X-Raydar for all 37 radiological findings in our taxonomy grouped by criticality 
+===== PAGE 9 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e52
+0 0·25 0·50 0·75 1·00
+1 – speciﬁcity
+0
+0 0·25 0·50 0·75 1·00
+1 – speciﬁcity
+0·25 0·50 0·75 1·00
+1 – speciﬁcity
+0 0·25 0·50 0·751 ·00
+1 – speciﬁcity
+0 0·25 0·500 ·751 ·00
+1 – speciﬁcity
+00 ·25 0·50 0·751 ·00
+1 – speciﬁcity
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Emphysema
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Volume loss
+Hernia Hyperexpanded lungs Mass soft tissue Medical devices Scoliosis
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Bronchial changes Bulla Cardiac calciﬁcation Cardiomegaly Dextrocardia Diaphragm abnormality
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Pulmonary blood ﬂow 
+redistribution
+Rib fracture Aortic calciﬁcation Aortic tortuosity Apical changes Atelectasis
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Mass paraspinal Mediastinum displaced Paratracheal hilar 
+enlargement
+Parenchymal lesion Parenchymal 
+opaciﬁcation 
+Pleural eﬀusion
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Cavity Clavicle fracture Dilated bowel Ground-glass opaciﬁcation Hilum changes Interstitial opaciﬁcation
+0
+0·25
+0·50
+0·75
+1·00
+Sensitivity
+Mediastinum widened Pneumomediastinum Pneumoperitoneum Pneumothorax Subcutaneous emphysema Bone lesion
+ AUC=0·872
+AUC=0·922
+AUC=0·917 AUC=0·919 AUC=0·651A UC=0·877 AUC=0·832
+AUC=0·778 AUC=0·908 AUC=0·752 AUC=0·935A UC=0·997 AUC=0·929
+AUC=0·881 AUC=0·883 AUC=0·812 AUC=0·885 AUC=0·974 AUC=0·799
+AUC=0·468 AUC=0·906 AUC=0·774A UC=0·781A UC=0·900 AUC=0·940
+AUC=0·919 AUC=0·940 AUC=0·880 AUC=0·788A UC=0·835 AUC=0·864
+AUC=0·868 AUC=0·922A UC=0·981A UC=0·974A UC=0·968 AUC=0·752
+Figure 2: X-Raydar’s ROCs for each finding computed in the consensus set (n=1427)
+The observed performance of the historical reporters (sensitivity, 1 – specificity) is shown with the symbol ×. Green indicates that the point is significantly above X-Raydar’s ROC and red indicates that 
+the point lays significantly under it, indicating that X-Raydar performed better for that finding. 95% CIs used to evaluate significance are shown in the appendix (p 27). ROC=receiver operating 
+characteristic curve.
+===== PAGE 10 =====
+Articles
+e53 www.thelancet.com/digital-health   Vol 6   January 2024
+under the receiver operating characteristic curve (AUC) 
+of 0·990 (0·011) across the 37 radiological findings in our 
+taxonomy (table 2), indicating good detection of 
+historically reported clinical findings in free-text reports 
+with a performance similar to that of manual annotations 
+of two radiologists. The appendix (p 25) provides the 
+NLP-derived prevalence estimated separately in the three 
+hospital networks as well as overall estimates; further 
+details are provided in the appendix (p 6), including a 
+breakdown of each finding’s prevalence by age (appendix 
+p 23).
+Table 3 summarises the performance of X-Raydar. The 
+mean AUC scores for the consensus set across all findings 
+was 0∙864 (SD 0∙102), and grouped by criticality were 
+0·943 (0·048) for critical findings, 0·834 (0·118) for urgent 
+findings, and 0 ·868 (0· 088) for non-urgent findings 
+(table 3). Strong performance was observed for the 
+detection of critical findings pneumothorax (0 ·974 
+[SD 0·016], n=44), subcutaneous emphysema (0 ·968 
+[0·045], n=36), and pneumoperitoneum (0 ·981 [0·024], 
+n=8), along with non-urgent findings apical changes 
+(0·974 [0·012], n=87) and dextrocardia (0 ·997 [0·005], 
+Consensus 
+set (n=1427)
+Historical reporter performance on the consensus set X-Raydar performance on the consensus set (fixed 
+0·50 decision threshold)
+Delta* (balanced 
+accuracy)
+p value
+Sensitivity† Specificity‡ Balanced 
+accuracy§
+Sensitivity† Specificity‡ Balanced 
+accuracy§
+Overall findings ··
+0·378 (0·203) 0·979 (0·025) 0·678 (0·103) 0·623 (0·240) 0·904 (0·095) 0·763 (0·110) 13·3% (13·1) ··
+Critical ·· 0·588 (0·292) 0·996 (0·005) 0·792 (0·147) 0·688 (0·241) 0·965 (0·024) 0·826 (0·119) 5·6% (13·2) ··
+Mediastinum widened 158 (11·2%) 0·291 
+(0·218–0·352)
+0·990 
+(0·984–0·995)
+0·641 
+(0·603–0·672)
+0·551 
+(0·468–0·632)
+0·937 
+(0·924–0·951)
+0·744 
+(0·704–0·784)
+16·1%↑ <0·0001
+Pneumomediastinum 9 (0·6%) 0·334 
+(0·000–0·704)
+0·999 
+(0·996–1·000)
+0·666 
+(0·499–0·852)
+0·341 
+(0·000–0·667)
+0·984 
+(0·977–0·990)
+0·663 
+(0·492–0·828)
+–0·5% 0·51
+Pneumoperitoneum 8 (0·6%) 1·000 
+(1·000–1·000)
+1·000 
+(1·000–1·000)
+1·000 
+(1·000–1·000)
+0·750 
+(0·419–1·000)
+0·972 
+(0·964–0·980)
+0·861 
+(0·695–0·988)
+–13·9% 0·95
+Pneumothorax 44 (3·1%) 0·728 
+(0·581–0·843)
+0·991 
+(0·986–0·996)
+0·860 
+(0·786–0·917)
+0·910 
+(0·824–0·978)
+0·941 
+(0·930–0·952)
+0·925 
+(0·883–0·962)
+7·6% 0·055
+Subcutaneous 
+emphysema
+36 (2·5%) 0·586 
+(0·413–0·755)
+0·998 
+(0·995–1·000)
+0·792 
+(0·706–0·877)
+0·890 
+(0·788–0·973)
+0·989 
+(0·983–0·994)
+0·939 
+(0·889–0·980)
+18·6%↑ 0·0011
+Urgent ·· 0·369 (0·148) 0·969 (0·032) 0·669 (0·075) 0·614 (0·238) 0·872 (0·119) 0·743 (0·097)
+12·2% (17·0) ··
+Bone lesion 265 (18·6%) 0·284 
+(0·224–0·343)
+0·966 
+(0·955–0·977)
+0·625 
+(0·595–0·652)
+0·445 
+(0·374–0·505)
+0·919 
+(0·903–0·936)
+0·682 
+(0·647–0·713)
+9·1%↑ 0·0038
+Bowel dilated 29 (2·0%) 0·279 
+(0·138–0·433)
+0·998 
+(0·995–0·999)
+0·638 
+(0·568–0·715)
+0·728 
+(0·543–0·879)
+0·951 
+(0·938–0·961)
+0·839 
+(0·748–0·916)
+31·5%↑ 0·0003
+Cavity 38 (2·7%) 0·317 
+(0·178–0·483)
+0·990 
+(0·985–0·994)
+0·654 
+(0·585–0·735)
+0·761 
+(0·629–0·907)
+0·923 
+(0·909–0·937)
+0·842 
+(0·776–0·917)
+28·7%↑ 0·0002
+Clavicle fracture 24 (1·7%) 0·499 
+(0·312–0·705)
+0·997 
+(0·994–0·999)
+0·748 
+(0·654–0·849)
+0·584 
+(0·386–0·782)
+0·984 
+(0·978–0·990)
+0·784 
+(0·685–0·884)
+4·8%↑ 0·31
+Rib fracture 152 (10·7%) 0·507 
+(0·439–0·583)
+0·991 
+(0·986–0·995)
+0·749 
+(0·716–0·788)
+0·659 
+(0·591–0·728)
+0·936 
+(0·923–0·950)
+0·797 
+(0·760–0·835)
+6·4% 0·041
+Ground-glass 
+opacification
+52 (3·6%) 0·133 
+(0·050–0·227)
+0·981 
+(0·973–0·988)
+0·557 
+(0·516–0·604)
+0·267 
+(0·170–0·402)
+0·938 
+(0·925–0·951)
+0·603 
+(0·555–0·672)
+8·3% 0·13
+Interstitial opacification 693 (48·6%)
+0·418 
+(0·380–0·454)
+0·942 
+(0·927–0·957)
+0·680 
+(0·659–0·698)
+0·762 
+(0·727–0·794)
+0·785 
+(0·755–0·815)
+0·773 
+(0·751–0·795)
+13·7%↑ <0·0001
+Mass paraspinal 3 (0·2%) 0·673 
+(0·000–1·000)
+0·999 
+(0·998–1·000)
+0·836 
+(0·500–1·000)
+0·000 
+(0·000–0·000)
+0·989 
+(0·983–0·994)
+0·494 
+(0·492–0·497)
+–40·9%↓ 0·99
+Mediastinum displaced 99 (6·9%) 0·303 
+(0·206–0·392)
+0·989 
+(0·984–0·994)
+0·646 
+(0·598–0·688)
+0·678 
+(0·589–0·761)
+0·932 
+(0·918–0·944)
+0·805 
+(0·761–0·847)
+24·6%↑ <0·0001
+Paratracheal hilum 
+change
+418 (29·3%) 0·218 
+(0·177–0·255)
+0·943 
+(0·928–0·957)
+0·581 
+(0·561–0·599)
+0·509 
+(0·461–0·556)
+0·855 
+(0·835–0·874)
+0·682 
+(0·656–0·706)
+17·4%↑ <0·0001
+Parenchymal mass or 
+nodule
+200 (14·0%) 0·294 
+(0·231–0·364)
+0·967 
+(0·957–0·975)
+0·630 
+(0·598–0·668)
+0·603 
+(0·546–0·673)
+0·824 
+(0·803–0·847)
+0·714 
+(0·682–0·754)
+13·3%↑ 0·0003
+Parenchymal 
+opacification
+524 (36·7%) 0·508 
+(0·460–0·551)
+0·874 
+(0·853–0·893)
+0·691 
+(0·666–0·715)
+0·973 
+(0·958–0·987)
+0·503 
+(0·468–0·534)
+0·738 
+(0·720–0·756)
+6·8%↑ 0·0009
+Pleura abnormality 284 (19·9%)
+0·267 
+(0·216–0·317)
+0·974 
+(0·964–0·981)
+0·621 
+(0·594–0·646)
+0·680 
+(0·626–0·728)
+0·825 
+(0·804–0·847)
+0·752 
+(0·723–0·781)
+21·1%↑ <0·0001
+Pleural effusion 580 (40·6%) 0·550 
+(0·508–0·586)
+0·972 
+(0·960–0·983)
+0·761 
+(0·740–0·780)
+0·831 
+(0·802–0·859)
+0·876 
+(0·852–0·897)
+0·854 
+(0·835–0·871)
+12·2%↑ <0·0001
+Pulmonary blood flow 
+redistribution
+343 (24·0%) 0·291 
+(0·246–0·336)
+0·956 
+(0·946–0·968)
+0·623 
+(0·600–0·647)
+0·731 
+(0·685–0·776)
+0·840 
+(0·818–0·860)
+0·785 
+(0·761–0·810)
+26·0%↑ <0·0001
+(Table 4 continues on next page)
+===== PAGE 11 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e54
+n=4)· Poorer perfor  mance was observed for urgent 
+findings paratracheal hilar changes (0·774 [0·027], n=418), 
+bone lesion (0·752 [0·035], n=265), and paraspinal mass 
+(0·468 [0·067], n=3), along with the non-urgent findings 
+soft tissue mass (0 ·651 [0·086], n=50) and cardiac 
+calcification (0·752 [0·044], n=138). For the auto-labelled 
+set the mean AUC across all findings was 0∙919 (SD 0∙039), 
+including 0·949 (0·033) for critical findings, 0·905 (0·041) 
+for urgent findings, and 0 ·923 (0· 034) for non-urgent 
+findings. The lowest AUC (0 ·837 [0·021], n=372) was 
+found for urgent finding ground-glass opacity and the 
+highest (0·984 [0·006], n=795) was for critical finding sub-
+cutaneous emphysema and non-urgent finding hernia 
+(0·984 [0·004], n=1480). Similar performance levels were 
+observed for MIMIC-CXR without fine tuning: the mean 
+AUC across all findings was 0∙842 (SD 0∙074), including 
+0·885 (0·088) for critical findings, 0·835 (0·057) for urgent 
+findings, and 0· 835 (0·083) for non-urgent findings. A 
+comparison of X-Raydar’s performance on MIMIC-CXR 
+and the consensus set against open-source models from 
+the TorchXrayVision library
+15 is provided in the appendix 
+(pp 15, 41).
+Consensus 
+set (n=1427)
+Historical reporter performance on the consensus set X-Raydar performance on the consensus set (fixed 
+0·50 decision threshold)
+Delta* (balanced 
+accuracy)
+p value
+Sensitivity† Specificity‡ Balanced 
+accuracy§
+Sensitivity† Specificity‡ Balanced 
+accuracy§
+(Continued from previous page)
+Non-urgent ··
+0·323 (0·189) 0·982 (0·016) 0·653 (0·094) 0·612 (0·253) 0·914 (0·075) 0·763 (0·117) 16·9% (7·3) ··
+Aortic calcification 571 (40·0%) 0·109 
+(0·087–0·140)
+0·992 
+(0·985–0·998)
+0·550 
+(0·540–0·565)
+0·219 
+(0·188–0·255)
+0·988 
+(0·980–0·994)
+0·603 
+(0·588–0·622)
+9·6%↑ <0·0001
+Aortic tortuosity 179 (12·5%) 0·239 
+(0·183–0·306)
+0·968 
+(0·956–0·976)
+0·603 
+(0·574–0·637)
+0·619 
+(0·548–0·681)
+0·916 
+(0·900–0·931)
+0·768 
+(0·730–0·800)
+27·4%↑ <0·0001
+Apical changes 87 (6·1%) 0·450 
+(0·340–0·550)
+0·985 
+(0·978–0·991)
+0·718 
+(0·662–0·768)
+0·885 
+(0·817–0·944)
+0·933 
+(0·921–0·945)
+0·909 
+(0·875–0·940)
+26·6%↑ <0·0001
+Atelectasis 299 (21·0%) 0·274 
+(0·222–0·324)
+0·938 
+(0·925–0·952)
+0·606 
+(0·581–0·630)
+0·703 
+(0·654–0·759)
+0·710 
+(0·684–0·734)
+0·706 
+(0·680–0·735)
+16·5%↑ <0·0001
+Bronchial changes 102 (7·1%) 0·187 
+(0·116–0·259)
+0·972 
+(0·961–0·980)
+0·579 
+(0·542–0·615)
+0·568 
+(0·458–0·648)
+0·817 
+(0·798–0·835)
+0·693 
+(0·641–0·735)
+19·7%↑ <0·0001
+Bulla 56 (3·9%) 0·268 
+(0·161–0·403)
+0·997 
+(0·993–1·000)
+0·632 
+(0·580–0·700)
+0·585 
+(0·466–0·709)
+0·966 
+(0·955–0·976)
+0·776 
+(0·715–0·835)
+22·8%↑ 0·0009
+Cardiac calcification 138 (9·7%) 0·007 
+(0·000–0·024)
+1·000 
+(1·000–1·000)
+0·504 
+(0·500–0·512)
+0·138 
+(0·083–0·200)
+0·986 
+(0·980–0·991)
+0·562 
+(0·534–0·593)
+11·5%↑ <0·0001
+Cardiomegaly 673 (47·2%) 0·565 
+(0·529–0·604)
+0·975 
+(0·962–0·986)
+0·770 
+(0·750–0·789)
+0·836 
+(0·805–0·863)
+0·884 
+(0·862–0·901)
+0·860 
+(0·841–0·877)
+11·7%↑ <0·0001
+Dextrocardia 4 (0·3%) 0·748 
+(0·250–1·000)
+1·000 
+(1·000–1·000)
+0·874 
+(0·625–1·000)
+1·000 
+(1·000–1·000)
+0·985 
+(0·977–0·991)
+0·992 
+(0·989–0·996)
+13·5% 0·17
+Diaphragm abnormality 101 (7·1%) 0·305 
+(0·227–0·385)
+0·989 
+(0·983–0·995)
+0·647 
+(0·608–0·687)
+0·623 
+(0·542–0·718)
+0·948 
+(0·935–0·959)
+0·786 
+(0·742–0·833)
+21·5%↑ <0·0001
+Emphysema 153 (10·7%) 0·321 
+(0·254–0·394)
+0·969 
+(0·959–0·977)
+0·645 
+(0·612–0·684)
+0·712 
+(0·635–0·783)
+0·873 
+(0·855–0·889)
+0·793 
+(0·754–0·828)
+22·9%↑ <0·0001
+Extrapleural soft tissue 
+abnormality
+50 (3·5%) 0·082 
+(0·019–0·159)
+0·996 
+(0·993–0·999)
+0·539 
+(0·507–0·577)
+0·120 
+(0·037–0·215)
+0·980 
+(0·973–0·987)
+0·550 
+(0·510–0·599)
+2·0% 0·35
+Hernia 85 (6·0%) 0·473 
+(0·378–0·578)
+0·990 
+(0·984–0·995)
+0·732 
+(0·685–0·784)
+0·626 
+(0·522–0·732)
+0·964 
+(0·954–0·973)
+0·795 
+(0·744–0·845)
+8·6% 0·049
+Hyperexpanded lungs 124 (8·7%) 0·414 
+(0·331–0·508)
+0·974 
+(0·964–0·982)
+0·694 
+(0·652–0·741)
+0·782 
+(0·709–0·853)
+0·857 
+(0·841–0·875)
+0·819 
+(0·781–0·855)
+18·0%↑ <0·0001
+Medical object 664 (46·5%) 0·491 
+(0·454–0·530)
+0·980 
+(0·969–0·989)
+0·736 
+(0·717–0·756)
+0·695 
+(0·660–0·731)
+0·913 
+(0·891–0·931)
+0·804 
+(0·783–0·826)
+9·2%↑ <0·0001
+Scoliosis 195 (13·7%) 0·190 
+(0·135–0·256)
+0·994 
+(0·989–0·998)
+0·592 
+(0·565–0·624)
+0·453 
+(0·375–0·522)
+0·963 
+(0·950–0·973)
+0·708 
+(0·667–0·742)
+19·6%↑ <0·0001
+Volume loss or collapse 229 (16·0%) 0·371 
+(0·311–0·432)
+0·972 
+(0·963–0·981)
+0·672 
+(0·641–0·702)
+0·833 
+(0·785–0·880)
+0·855 
+(0·836–0·876)
+0·844 
+(0·818–0·870)
+25·6%↑ <0·0001
+No findings 157 (11·0%) 0·981 
+(0·957–0·996)
+0·777 
+(0·752 – 0·799)
+0·879 
+(0·862–0·893)
+0·687 
+(0·615–0·755)
+0·954 
+(0·942–0·965)
+0·821 
+(0·786–0·855)
+–6·6% 0·93
+95% CIs calculated from 10 000 bootstrapping iterations. The performance is shown for all 37 radiological findings in our taxonomy grouped by criticality (critical, urgent, and non-urgent). For X-Raydar, we 
+report binary metrics based on a fixed 0·50 probability threshold; alternative thresholds approximating historic reporter specificity levels are considered in the appendix (p 26). *Delta indicates X-Raydar’s relative 
+improvement in balanced accuracy (the mean of sensitivity and specificity) in percentage compared with historical reports. ↑  and ↓  in the delta column indicate findings where model balanced accuracy deviated 
+from the historic reporters at a 95% CI, using the displayed p value derived from the observed SDs. †Data are mean sensitivity (SD) or sensitivity (95%CI). ‡Data are mean specificity (SD) or specificity (95%CI). 
+§Data are mean balanced accuracy (SD) or balanced accuracy (95% CI). 
+Table 4: Chest X-ray binary classification performance metrics for X-Raydar and the historical reports on the consensus set
+===== PAGE 12 =====
+Articles
+e55 www.thelancet.com/digital-health   Vol 6   January 2024
+In figure 2 we show ROC curves for each of the 
+37 findings for X-Raydar, with the sensitivity and 
+specificity levels achieved by the historical reporters 
+marked by a cross. Using the CIs and thresholds derived 
+as described in the appendix (pp 13–14), X-Raydar was 
+found to give signi ficantly superior performance in nine 
+findings at the 5% confidence level (with a 5% false 
+discovery rate Benjamini-Hochberg adjustment), 
+including sub  cutaneous emphysema, paren  chymal 
+opacification, and pleural effusion, statistically similar 
+performance in 26 findings, and inferior perfor mance in 
+two (rib fracture and dextrocardia; figure 2).
+We compared the historic reporter binary classification 
+metrics against X-Raydar using a fixed decision threshold 
+of 0·50 across findings. At the fixed decision threshold 
+of 0·50, X-Raydar generally significantly exceeds 
+historical reporter mean sensitivity across findings 
+(0·623 [SD 0∙240] vs 0·378 [0∙203]), albeit with reduced 
+specificity (0·904 [0∙095] vs 0·979 [0∙025]); on a balanced 
+accuracy basis, X-Radar was statistically superior to the 
+historic reporters in 26 of 37 findings, non-inferior in 
+nine, and inferior for one (paraspinal mass), with a mean 
+improvement of 13·3%  (SD 13∙1; table 4). The 
+performance gap narrows with increased criticality; we 
+observed a mean improvement of 5·6% (SD 13·2) in 
+critical findings, 12 ·2% (17·0) in urgent findings, and 
+16·9% (7·3) in non-urgent findings (table 4).
+Discussion 
+We developed and tested a deep learning system capable 
+of interpreting frontal chest x-rays with recognition of 
+37 radiological findings spanning routine radiological 
+practice, achieving a mean AUC of 0· 864 across our 
+taxonomy and 0· 943 on critical findings as compared 
+with expert-annotated consensus ground truth labels on 
+1427 images. Normal scans are identified with an AUC 
+of 0·941, and establishing appropriate model thresholds 
+per finding to filter normal scans with high specificity 
+would be an interesting topic for further work. 
+Performance on the NLP-labelled test set was stronger 
+with mean AUC 0∙919 (SD 0∙019) across all findings, 
+which is unsurprising given that the labels were obtained 
+using the same methodology as for X-Raydar’s training 
+data, whereas the consensus set were annotated under 
+more stringent conditions. Using the consensus set 
+labels as a comprehensive ground truth, we were able to  
+directly compare the performance of the historical 
+reporters to X-Raydar. At a fixed model threshold of 0∙50, 
+X-Raydar achieved a balanced accuracy of 0∙763 versus 
+0∙678 for the historic reports; selecting model thresholds 
+to match the observed human specificity levels, X-Raydar 
+gave statistically superior performance in nine findings 
+and inferior in two. These results and our analysis of 
+historical under-reporting patterns (appendix p 8) indicate 
+that X-Raydar could potentially improve the accuracy and 
+comprehensiveness of reporting in the health service 
+studied in both triage and second-reader roles.
+There has been substantial interest in chest x-ray AI 
+systems globally as a result of the COVID-19 pandemic 
+and since the recommendations from the WHO with 
+respect to tuberculosis screening. Acknowledging the 
+need to improve non-AI specialists’ access to such 
+systems, we have aimed to open source our work entirely 
+to assist future deployment of similar AI tools. X-Raydar 
+can be accessed directly through X-Raydar online, a user-
+friendly web interface for a general audience that 
+facilitates the process of uploading multiple DICOM 
+files, pre-processing the images, and displaying the 
+results in-browser (eg, see appendix p 29). This service is 
+run on a secure server hosted at the University of 
+Warwick (Warwick, UK) and is also accessible via a 
+programmable API. For the research community, we 
+take the unusual step of making our full pre-trained 
+network weights available under an academic use license, 
+allowing our models to be used in a full foundation role 
+for transfer learning and fine tuning to alternative 
+ontologies, datasets, and reporting tasks.
+Direct comparisons with similar studies are generally 
+challenging in the field due to the absence of a 
+standardised taxonomy, variations in clinical settings 
+and demographics of the datasets used, and variation in 
+assessment protocols. The majority of work in the field 
+also considers either single finding detection
+21 or multi-
+label classification within a partial taxonomy 11,13 as 
+opposed to comprehensive classification. However, we 
+have identified two studies assessing the performance of 
+AI systems attempting comprehensive classification 
+versus radiologists in a research setting for comparison. 
+Wu and colleagues
+22 adopted a 72-finding taxonomy and 
+trained their model with the MIMIC 20 and US National 
+Institutes of Health 23 datasets with automated label 
+extraction, reporting a mean AUC of 0 ·807 across 
+findings and outperforming third-year radiology 
+residents in a research setting. Seah and colleagues
+24 
+trained a model with more than 800  000 images from 
+various public datasets, hand labelled by 120 consultant 
+radiologists under a 127-finding taxonomy, reporting a 
+mean AUC of 0· 957 and improving radiologists’ 
+labelling performance when available in a research 
+setting. Our methodology is most directly comparable to 
+that of Wu and colleagues
+22 given the shared use of auto-
+labelled training data from historical reports, with our 
+model showing a higher headline performance at least 
+partially attributable to the larger training set available to 
+us. We attribute the performance gap with Seah and 
+colleagues to the expert labelling of training data under a 
+defined taxonomy; although we have shown strong 
+performance in the more scalable and resource-light 
+paradigm of NLP label extraction and demonstrated the 
+robustness of training to the associated label noise 
+(appendix pp 12–13), it is likely that the performance on 
+our dataset could be materially improved with full 
+manual annotation, if resources were available for us to 
+do so.
+===== PAGE 13 =====
+Articles
+www.thelancet.com/digital-health   Vol 6   January 2024 e56
+Generalisability is a major concern in the field, with 
+most published work necessarily relying on one or more 
+of a relatively small range of pre-labelled public 
+datasets
+11,20,23,25,26 often representing single hospitals or 
+clinical settings (eg, emergency medicine) because of the 
+practical and legal difficulties of gathering new data, and 
+thus depend on a limited range of demographics, 
+hospitals, clinical settings, and imaging hardware, 
+raising questions over cross-domain adaptability.
+27,28 
+Studies using novel, diverse datasets are therefore of 
+interest to the community—eg, a recently available 
+foundation model making feature embeddings available 
+for downstream use from a CNN trained on a novel 
+dataset of more than 800  000 images from India and the 
+USA14—albeit without offering access to network weights. 
+Progress towards improving trans  parency and stan -
+dardisation is also being made, such as the recent 
+establishment of a Python library of standardised 
+datasets and pre-trained models
+15 that aims to improve 
+reproducibility standards in the field. Much care was 
+therefore taken in the development of our DICOM 
+preprocessing module so that any potential scanner-
+related effects could be removed (appendix pp 2–3). Our 
+experiments on the generalisation perfor  mance of our 
+model on the MIMIC-CXR dataset 19 with preprocessing 
+through our pipeline showed similar performance levels 
+to our consensus test set without any fine-tuning, despite 
+an entirely separate demographic, clinical setting (ie, 
+emergency room) and differences in prevalence of 
+findings from our UK-sourced data. This is promising 
+evidence towards the goal of developing a single deep-
+learning system that could be applied in health systems 
+globally with confidence and supports our proposed use 
+case as an alternative foundation model for adaptation to 
+other reporting tasks. Investigating other (eg, sub-
+Saharan) populations is an important  topic for further 
+work; we hope that our open-source resources will 
+facilitate these comparisons.
+In our study, we aimed to use historical reporter 
+performance as a proxy for the realistic level of detail that 
+a reader is likely to give in a time-constrained and 
+resource-constrained real-world clinical setting and 
+evaluate how an AI algorithm compares with this 
+performance and could provide benefits to a health 
+service. Although we do not aim to prove that X-Raydar 
+can exceed human performance in an unconstrained 
+laboratory test setting (which is approximated by the 
+consensus set as a gold standard), our results provide 
+strong evidence that it can be of practical use in both a 
+second-reading capacity for critical findings and to 
+produce more comprehensive reports than are currently 
+possible under realistic conditions by addressing sources 
+of under-reporting.
+We presented a comparison with the historical 
+performance of all reporting radiologists, showing AI 
+outperformed them in the majority of findings. The 
+resource-intensive manual annotation process limited the 
+number of images that could be included in the consensus 
+ground truth set, leading to small sample sizes in some 
+findings; for this reason, our results are supported by an 
+additional large NLP-labelled test set. Although our study 
+has the advantage of evaluating automated reporting 
+against the demonstrated level of accuracy in a working 
+clinical setting, it is not possible to definitively assess 
+where a reporter might have deliberately under-reported 
+secondary or irrelevant findings, either by focusing on the 
+clinical question posed (which probably accounts for the 
+increased performance gap vs the AI for less critical 
+findings) or through human error or time constraints; our 
+extensive analysis (appendix p 8)  of under-reporting 
+patterns in the ground truth set indicate that both play a 
+part. Our study does not consider the potential for model 
+bias due to patient ethnicity, sex, or socioeconomic status, 
+factors, as some data were not available (eg, ethnicity and 
+socioeconomic status) that should be investigated before 
+any use of the deep-learning system in clinical settings. 
+We also consider only radiologists working within three 
+hospital networks in the UK health service, which might 
+not be representative of the reporting standards and 
+workflow in other health services.
+We have developed and tested a multi-label classifier 
+chest x-ray AI system with a comprehensive taxonomy 
+designed to balance clinical utility with suitability for NLP 
+label extraction. We have confirmed model performance 
+against a public dataset and real-world clinical reporting. 
+There are few freely accessible AI systems for practitioners 
+to use with their own data. We make our model available 
+via a user-friendly web portal, allowing DICOM images to 
+be uploaded without technical barriers, with the aim of 
+facilitating clinical imple  mentation of AI in resource-
+poor health-care systems. We make our full pre-trained 
+model weights for both X-Raydar and X-Raydar-NLP 
+available to the research community for evaluation and 
+use as an alternative foundation model.
+Contributors 
+YDC extracted the DICOM files from two hospital networks, 
+implemented the DICOM pre-processing pipeline, implemented the 
+computer vision algorithms, performed the ablation studies and 
+experiments, produced most figures and tables, interpreted the results, 
+and wrote the first version of the manuscript. The third network, 
+Coventry, was able to extract the data using their own PACS provider and 
+provided us with all the anonymised files. MM helped with data 
+pre-processing, data quality control, statistical analyses, figure and table 
+preparation, and re-drafted the manuscript. LG-A co-developed the 
+radiological taxonomy, performed the radiological annotations, and 
+co-wrote the manuscript. YZ implemented the NLP algorithm and 
+generated the labels. GF performed the MIMIC-CXR experiments, 
+investigated the effect of noisy labels, and produced the related tables 
+and figures. RS developed the AnnotateX platform and contributed to 
+the APIs and X-Raydar’s website development. CL, IS, KM, and AA 
+performed the radiological annotations. HH and DI provided support 
+with the data extraction and interpretation of the radiological data. 
+ML provided support during the development of the NLP algorithms. 
+CEH co-developed the radiological taxonomy and performed the 
+radiological annotations. VG secured funding, led the clinical team, 
+co-developed the radiological taxonomy, performed the radiological 
+annotations, reviewed the algorithms’ predictions, interpreted the 
+results, and co-wrote the manuscript. GM conceived the study, secured 
+===== PAGE 14 =====
+Articles
+e57 www.thelancet.com/digital-health   Vol 6   January 2024
+funding, coordinated the data extraction activities with the three hospital 
+networks, implemented the data extraction code to query the PACS and 
+extract DICOM files, conceived the experiments, supervised all aspects 
+of the project, interpreted the results, and co-wrote the manuscript. All 
+authors had access to the datasets used. YDC, MM, and GM had full 
+access to and verified the raw datasets. The corresponding author was 
+responsible for the decision to submit the manuscript.
+Declaration of interests 
+YDC received funding from the Wellcome Trust. HH received support 
+from the University of Leicester NHS Trust. GF received funding from 
+the University of Warwick and University Hospital Coventry and 
+Warwickshire. VG has received grants or contracts from Siemens 
+Healthineers and Lunit; has received payment and honoraria from the 
+European School of Radiology; and is Chair and on the academic 
+committee of the Royal College of Radiologists. RS, YZ, and 
+MM received funding from the UK Research Institute Engineering & 
+Physical Sciences Research Council (YZ and MM via the Mathematics of 
+Systems Centre for Doctoral Training at the University of Warwick 
+[EP/S022244/1]). IS received grant funding from the European 
+Federation of Pharmaceutical Industries and Associations Innovative 
+Medicines Initiative. All other authors declare no competing interests. 
+Data sharing 
+X-Raydar is available for online use via an online portal x-raydar.info 
+hosted on a secure University of Warwick server, along with APIs for both 
+X-Raydar-CV and X-Raydar-NLP. Models, network weights and code are 
+also available to researchers for non-commercial purposes at 
+www.x-raydar.info and https://github.com/x-raydar/. The original images, 
+free-text reports, and other patient data received from the NHS trusts 
+cannot be shared currently due to confidentiality agreements in place with 
+the contributing hospital networks.
+Acknowledgments 
+This study was funded by a Wellcome Trust Innovator Award. We thank 
+Massimo Neri for support during the software development (AnnotateX 
+and x-raydar.info website).
+References 
+1 WHO. Communicating radiation risks in paediatric imaging: 
+information to support health care discussions about benefit and 
+risk. June 22, 2016. https://www.who.int/publications/i/
+item/978924151034 (accessed Nov 25, 2023).
+2 Cozzi A, Schiaffino S, Arpaia F, et al. Chest x-ray in the COVID-19 
+pandemic: radiologists’ real-world reader performance. Eur J Radiol 
+2020; 132: 109272.
+3 WHO. WHO announces updated guidance on the systematic 
+screening for tuberculosis. March 22, 2021 (accessed Nov 25, 2023).
+4 Bruno MA, Walker EA, Abujudeh HH. Understanding and 
+confronting our mistakes: the epidemiology of error in radiology 
+and strategies for error reduction. Radiographics 2015; 35: 1668–76.
+5 Care Quality Commission. Radiology review: a national review of 
+radiology reporting within the NHS in England. July, 2018. https://
+www.cqc.org.uk/sites/default/files/20180718-radiology-reporting-
+review-report-final-for-web.pdf (accessed Nov 25, 2023).
+6 Majkowska A, Mittal S, Steiner DF, et al. Chest radiograph 
+interpretation with deep learning models: assessment with 
+radiologist-adjudicated reference standards and population-adjusted 
+evaluation. Radiology 2020; 294: 421–31.
+7 Annarumma M, Withey SJ, Bakewell RJ, Pesce E, G oh V, 
+Montana G. Automated triaging of adult chest radiographs with 
+deep artificial neural networks. Radiology 2019; 291: 272–272.
+8 Hwang EJ, Hong JH, Lee KH, et al. Deep learning algorithm for 
+surveillance of pneumothorax after lung biopsy: a multicenter 
+diagnostic cohort study. Eur Radiol 2020; 30: 3660–71.
+9 Qin ZZ, Sander MS, Rai B, et al. Using artificial intelligence to read 
+chest radiographs for tuberculosis detection: a multi-site evaluation 
+of the diagnostic accuracy of three deep learning systems. Sci Rep 
+2019; 9: 15000.
+10 Nasrullah N, Sang J, Alam MS, Mateen M, Cai B, Hu H. Automated 
+lung nodule detection and classification using deep learning 
+combined with multiple strategies. Sensors 2019; 19: 3722.
+11 Rajpurkar P, Irvin J, Zhu K, et al. CheXNet: radiologist-level 
+pneumonia detection on chest X-rays with deep learning. arXiv 
+2017; published online Nov 14. https://doi.org/10.48550/
+arXiv.1711.05225 (preprint).
+12 Hwang EJ, Park S, Jin KN, et al. Development and validation of a 
+deep learning-based automated detection algorithm for major 
+thoracic diseases on chest radiographs. JAMA Netw Open 2019; 
+2: e191095.
+13 Wang H, Jia H, Lu L, Xia Y . Thorax-Net: an attention regularized 
+deep neural network for classification of thoracic diseases on chest 
+radiography. IEEE J Biomed Health Inform 2020; 24: 475–85.
+14 Cohen JP, Bertin P, Frappier V. Chester: a web delivered locally 
+computed chest X-ray disease prediction system. arXiv 2019; 
+published online Jan 31. https://doi.org/10.48550/arXiv.1901.11210 
+(preprint).
+15 Sellergren AB, Chen C, Nabulsi Z, et al. Simplified transfer 
+learning for chest radiography models using less data. Radiology 
+2022; 305: 454–65.
+16 Cohen JP, Viviano JD, Bertin P, et al. TorchXRayVision: a library of 
+chest X-ray datasets and models. Proc Mach Learn Res 2022; 
+172: 231–49.
+17 Liu Y , Ott M, Goyal N, et al. RoBERTa: a robustly optimized BERT 
+pretraining approach. arXiv 2019; published online July 26. https://
+doi.org/10.48550/arXiv.1907 .11692 (preprint).
+18 Szegedy C, Vanhoucke V, I offe S, Shlens J, Wojna Z. Rethinking the 
+inception architecture for computer vision. 
+Proc IEEE Comput Soc Conf Comput Vis Pattern Recognit 2016; 
+2016: 2818–26.
+19 Ke A, Ellsworth W, Banerjee O, Ng AY , Rajpurkar P. CheXtransfer: 
+performance and parameter efficiency of ImageNet models for 
+chest X-ray interpretation. ACM CHIL 2021: 116–24.
+20 Johnson AEW, Pollard TJ, Berkowitz SJ, et al. MIMIC-CXR, 
+a de-identified publicly available database of chest radiographs with 
+free-text reports. Sci Data 2019; 6: 317 .
+21 Al-Waisy AS, Al-Fahdawi S, Mohammed MA, et al. COVID-
+CheXNet: hybrid deep learning framework for identifying 
+COVID-19 virus in chest X-rays images. Soft Comput 2023; 
+27: 2657–72.
+22 Wu JT, Wong KCL, Gur Y , et al. Comparison of chest radiograph 
+interpretations by artificial intelligence algorithm vs radiology 
+residents. JAMA Netw Open 2020; 3: e2022779.
+23 Wang X, Peng Y , Lu L, Lu Z, Bagheri M, Summers RM. 
+ChestX-Ray8: Hospital-scale chest X-ray database and benchmarks 
+on weakly-supervised classification and localization of common 
+thorax diseases. Proc IEEE Comput Soc Conf Comput Vis 
+Pattern Recognit 2017; 2017: 2097–106.
+24 Seah JCY , Tang CHM, Buchlak QD, et al. Effect of a comprehensive 
+deep-learning model on the accuracy of chest x-ray interpretation by 
+radiologists: a retrospective, multireader multicase study. 
+Lancet Digit Health 2021; 3: e496–506.
+25 Andriole GL, Crawford ED, Grubb RL 3rd, et al. Prostate cancer 
+screening in the randomized Prostate, Lung, Colorectal, and 
+Ovarian Cancer Screening Trial: mortality results after 13 years of 
+follow-up. J Natl Cancer Inst 2012; 104: 125–32.
+26 Bustos A, Pertusa A, Salinas JM, de la Iglesia-Vayá M. PadChest: 
+a large chest x-ray image dataset with multi-label annotated reports. 
+Med Image Anal 2020; 66: 101797 .
+27 Zech JR, Badgeley MA, Liu M, Costa AB, Titano JJ, Oermann EK. 
+Variable generalization performance of a deep learning model to 
+detect pneumonia in chest radiographs: a cross-sectional study. 
+PLoS Med 2018; 15: e1002683.
+28 Cohen JP, Hashir M, Brooks R, Bertrand H. On the limits of cross-
+domain generalization in automated X-ray prediction. 
+Proc Mach Learn Res 2020; 121: 136–55.

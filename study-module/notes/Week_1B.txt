@@ -1,0 +1,139 @@
+SOURCE: Week01\Week 1B.pdf
+PAGES: 5
+
+===== PAGE 1 =====
+none
+1 / 6
+Workshop Guide
+Faculty of Information Technology
+Research Methods for IT
+Week 1: Part (B)
+Research Ethics
+Workshop Activities
+There are 4 activities in this workshop (one on each page):
+Activity 1: Discuss dimensions of Research Ethics
+Activity 2: Reviewing Actual Research for Ethical Issues
+Activity 3: Processes, People & Documentation
+Weekly Communication Activity
+This workshop focuses on understanding what research ethics means, and the responsibilities you have in
+research to protect the interests of your participants and their data when you are conducting research. As you
+will have discovered in the online video for weeks 1 part a and b, “research” can mean many different things
+in IT, and researchers approach problems using different research designs depending on their subﬁeld and
+the 
+research questions that they are looking to answer. Research ethics can also pose different challenges
+depending on the design of the study and types of people and data involved.
+The weekly assessment task which contributes to your assignment can be found on the Moodle
+Assessments page.
+Before the workshop, each week you should study the videos, review the slides, transcript and the 
+readings provided. Complete the weekly quiz which is worth 5% of your total marks.
+There is a participation activity related to your participation in the activity for the week related on 
+Moodle over the 6 weeks this will be worth 5%.
+During the workshop you will work in small groups to complete the activities. You should aim to spend the
+allotted time in the workshop working on the activity (and writing notes) in your groups, and then reviewing
+with a larger group. You should record your notes on the activity in the worksheet provided.
+10%
+===== PAGE 2 =====
+none
+2 / 6
+Activity 1
+Dimensions of Research Ethics
+Work in groups, then review as a larger group with you tutor
+Activity 1 involves thinking about the dimensions of ethics research introduced in the week’s videos.
+“Dimensions of ethical research” (see the Week 1 video, slides, and transcript) outlines how the principles and 
+values translate into a set of dimensions of ethical research. In this activity you should consider what these 
+dimensions could mean in practice, how consideration of them might shape decisions you make about a 
+research design, and how an ethics review committee might consider them when assessing a design of 
+yours.
+In your groups
+1. For each of the dimensions that follow, come up with a (hypothetical but plausible) example of an
+aspect of a research design, or an activity within a research design, for an IT research project that might
+be cause for concern (i.e. not speciﬁcally an actual project but one that you imagine an IT researcher
+might want to conduct):
+i. Physical or psychological harm or abuse
+ii. Informed consent
+iii. Right of withdrawal
+iv. Vulnerable participant groups
+v. Deception
+vi. Coercion
+vii. Illegal practices
+viii. Invasion of privacy
+ix. Conﬁdentiality
+2. Write down your examples on your worksheet, with brief explanations.
+⚐ Make notes on your shared worksheet.
+On return to the main session
+Review with your tutor and the larger group.
+Take a 10-minute break! (before the next activity)
+===== PAGE 3 =====
+none
+3 / 6
+Activity 2
+Reviewing Actual Research for Ethical Issues
+Work in groups, then review as a larger group with your tutor
+Consider the paper introduced in Week 1 as an example of a “simulation study”:
+Hudson, S., Fogarty, J., Atkeson, C., Avrahami, D., Forlizzi, J., Kiesler, S., Lee, J. and Yang, J., 2003,
+April. Predicting human interruptibility with sensors: a Wizard of Oz feasibility study. In Proceedings of
+the SIGCHI Conference on Human factors in Computing Systems (pp. 257-264).
+In this project Hudson and his colleagues explored the question of how interruptible people (ofﬁce workers)
+are, and whether the activities people were in involved in were a reliable predictor of the best time to interrupt
+them. However, the activities they wanted to take account of were very wide ranging, from speaking, writing,
+sitting, standing, and being on-the-phone, to things like whether they were using a keyboard, using a mouse,
+looking at a monitor and a range of other things.
+Key elements of the research design included: (a) that rather than develop sensors for detecting the different
+activities they simply used a camera and microphone to capture people working in an ofﬁce; (b) after the
+capture the researchers performed a manual analysis of the data to established when the activities were
+occurring (i.e. simulated the sensors); and (c) that subjects were given an audio prompt, in response to which
+they had to self-report their interpretability.
+In your groups
+1
+. Spend 5-10 minutes working in groups to (re)familiarise yourself with the research; don’t read the whole
+paper, just the “Introduction” and “Study Details” sections.
+2
+. Consider the dimensions of research ethics (only the relevant ones) in relation to the study design as
+follows (record your considerations on the worksheet):
+i
+. Identify different aspects of the research design (as reported in the paper) that have the potential to
+cause a concern in relation to the different ethics dimensions.
+ii
+. For each aspect, describe how (if at all) the authors explain (in the paper) how they accounted for
+the potential concern.
+iii
+. For each aspect, explain how you would have ensured that the potential concern is addressed
+(where you consider this is possible).
+⚐ Make notes on your shared worksheet.
+On return to the main session
+Review your answers with your tutor and the larger group.
+===== PAGE 4 =====
+none
+4 / 6
+Take a 10-minute break! (before the next activity)
+===== PAGE 5 =====
+none
+5 / 6
+Activity 3
+Processes, People & Documentation
+Work in groups, then review as a larger group with you tutor
+Careful consideration of ethical issues related to the design of a research project must be backed up by
+clearly documented processes. A human research ethics committee will want to see this documentation.
+Consider the scenario in which you have been asked to repeat Hudson et al’s (2003) study on interruptibility
+as a research project at Monash University using 20 ofﬁce workers that are members of staff of the University.
+To do this you will ﬁrst need to develop and submit a research proposal to the Monash University Human
+Research Ethics Committee, and in preparation for this submission you must think through all the ethical
+issues, how you will address them, and what documentation you will need to ensure that the study is
+conducted as you propose.
+In your groups
+Consider the following processes that will be part of your study design: (1) recruitment; (2) conduct of
+observations and data capture; (3) data analysis; and (4) data curation.
+Working in groups, use the worksheet provided to outline what each will involve, to answer the following
+questions:
+1. who the people that are involved in each process (1-4) will be?
+2. what the processes (1-4) will involve, and for each are there are ethical considerations that need to be
+addressed?
+3. what documents will be helpful (or that Monash requires you to create) to create to capture these
+processes, and who will need to be aware of these documents?
+⚐Make notes on your shared worksheet.
+On return to the main session
+Review you answers with your tutor and the larger group.
+⚐This is a large task (to do properly) and would typically take an experienced researcher of a few weeks to
+complete (including creating the documents), so you should focus on covering what you see as the main
+and most interesting points relating to each process (recruitment, conduct of observations and data
+capture; data analysis, and data curation).

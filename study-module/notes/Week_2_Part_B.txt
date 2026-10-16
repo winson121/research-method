@@ -1,0 +1,137 @@
+SOURCE: Week02\Week 2 Part B.pdf
+PAGES: 5
+
+===== PAGE 1 =====
+none
+1 / 6 · updated 8/8/2022
+Workshop Guide
+Faculty of Information Technology
+Research Methods for IT
+Week 4 - Conﬁguring Research
+Workshop Activities
+There are 4 activities in this workshop sheet (one on each page):
+Activity 1: Forming a Research Question & Selecting Methods
+Activity 2: Creating a Research Plan
+Activity 3: Resource Allocation
+Weekly Communication Activity
+Each of the activities in this session leads on from one another, exploring the process of
+designing and planning a research study in an industry context.
+The weekly assessment task which contributes to your assignment can be found
+on the Moodle Assessments page.
+Before the studio, each week you should study the videos, review the slides,
+transcript and the readings provided. Complete the weekly quiz which is worth
+5% of your total marks.
+There is a participation activity related to your participation in the activity for the
+week related on Moodle over the 12 weeks this will be worth 5%.
+During the studio you will work in small groups to complete the activities. You should
+aim to spend the allotted time in the studio working on the activity (and writing notes) in
+your groups, and then reviewing with a larger group. You should record your notes on
+the activity in the worksheet provided.
+10%
+2
+3
+===== PAGE 2 =====
+none
+2 / 6 · updated 8/8/2022
+Activity 1
+Forming a Research Question & Selecting Methods
+Forming a research question is a core skill in conducting research. Often you are provided with only a very
+high-level idea of what the research problem is, and you will need to reﬁne this into a number of distinct and
+answerable questions that can lead to insight.
+Make sure that you and your team fully understand the following scenario:
+You work at a company which provides student administration service infrastructure to universities.
+Their main product offering is a suite of tools that links together the student enrollment process, from
+initial interest in the institution, through course and unit allocation, timetabling, transcript management
+and ﬁnance management. As such, the product is visible and used to many different classes of user,
+including prospective students, current students, teaching staff and administrative staff. As with many
+complex systems, as the company has grown, they have inherited and integrated a wide variety of
+systems from other vendors, to create a rich product offering. However, little is understood internally
+about how effective these systems are at working together. As the team responsible for systems
+integration at the company, your team has been tasked with understanding where the opportunities are
+for improving the infrastructure. In the company's words, they want to see increased system efﬁciency,
+and improved user experience.
+In this activity, you will work through a research planning process. However, as in many
+organisations, teams do not work in isolation and you will have to continue on from another team’s
+work at each stage.
+For this scenario, these stages are:
+1. Selecting a research focus - there are many different ways to approach the problem, and no piece of
+research can answer all possible questions. Focus on an element that you want to investigate and
+create 2 distinct research questions.
+2. Identify existing data that you can use to answer these questions.
+3. Identify additional data required from people. What types of methods (e.g. interviews) will you need to
+employ to collect this data?
+4. Select participant group(s) - Whether collecting qualitative or quantitative data, you will have to be
+selective about who you collect from and what you collect, so come up with some criteria for your
+participants and data collection.
+In your groups
+At each stage, you should start by reviewing any notes already made by a previous team.
+You will then continue where they left off with the next stage, making notes on the sheet.
+After 10 mins, you will pass on your notes to an adjacent team.
+⚐Make detailed notes on your shared worksheet.
+===== PAGE 3 =====
+none
+3 / 6 · updated 8/8/2022
+Activity 2
+Creating a Research Plan
+At the end of the last activity, you will have ended up with the outline of a research plan. This plan has been
+ratiﬁed by senior management in the company and your team has been tasked with operationalising the
+research. However, as is always the case, you have been given a limited amount of time to complete the
+research and produce some ﬁndings, since management wants to present your team’s ﬁndings at the annual
+general meeting in 3 months.
+Your task is to plan this research within these constraints.
+In your groups
+In this activity, produce a plan representing the various stages of the research, considering:
+1. Individual activities that will need to be conducted during the stages, e.g. recruitment advertising,
+recruitment shortlisting, interview scheduling making sure to identify any dependencies between them.
+2. What design or piloting may be required for each stage.
+3. What key resources (people, time, expertise) will be required to conduct this work?
+⚐Make notes on your shared worksheet.
+===== PAGE 4 =====
+none
+4 / 6 · updated 8/8/2022
+Activity 3
+Resource Allocation
+The resources available to conduct research in any context are always constrained. Part of the skill in
+conducting effective research is to use available resources effectively.
+Since your team is already working on an active project, management has allocated you $3000 for you to
+outsource or contract your research, using the company's list of suppliers and temporary contract staff.
+Your task is to resource your research plan from the last task to the best of your ability, given your
+initial set of resources.
+⚐Remember that effective research often triangulates ﬁndings from multiple sources, and that these
+ﬁndings need to be effectively communicated to the AGM.
+In your groups
+Each task you might want to resource has a ﬁnite cost, listed in the table below. You may ﬁnd that you will
+not be able to resource your entire plan, so you must select which parts of your plan to keep, which parts to
+adjust and which to drop, whilst also considering how detailed or nuanced you need your ﬁndings to be in
+order to answer your research question.
+⚐Make notes on your shared worksheet.
+Activity Cost
+Research study management (required)$1/participant
+Broadcast recruitment (e.g. web advert)$1/approach, 5% chance of completion, no diversity.
+Targeted online recruitment (e.g. existing clients)$5/approach, 15% chance of completion, some
+diversity.
+In-person recruitment $10/approach, 80% chance of completion, speciﬁc
+diversity can be requested.
+Survey collection $5/participant
+Focus Groups $3/participant, groups of 10
+Interview $100/participant up to 60 mins
+Automated transcription $1/min, but in-depth qualitative analysis is not
+possible.
+Human Transcription $2/minute
+Surface-level qualitative analysis of transcription,
+produces keywords $3/min
+===== PAGE 5 =====
+none
+5 / 6 · updated 8/8/2022
+Activity Cost
+In-depth qualitative analysis of transcription,
+produces nuanced issues $6/min
+Deep learning analysis on log data - detailed
+metrics
+$500 per 300 users, can only be performed on clean
+data
+Statistical analysis on log data - basic metrics$200 per 600 users, can be performed on dirty data
+Data cleaning $1/user
+Report writing for ﬁndings $200
+Powerpoint presentation for ﬁndings $300
+Video production for ﬁndings $500

@@ -1,0 +1,655 @@
+SOURCE: Week01\Workshop_1B.pdf
+PAGES: 48
+
+===== PAGE 1 =====
+Week 1: Part (B) Research Ethics 
+Workshop
+===== PAGE 2 =====
+Workshops 
+• Before the workshop:
+• Watch the week’s video, read the associated work. Complete the weekly quiz on Moodle 
+(except week 1 Part A), prepare for the workshop (10% of your overall mark).
+• During the weekly online workshop:
+• 3 sections:
+■ Work in small breakout groups of 4-6 students on an activity.
+■ Record work on shared (online or in-person) worksheet (link to be shared).
+■ Review small group work with the rest of the workshop.
+• Consultations:  
+• If you have any questions about the material or workshop examples, please post the 
+question in our Moodles Forum.
+• There might be live Q&A that will be announced later.
+===== PAGE 3 =====
+Research Ethics: online workshop 
+aims
+• The workshop activity sheet is on the Week 1 Moodle page:
+• Activity 1: Develop our own examples of (and responses to) ethical issues
+• be able to illustrate ethical issues with your own examples
+• Activity 2: Apply some of the ethics concepts in analysis of existing research
+• consider a piece of research and “spot” potential ethical issues
+• Activity 3: Consider practicalities of undertaking research in an ethical manner
+• start to understand complexity of managing ethical issues in 
+research
+===== PAGE 4 =====
+
+===== PAGE 5 =====
+
+===== PAGE 6 =====
+
+===== PAGE 7 =====
+
+===== PAGE 8 =====
+
+===== PAGE 9 =====
+
+===== PAGE 10 =====
+
+===== PAGE 11 =====
+
+===== PAGE 12 =====
+
+===== PAGE 13 =====
+Dimensions of Research Ethics
+Physical harm/abuse Informed consent Right of withdrawal Vulnerable participants Deception
+Invasion of privacy 
+Coercion Illegal practices
+Confidentiality
+===== PAGE 14 =====
+Activity 1 (30 mins)
+Dimensions of Research Ethics
+• Physical/psych harm/abuse 
+• Informed consent
+• Right of withdrawal
+• Vulnerable participants
+• Deception
+• Coercion
+• Illegal practices
+• Invasion of privacy
+• Confidentiality 
+Activity 1: work in groups (complete the printed worksheet):
+(i) Discuss an ethical dimension
+(ii) Make-up examples of research activities that raise an issue for an ethical 
+dimension.
+Example: someone wants to run a study to find out how good people are on doing 
+simple mathematics, so they stand outside our campus and ask students entering to 
+answer some simple maths questions. Issue: Informed consent.
+===== PAGE 15 =====
+Activity 1 Dimensions of Research Ethics 
+Break out rooms (Group Work)
+
+===== PAGE 16 =====
+Activity 1: Example 1 (after the initial discussion)
+Dimensions of Research Ethics
+Example 1: 
+You are doing research on barista staff use a new coffee making machine. You are using a video 
+to study their use in the shop, videoing staff members who have consented to take part in the 
+study. Occasionally the video captures people who have not consented to take part in the study.
+• Informed consent: not everyone videoed.
+• Privacy: no consent to video some people.
+===== PAGE 17 =====
+Activity 1:  Example 2 (after the initial discussion)
+Dimensions of Research Ethics
+Example 2: 
+You are doing a study of how people use Facebook to talk about politics. This involves 
+scraping comments from a public Facebook group and classifying them as “friendly”, “neutral” & 
+“hostile”. When you publish examples of comments you use examples of “hostile” posts.
+• Informed consent: have people consented?
+• Confidentiality: people can find the name of authors of your “hostile” post examples.
+• Psychological harm: authors of “hostile” posts put at risk of psychological abuse.
+===== PAGE 18 =====
+Activity 1 Dimensions of Research Ethics
+(Discussion)
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 19 =====
+Sample answers
+Ethical dimension Sample answer: hypothetical IT research 
+scenario Why is it an ethical concern?
+1. Physical or psychological harm or abuse
+Researchers test a VR application that 
+exposes participants to frightening or 
+distressing scenarios without adequate 
+warning or support.
+Participants may experience anxiety, stress 
+or psychological distress. Researchers 
+should minimise foreseeable harm, warn 
+participants about relevant risks, and allow 
+them to stop the experiment.
+2. Informed consent
+Researchers collect participants' screen 
+recordings, keystrokes and application 
+usage without explaining these activities in 
+the consent form.
+Participants cannot make an informed 
+decision if they do not understand what 
+data will be collected, how it will be used, or 
+what risks are involved.
+3. Right of withdrawal
+An experimental application does not allow 
+participants to stop recording or withdraw 
+their data once they have started the study.
+Participation should be voluntary. 
+Participants should understand how to 
+withdraw, whether their data can still be 
+removed, and any practical limitations after 
+data have been irreversibly anonymised or 
+published.
+===== PAGE 20 =====
+Sample answers
+Ethical dimension Sample answer: hypothetical IT research 
+scenario Why is it an ethical concern?
+4. Vulnerable participant groups
+Researchers test an educational AI 
+application on children who may not 
+understand how their personal information 
+will be processed.
+Children may have limited capacity to 
+understand research risks or make 
+independent decisions. Researchers should 
+use age-appropriate explanations, seek 
+appropriate parental or guardian consent, 
+and obtain children's assent where 
+appropriate.
+5. Deception
+Researchers tell participants that they are 
+interacting with another student when they 
+are actually interacting with an AI chatbot.
+Participants are deliberately given 
+misleading information, which may affect 
+their decisions or trust. Deception requires 
+justification, appropriate ethics approval, 
+and debriefing when suitable.
+6. Coercion
+A lecturer tells students they must 
+participate in a research experiment to 
+receive good grades.
+Students may feel unable to refuse 
+because of the researcher's authority. 
+Recruitment should make clear that 
+participation is voluntary and will not affect 
+grades or academic standing.
+===== PAGE 21 =====
+Sample answers
+Ethical dimension Sample answer: hypothetical IT research 
+scenario Why is it an ethical concern?
+7. Illegal practices
+Researchers ask participants to access a 
+third-party computer system without 
+permission to test its security.
+The study may involve unauthorised access 
+or other unlawful activities. Researchers 
+should obtain appropriate authorisation and 
+ensure the research complies with 
+applicable laws and institutional policies.
+8. Invasion of privacy
+Researchers scrape private social media 
+messages or continuously record 
+participants' computer screens without 
+adequate justification or permission.
+Personal information and private activities 
+may be exposed beyond what participants 
+reasonably expect. Data collection should 
+be necessary, proportionate and 
+appropriately disclosed.
+9. Confidentiality
+Researchers publish a dataset containing 
+participant names, email addresses and 
+identifiable workplace activity logs.
+Participants could be identified, 
+embarrassed or harmed. Researchers 
+should restrict access, remove direct 
+identifiers where possible, protect the data 
+and control how results are shared.
+===== PAGE 22 =====
+Activity 2 (30 mins)
+Reviewing Actual Research for Ethical Issues 
+Hudson, S., Fogarty, J., Atkeson, C., 
+Avrahami, D., Forlizzi, J., Kiesler, S., 
+Lee, J. and Yang, J., 2003, April. 
+Predicting human interruptibility 
+with sensors: a Wizard of Oz 
+feasibility study. In Proceedings of 
+the SIGCHI Conference on Human 
+factors in Computing Systems (pp. 
+257-264).
+Hudson et al. (2003) was a paper that was 
+mentioned in the Week 1 videos (simulation):
+(a) Observing the interruptibility of office workers
+(b) Used a camera and microphone to capture 
+people working in an office 
+(c) Subjects given audio prompt and self-reported 
+their interruptibility
+(d) Manual analysis of the video/audio data to 
+establish when the activities were occurring
+What are the potential ethical issues?
+===== PAGE 23 =====
+Activity 2
+Reviewing Actual Research for Ethical Issues 
+• Go back to breakout rooms/ groups
+• Work on the Flipchart for each group
+• Familiarize yourselves with paper 
+(Moodle)
+• Read “Abstract”, “Study Details” & 
+“Data” sections
+• Identify:
+• Aspect of research design with 
+ethical issues
+• What the researchers said about 
+these (if any)
+• How you would propose to address 
+the issue
+For example:
+1. ASPECT OF RESEARCH DESIGN: there are 
+only 4 participants, all from the same institution 
+as the researchers, do they really understand 
+who is going to see the data (informed 
+consent) and do they feel pressured to take 
+part (coercion).
+2. AUTHOR DESCRIPTION: does not describe 
+the issue, does not describe the recruitment 
+process.
+3. YOUR PROPOSAL: give member full details 
+of the identities of who is going to see the 
+videos and give them time to reflect on this 
+before confirming participation (informed 
+consent); advertise for participation widely 
+and make “opt-in”, rather than targeting 
+specific people (coercion).
+===== PAGE 24 =====
+Activity 2 Reviewing Actual Research for Ethical Issues 
+Break out rooms (Group Work)
+
+===== PAGE 25 =====
+Activity 2 Reviewing Actual Research for Ethical Issues 
+(Discussion)
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 26 =====
+Activity 2 (Example)
+Reviewing Actual Research for Ethical Issues 
+ASPECT OF RESEARCH DESIGN: inappropriately capture people and audio in during the activity, there 
+are many reasons why this might be inappropriate: (i) additional people not consented; (ii) content might 
+be sensitive; (iii) there might be a conflict of interest between a person paid to do the annotation and the 
+person or process being discussed.
+AUTHOR DESCRIPTION: “a keyboard which allowed the user to temporarily disable recording if they felt 
+their conversations were too sensitive to be recorded (to ensure privacy, subjects could also retroactively 
+request the recordings from any time period be destroyed prior to viewing).”
+MY PROPOSAL: the durations of the recording sessions were very long, and the mechanism by which 
+people could retroactively have recordings is not clear. Instead, use shorter recording sessions and ask 
+subjects to review recording and remove elements they think are inappropriate before giving to the 
+research team.
+===== PAGE 27 =====
+Activity 2 (Example)
+Reviewing Actual Research for Ethical Issues 
+ASPECT OF RESEARCH DESIGN: Duration of recordings for each subject are very long. The idea that 
+all activities are recorded on video and reviewed by researcher is likely to cause psychological harm 
+(stress). Also given the number of subjects is small the perceived “damage” (to the study) of withdrawing 
+from the study is high (more stress).
+AUTHOR DESCRIPTION: “7am to 6pm on workdays for 14-22 days for each subject” but no discussion of 
+the stress that this is likely to cause subjects.
+MY PROPOSAL: use more subjects, for shorter periods, allow them to review footage, continuously 
+check that they are happy to continue (by asking for their consent at each session).
+===== PAGE 28 =====
+Sample answers
+Research aspect Potential ethical concern What the authors report How I would address it
+1. Long-term audio and video recording
+Recording employees throughout their 
+working day may expose private 
+conversations, work habits, visitors and 
+sensitive workplace information.
+The authors describe using a camera and 
+microphone in each office. Participants 
+could temporarily disable recording and 
+retrospectively request that recordings from 
+a specified period be destroyed before the 
+recordings were viewed. 2003_Predicting-
+human-Oz.pdf
+I would clearly explain the recording 
+arrangements, minimise recording to what is 
+necessary, provide an obvious 
+pause/disable mechanism, and establish a 
+procedure to exclude sensitive 
+conversations from analysis.
+2. Informed consent and transparency
+Participants need to understand the extent 
+of the recording and the fact that 
+researchers will manually inspect 
+recordings.
+The paper describes the recording and 
+manual-coding process, but the sections 
+provided do not clearly document the 
+consent procedure or exactly what 
+participants were told about the manual 
+analysis. 2003_Predicting-human-Oz.pdf
+I would provide a participant information 
+statement and obtain documented informed 
+consent before recording. The explanation 
+should cover camera and microphone use, 
+manual review, data access, potential risks 
+and withdrawal options.
+3. Right of withdrawal
+Participants may wish to stop recording 
+during sensitive discussions or remove 
+recordings they later consider inappropriate.
+Participants could disable recording 
+temporarily and request retrospective 
+destruction of recordings before they were 
+viewed. The paper does not clearly establish 
+the full procedure for withdrawing from the 
+entire study. 2003_Predicting-human-Oz.pdf
+I would provide a clearly documented 
+withdrawal process, explain applicable 
+deadlines and data-removal limitations, and 
+log and action deletion requests.
+4. Psychological harm and disruption
+Frequent audio prompts could interrupt 
+concentration, disrupt conversations or 
+increase participants' workload.
+The authors state that they used a single 
+question and a five-point scale to minimise 
+disruption. They averaged about two 
+prompts per hour. 2003_Predicting-human-
+Oz.pdf
+I would allow participants to skip prompts, 
+offer adjustable prompt frequency, and 
+provide the option to pause participation 
+during important tasks or meetings.
+===== PAGE 29 =====
+Sample answers
+Research aspect Potential ethical concern What the authors report How I would address it
+5. Privacy of visitors and other third parties
+Office visitors could be recorded even 
+though they were not the main research 
+participants.
+The paper describes cameras positioned to 
+capture the main work areas and the office 
+door. The researchers also coded 
+information about guests and their 
+activities. The sections provided do not 
+clearly explain how visitor consent was 
+handled. 2003_Predicting-human-Oz.pdf
+2003_Predicting-human-Oz.pdf
+I would prevent or minimise recording of 
+non-participants, pause recording during 
+sensitive meetings, and establish a clear 
+process for informing visitors and handling 
+any inadvertently captured data.
+6. Confidentiality and data security
+Audio and video can identify participants 
+through faces, voices, conversations and 
+working patterns. Multiple coders reviewing 
+recordings increases the number of people 
+with access.
+Student coders were employed and trained 
+for consistency. A randomly selected 5% of 
+the data received duplicate coding, yielding 
+93.4% agreement. This addresses coding 
+consistency, but does not by itself 
+demonstrate how confidentiality or secure 
+storage was managed. 2003_Predicting-
+human-Oz.pdf
+I would restrict raw recording access to 
+authorised team members, require 
+confidentiality agreements, encrypt stored 
+files, keep identity keys separate from 
+analysis data, and establish retention and 
+secure-deletion schedules.
+7. Treatment of missing self-reports
+Automatically assigning a response to 
+someone who did not answer may 
+misrepresent their actual state.
+Of 672 prompts, 54 received no response 
+while the participant was present. The 
+authors investigated these cases and 
+classified them as least interruptible for 
+modelling; they also reported that removing 
+them had little effect on accuracy. 
+2003_Predicting-human-Oz.pdf
+I would retain these responses as missing 
+unless there were sufficient evidence to 
+justify another classification. I would 
+conduct a sensitivity analysis comparing 
+alternative treatments and transparently 
+document the decision.
+===== PAGE 30 =====
+BREAK
+BREAK
+===== PAGE 31 =====
+Who have 
+access to it
+Private or 
+open-source 
+data
+===== PAGE 32 =====
+Poor practices
+
+===== PAGE 33 =====
+Research Integrity
+Maintaining Publication Integrity That Is No Longer Just “Worshipping” Numbers
+What the RI² flags might really be telling us - Academia - The Jakarta Post
+
+===== PAGE 34 =====
+
+===== PAGE 35 =====
+Fraud case on data-fabrication
+Fabricated research on pneumonia at the International Society of Pneumonia & Pneumococcal Diseases (ISPPD) conference in 
+Copenhagen, Denmark. Indonesian nationals allegedly used AI to fabricate medical research, presenting it at an international 
+conference in Denmark to obtain travel grants.
+
+===== PAGE 36 =====
+Student Author
+
+===== PAGE 37 =====
+Activity 3 (30 mins)
+Processes, People & Documentation
+1. Processes:
+• Recruitment
+• Conduct of observations
+• Data analysis
+• Data curation
+2. People
+3. Documentation
+Consider the scenario in which you have been 
+asked to repeat Hudson et al’s (2003) study on 
+interruptibility as a research project at Monash 
+University using 20 office workers that are members 
+of staff of the University. 
+To do this you will first need to develop and submit 
+a research proposal to the Monash University 
+Human Research Ethics Committee, and in 
+preparation for this submission you must think 
+through all the ethical issues? how you will address 
+them? 
+…and what documentation you will need to ensure 
+that the study is conducted as you propose.
+===== PAGE 38 =====
+Activity 3
+Processes, People & Documentation
+• Go back to breakout rooms/groups
+• 2-3 people (decide who will report back)
+• Choose one section in the activity for recruitment, data 
+capture, people or documentation. If you finish early 
+choose  another section. 
+• Identify:
+1. Steps (subprocesses) involved 
+2. People who might be involved.
+3. How you would document the subprocesses.
+4. Consider all these factors (ethically) reminder that 
+you would need approval from the ethics 
+committee. 
+5. Example on next slide
+===== PAGE 39 =====
+Activity 3 
+Processes, People & Documentation
+Recruitment
+Sub-process People Documentation
+For example: Consider the  
+activities (sub-processes) which 
+are involved in the stages of the 
+recruitment process.
+Consider which people are 
+involved at each stage of the 
+recruitment process. 
+Consider the documentation for each activity, in 
+the recruitment process. 
+Writing an ethics proposal, is an important part of the ethics approval and review process. An 
+excellent application will show that you considered all parts of your study proposal's design as 
+well as your potential research participants. 
+===== PAGE 40 =====
+Initial example of Activity 3
+For example:
+1. Sub-process: ”Advertising” part of “Recruitment” how you get initial interests from 
+potential subjects.
+2. People: (i) potential subjects, (ii) person sending out the advert, (iii) person responding 
+to subject replies; (iv) person for complaints to be made to.
+3. Documentation: (i) text of the advert (poster); (ii) text of the advert (email or social 
+media); (iii) checklist to filter people if they respond to the advert; (iv) process and script 
+for person responding to potential subjects (if interested); (v) process for responding to 
+complaints about the advert; (vi) spreadsheet to record advertising and responses…
+There are many steps to each process, and many people involved…
+===== PAGE 41 =====
+Activity 3 Processes, People & Documentation 
+Break out rooms (Group Work)
+
+===== PAGE 42 =====
+Activity 3 Processes, People & Documentation
+(Discussion)
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 43 =====
+Activity 3 (Example for recruitment)
+Processes, People & Documentation
+Recruitment
+Sub-process People Documentation
+Advertising
+Identifying 
+potential 
+subjects
+Potential subjects (respond to advert), Research 
+team (review responses), Admin staff (distribute 
+advert and communicate to subjects); Independent 
+person (for complaints about process)
+Paper advert (posters); Electronic advert (email 
+& social media); List of responses to advert (e.g. 
+contact details); script (for responding to 
+questions about advert).
+Selection
+Moving from 
+potential to 
+actual subjects
+Potential subjects, Research team (check suitability 
+workspace), Subject’s colleagues (check they are 
+aware of student and have no concerns); 
+Independent person (for complaints about process)
+Explanatory statement (for subjects and 
+subjects’ colleagues); Workspace checklist & 
+procedure (process for research team to check 
+the office location’s suitability) 
+Consent Potential subjects, Research team (check suitability 
+workspace), Subject’s colleagues (check they are 
+aware of student and have no concerns); 
+Independent person (for complaints about process)
+Consent form (for subjects and colleagues); List 
+of annotators (to allow subjects identify 
+conflicts); Subject details & schedule (contact 
+details and times for observations).
+===== PAGE 44 =====
+Sample answers
+Sub-process People Documentation
+1.1. Define participant eligibility criteria Principal Investigator (PI), research team Research protocol; inclusion and exclusion 
+criteria
+1.2. Identify and approach potential 
+participants Recruitment coordinator, eligible Monash staff Recruitment email; participant invitation
+1.3. Provide study information Researcher, potential participants Participant Information Statement (PIS); study 
+information sheet
+1.4. Obtain informed consent Researcher, participants Informed Consent Form; consent log
+1.5. Schedule participants for the study Research coordinator, participants Participant scheduling record; recruitment log
+Step 1. Recruitment
+Ethical considerations: Participation must be voluntary. Staff should not feel pressured to participate 
+because of their employment relationship or the authority of the researcher. Managers should not know 
+who declined unless there is a justified, approved reason.
+===== PAGE 45 =====
+Sample answers
+Sub-process People Documentation
+2.1. Prepare the recording equipment Research team, IT/equipment technician Equipment checklist; data collection protocol
+2.2. Explain the recording procedure to 
+participants Researcher, participants Participant instructions; approved study 
+protocol
+2.3. Install cameras and microphones in the 
+office
+Researcher, participants, relevant workplace 
+personnel
+Equipment installation record; recording 
+location plan
+2.4. Record workplace activities Participants, data collection team Recording log; data collection log
+2.5. Collect interruptibility self-reports through 
+audio prompts Participants, researcher or research assistant Prompt schedule; self-report data form
+Step 2. Conduct of Observations and Data Capture
+Ethical considerations: Audio and video may capture sensitive conversations or people who are not research participants. Participants should be able to pause 
+recording under the approved protocol, and researchers should minimise unnecessary collection and restrict access to raw recordings.
+===== PAGE 46 =====
+Sample answers
+Sub-process People Documentation
+3.1. Develop a coding scheme for workplace 
+activities PI, research team, coding specialists Coding manual; codebook
+3.2. Train coders to identify activities 
+consistently
+Research assistants/coders, coding 
+supervisor Coder training materials; training records
+3.3. Review and code authorised audio/video 
+recordings Trained coders Coding sheets; coded dataset; coder access 
+records
+3.4. Check consistency between coders Independent coders, PI or coding supervisor Inter-coder agreement report; quality-check 
+records
+3.5. Combine coded activities with self-
+reported interruptibility Data analysts, statistician or ML researcher Data processing log; data dictionary; de-
+identification procedure
+3.6. Develop and evaluate predictive models ML researcher, statistician, PI Statistical analysis plan; analysis scripts; 
+model evaluation report
+3.7. Handle missing or incomplete 
+observations Data analysts, PI Missing-data log; analysis decision record
+Step 3. Data Analysis
+Ethical considerations: Only authorised researchers should access identifiable recordings. The coding scheme should be applied consistently, analytical decisions should 
+be documented, and the results should be reported honestly. For example, a missing self-report should not automatically be assumed to mean that a participant was not 
+interruptible without justification and consideration of its impact on the results.
+===== PAGE 47 =====
+Sample answers
+Sub-process People Documentation
+4.1. Organise and label the collected data Research team, data manager Data inventory; file-naming convention; data 
+dictionary
+4.2. Remove or separate direct identifiers 
+where appropriate Data manager, authorised research team De-identification protocol; participant-ID key 
+management record
+4.3. Store recordings and datasets securely Data custodian, authorised IT/security 
+personnel
+Research Data Management Plan; storage 
+and encryption procedure
+4.4. Manage access permissions PI, data custodian, authorised researchers Data access register; access permission 
+records
+4.5. Back up data and check data integrity Data custodian, IT personnel Backup log; data integrity check records
+4.6. Retain data according to approved 
+requirements
+PI, data custodian, institutional personnel 
+where required
+Data retention schedule; Research Data 
+Management Plan
+4.7. Share data, if authorised and appropriate PI, data custodian, receiving researchers Data-sharing agreement; sharing approval 
+records
+Step 4. Data Curation
+Ethical considerations: Audio and video remain potentially identifiable even after names have been removed. Access, retention, sharing and destruction must follow the approved 
+research protocol and applicable university requirements. Raw recordings should not be publicly shared simply because the research has been completed.
+===== PAGE 48 =====
+Weekly Reflection (15 minutes) 
+• Now it is time to reflect the weekly activity. 
+• In your initial groups. Discuss amongst each other the following:
+• “Summarise the main ethical issues that can impact IT research.”
+• In your groups, choose one ethical issue each and provide a brief explanation 
+to why do you think this ethical issue impacts research projects?

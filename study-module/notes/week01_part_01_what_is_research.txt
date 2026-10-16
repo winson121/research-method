@@ -1,0 +1,38 @@
+SOURCE: Week01\week01-part-01(what is research).pdf
+PAGES: 11
+
+===== PAGE 1 =====
+What is research?
+===== PAGE 2 =====
+What is research?•“… a systematic, careful enquiry or examination to discover new information or relationships and to expand/verify existing knowledge for some specified purpose.” [Bennet, 1991]•A systematic process of collecting, analyzing, and interpreting information (data) to increase understanding of a phenomenon about which we are interested or concerned. [Leedy& Ormrod, 2013]“Research is the careful search or inquiry for; endeavourto discover new facts, procedures, methods and techniques by the scientific study of a subject, course of critical investigation.” [Concise Oxford Dictionary 4th ed]
+===== PAGE 3 =====
+Why do research?A rewarding activity for those looking to:Solve problems & improve the human conditionFor public good (traditional role of universities)Generate new knowledge to drive innovation, progress and prosperity•commercial research•More recent trend for universitiesProvide intellectual challengeResearch is a chance to help others, think of the impact on your life of the microscope and the resulting research.Robert Hooke's microscope and other Instruments: https://en.wikipedia.org/wiki/Microscope
+
+===== PAGE 4 =====
+1
+2
+3
+4
+5
+The research process in IT
+===== PAGE 5 =====
+Theory, observation & experimentThere are multiple ways or methods to carry out research.Each may be valid in a particular context but  most rely on observation.
+Fig Source: http://www.cs.toronto.edu/~sme/CSC2130/
+•Theory •models & theories of reality•underlying concepts•Observation & Experiment•provides ‘facts’•evaluates theory
+===== PAGE 6 =====
+Traditional view of scientific inquiry
+Fig Source: http://www.cs.toronto.edu/~sme/CSC2130/
+===== PAGE 7 =====
+e.g. Time Dilation & Special Relativity Special relativity [Theory]“the rate of a clock C traveling between two synchronized laboratory clocks A and B, as seen by a laboratory observer, is slowed down relative to the laboratory clock rates”Muons are created by cosmic rays in the upper atmosphere of the earth.These fast moving particles (e.g. muons) should decay slower than their half-life might suggest.Rossi–Hall experiment: measured muons travelling above 0.99c (c=speed of light) at Echo Lake (3240 m) and Denver in Colorado (1616 m) [Observation]Difference in measurement at the two altitudes qualitatively confirmed the theory (i.e. less decay than the half-life predicts).IMPORTANT: prediction of a novel previously unobserved phenomena.
+
+===== PAGE 8 =====
+The “ACTUAL METHOD”…
+http://phdcomics.com
+===== PAGE 9 =====
+Basic v Applied            Science v EngineeringScience§create knowledge§study the world as it is§trained in scientific method§design experiments (to test theories)§use explicit knowledge§are “thinkers”
+Engineering§apply that knowledge§seek to change the world§trained in engineering design§design artefacts using theories§prefer contingent knowledge§are “doers”Based on: http://www.cs.toronto.edu/~sme/CSC2130/
+===== PAGE 10 =====
+Research methods (not “method”)Many different methods:Observation ExperimentDesignSimulationSurveyInterviewFocus groupCase studyAction (research)
+We need different methods :Different research contexts and topics require different methods and approachesNo method is adequate for all contextsIncreasingly research is interdisciplinary, conducted by multidisciplinary teamsWe need to be able to critically assess the quality and limitations of research
+===== PAGE 11 =====
+All methods are “flawed”(1) e.g. (laboratory) experiments•Cannot study large-scale software development in the lab•Too many variables to control them all(2) e.g. case studies•How do we know that what’s true in one project generalises to others?•Researcher chooses the questions which biases the study(3) e.g. surveys•Self-selection biases the study•Respondents tell you what they think you want to know(4)……we need to be aware and address these issues…Based on: http://www.cs.toronto.edu/~sme/CSC2130/

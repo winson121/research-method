@@ -1,0 +1,225 @@
+SOURCE: Week01\Workshop_1A.pdf
+PAGES: 34
+
+===== PAGE 1 =====
+Week 1: Part (A) Why Research 
+Methods Workshop
+===== PAGE 2 =====
+Introduction
+Lecturer: Vanya Valindria
+CE: Yi-Shan Tsai
+Workshop Part A (On-line) Tuesday 7:00 pm - 9:00pm Zoom
+Workshop Part B (In-person)
+No Zoom Saturday 13.30 pm - 16:30 pm Room 512
+===== PAGE 3 =====
+Online workshops 
+• Before the workshop:
+• Watch the week’s video, read the associated work
+• During the weekly online workshop:
+• 3 sections:
+■ Work in small breakout groups of 4-6 students on an activity.
+■ Record work on shared (online or in-person) worksheet (link to be shared).
+■ Review small group work with the rest of the workshop.
+• Consultations:  
+• If you have any questions about the material or workshop examples, please post the 
+question in our Moodle Forum.
+===== PAGE 4 =====
+LEARNING 
+OUTCOMES
+
+===== PAGE 5 =====
+Gradebook and Assignments
+Assignment 1 (40%) : due 1 Nov 2026
+Assignment 2 (40%): due 20 Nov 2026
+Quizzes (20%) : every week (on-site only)
+Ethics and citing papers (Week 1 & 2)
+Survey and interviews (Week 3)
+Statistics and hypothesis (Week 4 & 5)
+Research video (Week 6)
+===== PAGE 6 =====
+Groups for Assignment 2
+Group 1 Muhammad Reza
+Toto Sebayang
+Group 2 Novky Nurwindy
+Fannisa Yohandi
+Group 3 Oktorio Prasetya
+Andrea Sentosa
+Group 4 Rio Jondruk
+Obi Sobriyah
+Group 5 Adryanus Rinaldi
+Marini Syafitri
+Group 6 Fildza Nabila
+Gunung Raharjo
+Group 7 Farisa Aliya
+Dhifan Fauzan
+Group 8 Daffa Padantya
+Ino Setyawan
+Group 9 Ridwan Putera
+Freda Wahyuda
+Group 10 Tri Alim
+Ravin Pradhitya
+Group 11 Gusti Anshari
+Fitra Hanifah
+Group 12 Qurrotul Aini
+Muhammad Qowindra
+Group 13 Hansen Cugito
+Helga Elmira
+===== PAGE 7 =====
+Groups for Assignment 2
+Group 14 Else Huslijah
+Vino Redison
+Group 15 Rizki Nasution
+Jeyvan Viriya
+Group 16 Lakas Paramadiwya
+Mico Wijaya
+Group 17 Pangeran Kusumo
+Adrian Taufan
+Group 18 Akbar Maulana
+Safira Ramadhani
+Group 19 Friska Angelina
+Enrico Dewangga
+Group 20 Genesius Julian Muljadi
+Yodi Satriani
+Group 21 Muhammad Pirzada
+Anastasia Tracy
+Group 22 Neil Armstrong
+Bramaditya Swarasmaradhana
+Group 23 Rafi Alaudi
+Bramantyo Suyadi
+Group 24 Adhitya Alfani
+Fauzia Khairani
+Group 25 Yohanes Paskalis
+Winson Wijaya
+Group 26 Sneha Lalwani
+===== PAGE 8 =====
+Introducing Research Methods: online 
+workshop aims
+The workshop activity sheet is on the Week 1 Moodle page:
+• Activity 1: Understanding people – What qualitative data is all about
+• Activity 2: Understanding systems – what quantitative data can do
+• Activity 3: Communicating research – how to communicate new knowledge
+===== PAGE 9 =====
+Introduction
+This unit is all about introducing you to the types of methods that are commonly used to 
+conduct research in both industry and academic settings.
+Throughout the unit, we will be covering different broad types of methods.
+Each week’s workshop is designed to give you a chance to practice some of these 
+methods.
+As this is the first week – we will start with a common scenario from an IT company, 
+aiming to demonstrate that this unit will introduce real skills that you will need.
+===== PAGE 10 =====
+The Scenario 
+● Please refer to the Week 1 Workshop Sheet to find the scenario: Case Study Context: 
+OnStudent Feature Development.
+● In groups, select someone to read the scenario out loud to the rest of the group.        
+Make sure you all understand the scenario. 
+===== PAGE 11 =====
+The Scenario
+Break out rooms (Group Work)
+MIRO board:
+https://miro.com/app/board/uXjVHkauQZ
+Y=/?share_link_id=461105140867
+Password: ITI5125_2026
+
+===== PAGE 12 =====
+
+===== PAGE 13 =====
+Activity 1 (20 mins)
+Understanding people
+Work in groups to answer the questions on the worksheet, which focus on how to 
+capture data about people using interviews.
+===== PAGE 14 =====
+Activity 1
+Break out rooms (Group Work)
+
+===== PAGE 15 =====
+Activity 1 Discussion
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 16 =====
+Solves real-world problems
+===== PAGE 17 =====
+
+===== PAGE 18 =====
+
+===== PAGE 19 =====
+WHY RESEARCH? Image Generation From Scene Graphs (2017)
+DenseCap: Fully Convolutional Localization 
+Networks for Dense Captioning (2015)
+NOW
+NOW
+
+===== PAGE 20 =====
+DRIVE 
+INNOVATION 
+AND PROGRESS
+Will Smith Eating Spaghetti // Benchmark Test // A.I.
+
+===== PAGE 21 =====
+Activity 2 (20 mins)
+Understanding a System
+Work in groups to answer the questions on the worksheet, which focus on working with quantitative data.
+Remember that we do not expect you to know exactly what methods you might apply – this is a process of 
+realizing that there are methods for working with this type of data.
+===== PAGE 22 =====
+Activity 2 Understanding a System
+Break out rooms (Group Work)
+
+===== PAGE 23 =====
+Activity 2 Understanding a System
+(Discussion)
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 24 =====
+
+===== PAGE 25 =====
+
+===== PAGE 26 =====
+Feasibility study
+
+===== PAGE 27 =====
+Comparative study
+
+===== PAGE 28 =====
+Less is more: Micro-expression recognition from video using apex frame - ScienceDirect
+
+===== PAGE 29 =====
+
+===== PAGE 30 =====
+MODELLING (Example)
+
+===== PAGE 31 =====
+Activity 3 (20 mins)
+Communicating your results
+Work in groups to answer the questions on the worksheet, which focus on how to communicate your 
+research results in a specific form (2 minute video)
+Remember to consider:
+- Who are you communicating to?
+- What do you need to communicate?
+- How much do they know already?
+- How much do they need to know?
+===== PAGE 32 =====
+Activity 3 Communicating your results 
+Break out rooms (Group Work)
+
+===== PAGE 33 =====
+Activity 3 Communicating your results
+(Discussion)
+Now we will share our thoughts…
+When talking share your screen (with the 
+workshop sheet)…
+We will start with breakout group X
+
+===== PAGE 34 =====
+Weekly Reflection (15 minutes) 
+• Now it is time to reflect on our weekly activity. 
+• In your initial groups. Discuss amongst each other the following:
+• “What do you think the primary purpose of research methods within IT is?”
+• In your groups, choose one primary purpose each and provide a brief explanation to 
+why do you think is important?
