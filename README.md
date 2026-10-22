@@ -21,9 +21,10 @@ D:\ITI5125\
 
 ## How a new week flows
 
-1. You drop the new week's files into `_incoming\WeekNN\`.
+1. You drop the new week's files into `_incoming\WeekNN\` (plain `WeekNN\` works too — that's where week 3 landed).
 2. You paste the reusable prompt (below) into a new conversation.
 3. I extract everything, build the new module, and hand you an updated HTML.
+4. `index.html` is the launcher page linking every module file.
 
 ## Reusable prompt for future weeks
 

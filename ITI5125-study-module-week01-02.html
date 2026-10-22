@@ -1709,14 +1709,14 @@ function escDiv(){const d=document.createElement("div");return d;}
 function renderQ(q, host, num){
   const card=document.createElement("div");card.className="quiz";
   const top=document.createElement("div");top.className="qtop";
-  const tag=document.createElement("span");tag.className="qtag"+(q.type==="multi"?" multi":(q.t==="case"?" case":""));
-  tag.textContent=TAGLBL[q.t]||(q.type==="multi"?"Choose all that apply":"Question");top.appendChild(tag);
+  const tag=document.createElement("span");tag.className="qtag"+((q.type==="multi"||q.t==="multi")?" multi":(q.t==="case"?" case":""));
+  tag.textContent=TAGLBL[q.t]||((q.type==="multi"||q.t==="multi")?"Choose all that apply":"Question");top.appendChild(tag);
   if(num){const n=document.createElement("span");n.className="src";n.textContent="Q"+num;top.appendChild(n);}
   card.appendChild(top);
   const qt=document.createElement("div");qt.className="qt";qt.textContent=q.q;card.appendChild(qt);
   if(q.extra){const ex=document.createElement("div");ex.className="qextra";ex.innerHTML=q.extra;card.appendChild(ex);}
   const why=document.createElement("div");why.className="why";why.innerHTML="<b>Why:</b> "+q.why;
-  if(q.type==="multi"){
+  if((q.type==="multi"||q.t==="multi")){
     const picked=new Set();
     q.opts.forEach((o,i)=>{
       const b=document.createElement("button");b.className="opt";b.textContent=o[0];

@@ -1,0 +1,88 @@
+</style>
+</head>
+<body>
+<div class="toast" id="toast">saved</div>
+
+<header class="hdr">
+  <button class="burger" id="burger" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="ttl">ITI5125 · week 3 study module</div>
+  <div class="prog-wrap">
+    <div class="prog-ring" id="ring" aria-label="Progress"></div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+
+<nav class="drawer" id="drawer">
+  <button class="closebtn" id="drawerClose" aria-label="Close menu">✕</button>
+  <div style="font-weight:800;font-size:16px;padding:6px">study module</div>
+  <a href="#dashboard" data-nav="dashboard">🏠 <span>Dashboard</span></a>
+  <h3>week 3 · surveys &amp; interviews</h3>
+  <a href="#w3-overview" data-nav="w3-overview"><span class="w3dot"></span>Week 3 roadmap<span class="tick">✓</span></a>
+  <a href="#w3-surveys" data-nav="w3-surveys"><span class="w3dot"></span>Surveys &amp; questionnaires<span class="tick">✓</span></a>
+  <a href="#w3-ws3a" data-nav="w3-ws3a"><span class="w3dot"></span>Workshop 3A · solved<span class="tick">✓</span></a>
+  <a href="#w3-interviews" data-nav="w3-interviews"><span class="w3dot"></span>Research interviews<span class="tick">✓</span></a>
+  <a href="#w3-ws3b" data-nav="w3-ws3b"><span class="w3dot"></span>Workshop 3B · solved<span class="tick">✓</span></a>
+  <a href="#w3-craft" data-nav="w3-craft"><span class="w3dot"></span>Deep dive · probes &amp; focus groups<span class="tick">✓</span></a>
+  <a href="#w3-assign" data-nav="w3-assign"><span class="w3dot"></span>Assignment prep · consent &amp; transcription<span class="tick">✓</span></a>
+  <a href="#w3-sprint" data-nav="w3-sprint"><span class="w3dot"></span>Quiz sprint · rapid recognition<span class="tick">✓</span></a>
+  <a href="#w3-bank" data-nav="w3-bank"><span class="w3dot"></span>Week 3 question bank<span class="tick">✓</span></a>
+  <a href="#mock" data-nav="mock">⏱️ <span>Simulated quiz</span></a>
+  <a href="#glossary" data-nav="glossary">📖 <span>Glossary</span></a>
+</nav>
+
+<main class="wrap">
+
+<!-- ================= DASHBOARD ================= -->
+<section class="view" id="dashboard">
+  <div class="hero">
+    <h1>ITI5125 · Surveys &amp; Interviews — week 3</h1>
+    <p>One-stop consume-mode study module for week 3: survey &amp; questionnaire design, question wording pitfalls, sampling, the full interview craft (types, schedules, probes, focus groups, sensitive topics, conduct, transcription) and the consent process. Both workshop sheets are solved with multiple detailed model answers you can present in class, plus a full question bank and a timed simulated quiz.</p>
+  </div>
+  <div class="card">
+    <h2 class="sect">Your week 3 target</h2>
+    <div class="grid3" style="margin-top:12px">
+      <div class="stat"><div class="v">W3</div><div class="l">quiz coverage</div></div>
+      <div class="stat"><div class="v">3A+3B</div><div class="l">workshops covered</div></div>
+      <div class="stat"><div class="v" id="dashQCount">–</div><div class="l">bank questions</div></div>
+    </div>
+    <p class="small" style="margin-top:12px">The weekly quiz is multiple choice, including <b>choose-one-or-more</b> items. It can test concepts, case-study details (Daniela's COVID survey, the Cortana nursing-home interviews), question-wording flaws, interview types and "what would you do" role-plays. This module trains all of those formats — including the exact activity sheets your workshop groups will work through.</p>
+  </div>
+  <div class="card">
+    <h2 class="sect">How this week is organised</h2>
+    <p class="small" style="margin-top:8px">Moodle splits week 3 into <b>Part A: Surveys</b> and <b>Part B: Interviews</b>, each with a lecture, a case study, a workshop sheet and assessed pieces that feed your assignments.</p>
+    <table class="tb">
+      <tr><th style="text-align:left;padding:8px;border-bottom:1px solid var(--line)">Part</th><th style="text-align:left;padding:8px;border-bottom:1px solid var(--line)">Learn</th><th style="text-align:left;padding:8px;border-bottom:1px solid var(--line)">Practice (solved in this module)</th></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--line)"><b>A · Surveys</b></td><td style="padding:8px;border-bottom:1px solid var(--line)">Survey vs questionnaire · what surveys can capture · when questionnaires are appropriate · sampling · question forms &amp; scales · the Daniela COVID case</td><td style="padding:8px;border-bottom:1px solid var(--line)">Workshop 3A: critique 10 flawed questions, then design a full questionnaire on adjusting to student life</td></tr>
+      <tr><td style="padding:8px"><b>B · Interviews</b></td><td style="padding:8px">Why interviews · epistemology &amp; ontology · advantages/disadvantages · structured / semi-structured / unstructured · the Cortana nursing-home case</td><td style="padding:8px">Workshop 3B: mini-topics, a 10-minute interview schedule with probes, role-play conduct and reflections</td></tr>
+    </table>
+    <p class="small" style="margin-top:10px">Week's learning outcomes (from the Moodle overview): understand the purpose and role of questionnaires; identify and describe question types; design a questionnaire using best practice; know the deployment tools; understand how interviews and focus groups capture qualitative information; identify interview/focus-group types; critique interviews for good and bad practice; plan an interview appropriate for a topic; describe interview characteristics in research.</p>
+  </div>
+  <div class="card">
+    <h2 class="sect">Search the module</h2>
+    <div class="searchrow"><input id="searchBox" placeholder="e.g. leading question, Likert, consent form, grand tour, 10 minutes…" aria-label="Search"></div>
+    <div id="searchRes" style="margin-top:6px"></div>
+  </div>
+  <div class="card">
+    <h2 class="sect">Suggested path (~2.5–3 hours)</h2>
+    <ul style="margin:8px 0 0 18px;font-size:14.5px;line-height:1.8">
+      <li><b>Before the workshop:</b> read the roadmap → surveys section → interviews section, doing every bite-size quiz as you go.</li>
+      <li><b>Workshop prep:</b> study both solved workshop sections (3A and 3B) — pick the model answer set closest to your group's angle and walk in ready.</li>
+      <li><b>Assignment prep:</b> the template/consent/transcription section if you have the interview assignment coming.</li>
+      <li><b>Last 30 minutes before the quiz:</b> the quiz sprint section — pure rapid-recognition tables built for ~30-second questions.</li>
+      <li><b>Exam prep:</b> work the full question bank (mixed formats), then sit the simulated quiz (randomised, timed, 20 questions).</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 class="sect">Progress</h2>
+    <p class="small">Week 3 · surveys &amp; interviews</p>
+    <div class="pbar"><div id="pbW3" style="width:0%"></div></div>
+    <div class="rowbtns">
+      <a class="btn primary" href="#" id="continueBtn">Continue where I left off</a>
+      <a class="btn" href="#mock">Simulated quiz</a>
+    </div>
+    <p class="small" style="margin-top:10px">Progress is saved in this browser automatically. The week 1–2 module is a separate file (<code style="font-size:12px">ITI5125-study-module-week01-02.html</code>) with its own progress.</p>
+  </div>
+</section>
